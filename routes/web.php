@@ -24,3 +24,5 @@ Route::get('login', 'UserController@getLogin')->name('login');
 Route::post('login', 'UserController@postLogin');
 
 Route::get('logout', 'UserController@getLogout')->name('logout');
+
+Route::resource('users', 'UserRestfulController');

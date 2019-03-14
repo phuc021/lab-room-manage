@@ -14,9 +14,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="{{ url('/users') }}">
                         <i class="pe-7s-user"></i>
-                        <p>User Profile</p>
+                        <p>User Manage</p>
                     </a>
                 </li>
                 <li>

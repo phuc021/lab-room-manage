@@ -10,7 +10,7 @@ use Auth;
 class UserController extends Controller
 {
     public function getRegister(){
-    	return view('users.register');
+    	return view('auth.register');
     }
 
     public function postRegister(Request $req){
@@ -38,7 +38,7 @@ class UserController extends Controller
     }
 
     public function getLogin(){
-    	return view('users.login');
+    	return view('auth.login');
     }
 
     public function postLogin(Request $req){
