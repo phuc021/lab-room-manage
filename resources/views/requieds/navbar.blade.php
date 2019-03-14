@@ -66,16 +66,32 @@
                                 <li><a href="#">Separated link</a></li>
                               </ul>
                         </li>
-                        <li>
-                            <a href="#">
-                                <p>Register</p>
-                            </a>
+                        @if(Auth::check())
+                            <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <p>
+                                        {{ Auth::user()->name }}
+                                        <b class="caret"></b>
+                                    </p>
+
+                              </a>
+                              <ul class="dropdown-menu">
+                                <li><a href="#">Profile</a></li>
+                                <li><a href="{{ URL::route('logout') }}">Log Out</a></li>
+                              </ul>
                         </li>
-                        <li>
-                            <a href="#">
-                                <p>Login</p>
-                            </a>
-                        </li>
+                        @else
+                            <li>
+                                <a href="{{ URL::route('register') }}">
+                                    <p>Register</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ URL::route('login') }}">
+                                    <p>Login</p>
+                                </a>
+                            </li>
+                        @endif
 						<li class="separator hidden-lg"></li>
                     </ul>
                 </div>

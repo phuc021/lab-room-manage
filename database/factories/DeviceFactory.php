@@ -15,10 +15,12 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(App\Model\Devices::class, function (Faker $faker) {
+$factory->define(App\Models\Devices::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
-        'desc' =>$faker->languageCode,
-        'status' =>$faker->year,
+        'desc' => $faker->languageCode,
+        'status' => $faker->year,
+        'computers_id' => $faker->randomDigit,
+        'type_devices_id' => $faker->randomDigit,
     ];
 });

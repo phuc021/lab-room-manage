@@ -29,6 +29,5 @@ mix.styles('resources/assets/css/animate.min.css','public/css/animate.min.css')
 // 	.js('resources/js/light-bootstrap-dashboard.js','public/js');
 
 mix.copyDirectory('resources/assets/fonts','public/fonts')
-	.copyDirectory('resources/assets/sass/','public/sass')
-	.copyDirectory('resources/assets/img','public/assets/img')
-	.copyDirectory('resources/js','public/js');
+	.copyDirectory('resources/js','public/js')
+	.copyDirectory('resources/assets/folder_form_register_login','public/assets/folder_form_register_login');
