@@ -14,7 +14,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
         	UsersTableSeeder::class,
         	RoomsTableSeeder::class,
-        	DevicesTableSeeder::class
+        	DevicesTableSeeder::class,
+            ComputersTableSeeder::class,
         ]);
     }
 }
