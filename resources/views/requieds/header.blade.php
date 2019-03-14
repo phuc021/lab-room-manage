@@ -13,7 +13,7 @@
     <link href="{{ asset('css/animate.min.css') }}" rel="stylesheet"/>
     <link href="{{ asset('css/light-bootstrap-dashboard.css') }}" rel="stylesheet"/> {{-- ?v=1.4.0 --}}
     <link href="{{ asset('css/demo.css') }}" rel="stylesheet" />
-
+    <link rel="stylesheet" href="{{ asset('css/all.css') }}">
 
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">

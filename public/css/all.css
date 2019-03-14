@@ -1,0 +1,25 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+table.list-user tbody tr td:last-child {
+    display: inline;
+}
+table.list-user tbody tr td {
+    width: 20%;
+    text-align: center;
+}
+
+table.list-user tbody tr td form {
+    display: inline;
+}
+
+table.list-user thead tr th {
+    width: 20%!important;
+    text-align: center;
+}
+
+table.list-user {
+    width: 100%!important;
+}
