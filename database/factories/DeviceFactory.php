@@ -21,6 +21,7 @@ $factory->define(App\Models\Devices::class, function (Faker $faker) {
         'desc' => $faker->languageCode,
         'status' => $faker->year,
         'computers_id' => $faker->randomDigit,
-        'type_devices_id' => $faker->randomDigit,
+        'type_devices_id' => $faker->randomDigit, 
+        
     ];
 });
