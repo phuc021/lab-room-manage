@@ -19,10 +19,6 @@ class CreateDevicesTable extends Migration
             $table->string('desc');
             $table->string('status');
             $table->integer('computers_id')->unsigned();
-            $table->foreign('computers_id')->references('id')->on('computers')->onDelete('cascade');
-            $table->integer('type_devices_id')->unsigned();
-            $table->foreign('type_devices_id')->references('id')->on('type_devices')->onDelete('cascade');
-            $table->timestamps();
         });
     }
 

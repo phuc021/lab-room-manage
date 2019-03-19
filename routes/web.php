@@ -15,14 +15,14 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('register','UserController@getRegister')->name('register');
+	Route::get('register','Auth\AuthController@getRegister')->name('register');
 
-Route::post('register','UserController@postRegister');
+	Route::post('register','Auth\AuthController@postRegister');
 
-Route::get('login', 'UserController@getLogin')->name('login');
+	Route::get('login', 'Auth\AuthController@getLogin')->name('login');
 
-Route::post('login', 'UserController@postLogin');
+	Route::post('login', 'Auth\AuthController@postLogin');
 
-Route::get('logout', 'UserController@getLogout')->name('logout');
+	Route::get('logout', 'Auth\AuthController@getLogout')->name('logout');
 
-Route::resource('users', 'UserRestfulController');
+Route::resource('users', 'UserController');
