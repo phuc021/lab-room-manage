@@ -8,7 +8,7 @@ table.list-user tbody tr td:last-child {
 }
 table.list-user tbody tr td {
     width: 20%;
-    text-align: center;
+    text-align: left;
 }
 
 table.list-user tbody tr td form {
@@ -17,7 +17,7 @@ table.list-user tbody tr td form {
 
 table.list-user thead tr th {
     width: 20%!important;
-    text-align: center;
+    text-align: left;
 }
 
 table.list-user {
