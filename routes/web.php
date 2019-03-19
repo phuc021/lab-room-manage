@@ -25,4 +25,10 @@ Route::get('/', function () {
 
 	Route::get('logout', 'Auth\AuthController@getLogout')->name('logout');
 
+<<<<<<< HEAD
 Route::resource('users', 'UserController');
+=======
+Route::resource('users', 'UserRestfulController');
+
+Route::resource('tags','TagsController');
+>>>>>>> Update all Tag
