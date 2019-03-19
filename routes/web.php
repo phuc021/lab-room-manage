@@ -15,15 +15,17 @@ Route::get('/', function () {
     return view('home');
 });
 
-	Route::get('register','Auth\AuthController@getRegister')->name('register');
+Route::get('register','Auth\AuthController@getRegister')->name('register');
 
-	Route::post('register','Auth\AuthController@postRegister');
+Route::post('register','Auth\AuthController@postRegister');
 
-	Route::get('login', 'Auth\AuthController@getLogin')->name('login');
+Route::get('login', 'Auth\AuthController@getLogin')->name('login');
 
-	Route::post('login', 'Auth\AuthController@postLogin');
+Route::post('login', 'Auth\AuthController@postLogin');
 
-	Route::get('logout', 'Auth\AuthController@getLogout')->name('logout');
+Route::get('logout', 'Auth\AuthController@getLogout')->name('logout');
 
 Route::resource('users', 'UserController');	
 Route::resource('tags','TagsController');
+Route::get('logout', 'UserController@getLogout')->name('logout');
+Route::resource('rooms', 'RoomController');
