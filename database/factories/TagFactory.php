@@ -14,12 +14,13 @@ use Faker\Generator as Faker;
 | model instances for testing / seeding your application's database.
 |
 */
-$factory->define(App\Models\Computer::class, function (Faker $faker) {
-	$idRoom = App\Models\Room::inRandomOrder()->first()->id;
+
+$factory->define(App\Models\Tag::class, function (Faker $faker) {
+	$id_device = ['1','2','3','4','5','6','7','8','9','10'];
+	$value = ['I5', '8GB', '500GB', '850W', 'MSI'];
+	shuffle($value);
     return [
-        'name' => $faker->name,
-        'desc' => $faker->languageCode,
-        'status' => $faker->year,
-        'rooms_id' => $idRoom,
+    	'value' => $value[0],
+    	'devices_id' => $id_device[0]
     ];
 });
