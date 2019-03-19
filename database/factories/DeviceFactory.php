@@ -16,8 +16,10 @@ use Faker\Generator as Faker;
 */
 
 $factory->define(App\Models\Devices::class, function (Faker $faker) {
+    $names = array('CPU','RAM','HDD','Mainboard');
+    shuffle($names);
     return [
-        'name' => $faker->name,
+        'name' => $names[0],
         'desc' => $faker->languageCode,
         'status' => $faker->year,
         'computers_id' => $faker->randomDigit,
