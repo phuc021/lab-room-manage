@@ -35,4 +35,6 @@ Route::get('logout', 'UserController@getLogout')->name('logout');
 
 Route::resource('devices', 'DevicesController');
 
+Route::get('logout', 'UserController@getLogout')->name('logout');
 
+Route::resource('computers','ComputersController');
