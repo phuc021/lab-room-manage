@@ -17,8 +17,6 @@ class CreateTagsTable extends Migration
             $table->increments('id');
             $table->string('value');
             $table->integer('devices_id')->unsigned();
-            $table->foreign('devices_id')->references('id')->on('devices')->onDelete('cascade');
-            $table->timestamps();
         });
     }
 

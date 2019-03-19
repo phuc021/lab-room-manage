@@ -19,7 +19,6 @@ class CreateComputersTable extends Migration
             $table->string('desc');
             $table->string('status');
             $table->integer('rooms_id')->unsigned();
-            $table->foreign('rooms_id')->references('id')->on('rooms')->onDelete('cascade');
             $table->timestamps();
         });
     }

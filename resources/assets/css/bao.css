@@ -6,8 +6,14 @@
 table.list-user tbody tr td:last-child {
     display: inline;
 }
+
 table.list-user tbody tr td {
     width: 20%;
+    text-align: left;
+}
+
+table.list-user tbody tr td.role-user {
+    width: 10%!important;
     text-align: left;
 }
 
@@ -22,4 +28,5 @@ table.list-user thead tr th {
 
 table.list-user {
     width: 100%!important;
+    margin-left: 20px;
 }
