@@ -7,7 +7,7 @@
 
 	<div>
 	</div>
-		<div class="container">
+		<div class="container-fluid">
 
 			<div class="form-group">
 
@@ -27,9 +27,10 @@
 
 					<label for="">{{ trans('rooms/create.status')}}:</label>
 					<select name="status" class="form-control">
-						<option value="1">Active</option>
-						<option value="0">Close</option>
-					</select>
+					@foreach(RoomsHelper::getOptionStatus() as $key => $value)
+						<option value="{{$key}}">{{$value}}</option>
+					@endforeach
+					</select><br>
 					<button type="sumbit">Sumbit</button>
 				</form>
 
