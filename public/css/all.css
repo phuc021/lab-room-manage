@@ -30,3 +30,7 @@ table.list-user {
     width: 100%!important;
     margin-left: 20px;
 }
+
+.form-edit-user {
+    width: 55%;
+}

@@ -24,7 +24,7 @@
 								<td>{{ $user->email }}</td>
 								<td>{{ $user->role }}</td>
 								<td>
-									<a href=""><button type="button" class="btn btn-info">Edit</button></a>
+									<a href="{{ url('users/'.$user->id.'/edit') }}"><button type="button" class="btn btn-info">Edit</button></a>
 								</td>
 							</tr>
 						</tbody>
