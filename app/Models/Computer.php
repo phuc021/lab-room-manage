@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Computer extends Model
 {
-    //
+    protected $fillable = [
+    	'name', 'desc', 'status','rooms_id'
+    ];
 }
