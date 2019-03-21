@@ -1,0 +1,8 @@
+.container-fluid.vip {
+    width: 700px;
+}
+
+button.btn.btn-default.cre-sub{
+    float: right;
+    margin: 10px;
+}
