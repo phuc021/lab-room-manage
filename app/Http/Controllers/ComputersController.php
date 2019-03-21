@@ -38,7 +38,7 @@ class ComputersController extends Controller
     public function store(Request $request)
     {
         Computer::create($request->all());
-        return redirect('computers')->with(['success' => 'Add New Complete !!']);
+        return redirect('computers');
     }
 
     /**

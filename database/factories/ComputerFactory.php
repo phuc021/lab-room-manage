@@ -15,13 +15,10 @@ use Faker\Generator as Faker;
 |
 */
 $factory->define(App\Models\Computer::class, function (Faker $faker) {
-<<<<<<< HEAD
 	$idRoom = App\Models\Room::inRandomOrder()->first()->id;
-=======
 	$names = array('1','2','3','4','5','6','7','8','9','10',
 		'11','12','13','14','15','16','17','18','19','20');
 	shuffle($names);
->>>>>>> finish controller computer
     return [
         'name' => $names[0],
         'desc' => $faker->languageCode,
