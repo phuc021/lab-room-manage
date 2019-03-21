@@ -27,11 +27,10 @@ Route::post('login', 'Auth\AuthController@postLogin');
 Route::get('logout', 'Auth\AuthController@getLogout')->name('logout');
 
 Route::resource('users', 'UserController');	
-Route::resource('tags','TagsController');
-Route::get('logout', 'UserController@getLogout')->name('logout');
-Route::resource('rooms', 'RoomController');
 
-Route::get('logout', 'UserController@getLogout')->name('logout');
+Route::resource('tags','TagsController');
+
+Route::resource('rooms', 'RoomController');
 
 Route::resource('devices', 'DevicesController');
 
