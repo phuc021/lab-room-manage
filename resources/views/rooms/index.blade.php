@@ -5,11 +5,11 @@
 @section('body')
 <center>
     <h2>Rooms</h2>
-
 </center>
-<div class="container">
-        <button class="btn btn-default"><a href="{{url('rooms/create')}}">Add new</a></button>
-    </div>
+<div class="container-fluid">
+        <button class="btn btn-primary"><a href="{{url('rooms/create')}}">Add new</a></button>
+    </div><br>
+   
 	 
         <table class="table table-bordered">
     
@@ -31,14 +31,16 @@
             <td>{{$i}}</td>
             <td>{{ $rooms->name }}</td>
             <td>{{ $rooms->desc }}</td>
-            <td>{{ $rooms->status }}</td>
-            <td><a href="{{ url("rooms/$rooms->id/edit") }}">Edit</a></td>
+            <td>{{ RoomsHelper::getStatus($rooms->status) }}</td>
+            <td><button class="btn btn-secondary"> 
+                <a href="{{ url("rooms/$rooms->id/edit") }}">Edit</a>
+            </button></td>
             <td>
                 <form action="{{ url('rooms/'.$rooms->id) }}" method="POST"> 
                     {{ csrf_field() }}
                     {{ method_field('DELETE') }}
                 
-                   <button class="btn btn-danger" type="submit" data-toggle="tooltip" title="Delete" data-placement="top" onclick="return confirm('bạn có thực sự muốn xóa ?'); ">Delete</button>
+                   <button class="btn btn-primary" type="submit" data-toggle="tooltip" title="Delete" data-placement="top" onclick="return confirm('bạn có thực sự muốn xóa ?'); ">Delete</button>
                 </form>
         </tr>
     </td>
