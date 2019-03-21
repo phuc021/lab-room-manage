@@ -18,18 +18,8 @@
 							<tr>
 								<td>{{ $user->name }}</td>
 								<td>{{ $user->username }}</td>
-								<td>{{ $user->email }}</td>
-								@if($user->role == null)
-									<td class="role-user">No Role</td>
-								@elseif($user->role == 3)
-									<td class="role-user">Admin</td>
-								@elseif($user->role == 2)
-									<td class="role-user">Technicians</td>
-								@elseif($user->role == 1)
-									<td class="role-user">Teacher</td>
-								@elseif($user->role == 0)
-									<td class="role-user">Student</td>
-								@endif
+								<td>{{ $user->email }}</td>	
+								<td class="role-user">{{  UserHelper::getRole($user->role) }}</td>
 								<td>
 									<a href="{{ url('users/'.$user->id.'/edit') }}"><button type="button" class="btn btn-info">Edit</button></a>
 									<form action="{{ url("users/$user->id") }}" method="POST">

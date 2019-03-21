@@ -15,7 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $userList = DB::table('users')->get();
+        $userList = DB::table('users')->orderBy('id','DESC')->get();
         return view('users.index', ['userList' => $userList]);
     }
 
@@ -73,9 +73,18 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         $user = User::findOrFail($id);
-        $user->update($request->all());
+        $validate = $request->validate([
+            'username' => 'required',
+            'password' => 'required',
+            'name' => 'required',
+            'email' => 'required', 
+            'role' => 'required',
+        ]);
+        $user->Update($request->all());
         return redirect('users')->with(['success' => 'Update Success !!!']);
+        
     }
 
     /**

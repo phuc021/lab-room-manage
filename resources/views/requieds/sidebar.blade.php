@@ -7,10 +7,10 @@
             </div>
 
             <ul class="nav">
-                <li class="active">
+                <li>
                     <a href="">
                         <i class="pe-7s-graph"></i>
-                        <p>Dashboard</p>
+                        <p>Home Page</p>
                     </a>
                 </li>
                 <li>
@@ -22,31 +22,31 @@
                 <li>
                     <a href="">
                         <i class="pe-7s-note2"></i>
-                        <p>Table List</p>
+                        <p>Room Manage</p>
                     </a>
                 </li>
                 <li>
                     <a href="">
-                        <i class="pe-7s-news-paper"></i>
-                        <p>Typography</p>
+                        <i class="pe-7s-note2"></i>
+                        <p>Computer Manage</p>
                     </a>
                 </li>
                 <li>
                     <a href="">
-                        <i class="pe-7s-science"></i>
-                        <p>Icons</p>
+                        <i class="pe-7s-note2"></i>
+                        <p>Device Manage</p>
                     </a>
                 </li>
                 <li>
                     <a href="">
-                        <i class="pe-7s-map-marker"></i>
-                        <p>Maps</p>
+                        <i class="pe-7s-note2"></i>
+                        <p>Tag Manage</p>
                     </a>
                 </li>
                 <li>
                     <a href="">
-                        <i class="pe-7s-bell"></i>
-                        <p>Notifications</p>
+                        <i class="pe-7s-note2"></i>
+                        <p>Type Devices Manage</p>
                     </a>
                 </li>
             </ul>
