@@ -3,21 +3,21 @@
 @section('title', 'Computers')
 
 @section('body')	
-    <h1>{{ trans('computer/ComputerIndex.title')}}</h1>
-    <div class="container">
+    <h1>{{ trans('computer/index.title')}}</h1>
+    <div class="container-fluid">
     <div>
-        <button class="btn btn-danger"><a href="{{url('computers/create')}}">{{ trans('computer/ComputerIndex.add')}}</a></button>
+        <button class="btn btn-danger active"><a href="{{url('computers/create')}}">{{ trans('computer/index.add')}}</a></button>
     </div>
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th>{{ trans('computer/ComputerIndex.stt')}}</th>
-                <th>{{ trans('computer/ComputerIndex.name')}}</th>
-                <th>{{ trans('computer/ComputerIndex.desc')}}</th>
-                <th>{{ trans('computer/ComputerIndex.status')}}</th>
-                <th>{{ trans('computer/ComputerIndex.roomsID')}}</th>
-                <th>{{ trans('computer/ComputerIndex.edit')}}</th>
-                <th>{{ trans('computer/ComputerIndex.delete')}}</th>
+                <th>{{ trans('computer/index.stt')}}</th>
+                <th>{{ trans('computer/index.name')}}</th>
+                <th>{{ trans('computer/index.desc')}}</th>
+                <th>{{ trans('computer/index.status')}}</th>
+                <th>{{ trans('computer/index.roomsID')}}</th>
+                <th>{{ trans('computer/index.edit')}}</th>
+                <th>{{ trans('computer/index.delete')}}</th>
             </tr>
         </thead>
         <?php $i = 0; ?>
@@ -27,15 +27,15 @@
                 <td><?php echo ++$i; ?></td>
                 <td>{{ $computer->name }}</td>
                 <td>{{ $computer->desc }}</td>
-                <td>{{ $computer->status }}</td>
+                <td>{{ ComputerHelper::getStatus( $computer->status )}}</td>
                 <td>{{ $computer->rooms_id }}</td>
-                <td><button class="btn btn-danger"><a href="{{ url("computers/$computer->id/edit") }}">{{ trans('computer/ComputerIndex.edit')}}</a></button></td>
+                <td><button class="btn btn-danger active"><a href="{{ url("computers/$computer->id/edit") }}">{{ trans('computer/index.edit')}}</a></button></td>
                 <td>
                     <form action="{{url("computers/$computer->id")}}" method="POST" method="POST">
                         {{csrf_field()}}
                         {{method_field('DELETE')}}
 
-                        <button class="btn btn-danger" type="submit" data-toggle="tooltip" title="Delete" data-placement="top" onclick="return confirm('bạn có thực sự muốn xóa ?'); ">{{ trans('computer/ComputerIndex.delete')}}</button>
+                        <button class="btn btn-danger active" type="submit" data-toggle="tooltip" title="Delete" data-placement="top" onclick="return confirm('bạn có thực sự muốn xóa ?'); ">{{ trans('computer/index.delete')}}</button>
                     </form>
                 </td>
             </tr>
