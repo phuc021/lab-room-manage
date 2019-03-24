@@ -18,7 +18,7 @@ use Faker\Generator as Faker;
 $factory->define(App\Models\Tag::class, function (Faker $faker) {
 	$values = array('CORE i3','CORE i5','CORE i7','CORE i9','XEON','RAM DDR3 4Gb','RAM DDR4 8Gb','Main ASUS','MAIN MSI','NVIDIA GeForce GTX 1080 Ti SLI','NVIDIA GeForce RTX 2080 Ti ','NVIDIA Quadro GV100 32GB');
 	shuffle($values);
-    return [
+    return [   
     	'value' => $values[0] ,
     	'devices_id' => $faker->randomDigitNotNull,
     ];

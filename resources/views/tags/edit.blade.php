@@ -11,19 +11,19 @@
 				{{method_field('put') }}
 				<p>
 					<h3>
-						<center>Edit</center>
+						<center>{{trans('tags/langTag.editTitle')}}&nbsp{{trans('tags/langTag.value')}}:&nbsp{{ $tags->value }}</center>
 					</h3>
 				</p>
-				<label for="">{{trans('tags/create.value')}}:</label>
+				<label for="">{{trans('tags/langTag.value')}}:</label>
 				
 				<input type="text" class="form-control" name="value" value="{{ $tags->value }}">
 
-				<label for="">{{trans('tags/create.deviceid')}}:</label>
+				<label for="">{{trans('tags/langTag.deviceid')}}:</label>
 				
 				{{-- không dùng input, dùng option --}}
 				<input type="text" class="form-control" name="devices_id" value="{{ $tags->devices_id }}">
 				<br>
-					<button class="btn btn-success" type="sumbit">Sumbit</button>
+					<button class="btn btn-success" type="sumbit">{{trans('tags/langTag.submit')}}</button>
 				</form>
 			</div>
 		</div>

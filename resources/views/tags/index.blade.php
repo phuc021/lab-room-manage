@@ -8,18 +8,18 @@
 
 </center>
 <div class="container">
-        <button class="btn btn-default"><a href="{{url('tags/create')}}">Add new</a></button>
+        <button class="btn btn-default"><a href="{{url('tags/create')}}">{{trans('tags/langTag.addnew')}}</a></button>
     </div>
 	 <br>
         <table class="table table-bordered">
     
     <thead>
         <tr>
-            <th>Serial</th>
-            <th>Value</th>
-            <th>Device ID</th>
-            <th>Edit</th>
-            <th>Delete</th>
+            <th>{{trans('tags/langTag.stt')}}</th>
+            <th>{{trans('tags/langTag.value')}}</th>
+            <th>{{trans('tags/langTag.deviceid')}}</th>
+            <th>{{trans('tags/langTag.edit')}}</th>
+            <th>{{trans('tags/langTag.del')}}</th>
         </tr>
     </thead>
     <tbody>
@@ -30,13 +30,13 @@
             <td>{{$i}}</td>
             <td>{{ $tags->value }}</td>
             <td>{{ $tags->devices_id }}</td>
-            <td><a href="{{ url("tags/$tags->id/edit") }}">Edit</a></td>
+            <td><a href="{{ url("tags/$tags->id/edit") }}">{{trans('tags/langTag.edit')}}</a></td>
             <td>
                 <form action="{{ url('tags/'.$tags->id) }}" method="POST"> 
                     {{ csrf_field() }}
                     {{ method_field('DELETE') }}
                 
-                   <button class="btn btn-danger" type="submit" data-toggle="tooltip" title="Delete" data-placement="top" onclick="return confirm('bạn có thực sự muốn xóa ?'); ">Delete</button>
+                   <button class="btn btn-danger" type="submit" data-toggle="tooltip" title="Delete" data-placement="top" onclick="return confirm('bạn có thực sự muốn xóa ?'); ">{{trans('tags/langTag.del')}}</button>
                 </form>
         </tr>
     </td>

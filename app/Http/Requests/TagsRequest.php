@@ -25,6 +25,6 @@ class TagsRequest extends FormRequest
     {
         return [
             //
-        ];
+        ];     
     }
 }

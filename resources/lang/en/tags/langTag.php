@@ -13,9 +13,13 @@ return [
     |
     */
 
-    'create_new_tag' => 'Add new tag',
+    'create_new_tagTitle' => 'ADD NEW TAG',
     'value' => 'Value',
     'deviceid' => 'Device ID',
-
-
+    'submit' => 'Submit',
+    'editTitle' => 'EDIT',
+    'addnew' => 'Add new',
+    'stt' => 'Serial',
+    'edit' => 'Edit',
+    'del' => 'Delete'
 ];
