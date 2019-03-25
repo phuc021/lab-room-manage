@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Models\Tag;
+
 
 class TagsController extends Controller
 {
@@ -13,7 +16,8 @@ class TagsController extends Controller
      */
     public function index()
     {
-        return view('tags.index');
+        $tagsList = DB::table('tags')->orderBy('id','DESC')->GET();
+        return view('tags.index',['tagsList'=>$tagsList]);
     }
 
     /**
@@ -34,7 +38,8 @@ class TagsController extends Controller
      */
     public function store(Request $request)
     {
-        
+        Tag::create($request->all());
+        return redirect('tags');
     }
 
     /**
@@ -43,9 +48,9 @@ class TagsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id)   
     {
-        $tag = Tags::findOrFail($id);
+        $tag = Tag::findOrFail($id);
         // $tag = DB::table('tags')->where('id',$id)->first();
         return view('tags.show', ['tag', $tag]);
     }
@@ -58,7 +63,8 @@ class TagsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $tags = Tag::where('id',$id)->first();
+        return view('tags.edit',['tags' => $tags]); 
     }
 
     /**
@@ -70,7 +76,10 @@ class TagsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $tags = Tag::findOrFail($id);
+        $tags->Update($request->all());
+        // dd($tags);
+        return redirect('tags');
     }
 
     /**
@@ -81,6 +90,7 @@ class TagsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Tag::destroy($id);
+        return redirect('tags');
     }
 }

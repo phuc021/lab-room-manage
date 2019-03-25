@@ -16,11 +16,10 @@ use Faker\Generator as Faker;
 */
 
 $factory->define(App\Models\Tag::class, function (Faker $faker) {
-	$id_device = ['1','2','3','4','5','6','7','8','9','10'];
-	$value = ['I5', '8GB', '500GB', '850W', 'MSI'];
-	shuffle($value);
-    return [
-    	'value' => $value[0],
-    	'devices_id' => $id_device[0]
+	$values = array('CORE i3','CORE i5','CORE i7','CORE i9','XEON','RAM DDR3 4Gb','RAM DDR4 8Gb','Main ASUS','MAIN MSI','NVIDIA GeForce GTX 1080 Ti SLI','NVIDIA GeForce RTX 2080 Ti ','NVIDIA Quadro GV100 32GB');
+	shuffle($values);
+    return [   
+    	'value' => $values[0] ,
+    	'devices_id' => $faker->randomDigitNotNull,
     ];
 });
