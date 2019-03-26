@@ -194,4 +194,6 @@ input.form-control {
     border-color: red;
 }
 
-
+.font-bold{
+	font-weight: 500;
+}

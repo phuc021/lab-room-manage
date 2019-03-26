@@ -32,7 +32,7 @@ Route::resource('tags','TagsController');
 
 Route::resource('rooms', 'RoomController');
 
-Route::resource('devices', 'DevicesController');
+Route::resource('devices', 'DeviceController');
 
 Route::resource('computers','ComputersController');
 
