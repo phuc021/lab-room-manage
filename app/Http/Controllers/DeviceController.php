@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Devices;
+use App\Models\Room;
+use App\Models\Device;
+use App\Models\Computer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Http\Requests\DeviceRequest;
 
 
-class DevicesController extends Controller
+class DeviceController extends Controller
 {
     /**
      * 
@@ -17,7 +20,9 @@ class DevicesController extends Controller
      */
     public function index()
     {
-        $devicesList = DB::table('devices')->orderBy('id','DESC')->get();
+        $itemPerPage = 20;
+        $devicesList = Device::paginate($itemPerPage);
+        // $devicesList = DB::table('devices')->orderBy('id','DESC')->get();
         return view('devices.index',['devicesList'=> $devicesList]); 
     }
 
@@ -28,7 +33,11 @@ class DevicesController extends Controller
      */
     public function create()
     {
-        return view('devices.create');
+        $roomList = Room::all();
+        $computerList = Computer::all();
+        return view('devices.create', 
+            array("computerList" => $computerList,
+                  "roomList" => $roomList));
     }
 
     /**
@@ -37,9 +46,9 @@ class DevicesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(DeviceRequest $request)
     {
-        Devices::create($request->all());
+        Device::create($request->all());
         return redirect('devices');
     }
 
@@ -62,7 +71,7 @@ class DevicesController extends Controller
      */
     public function edit($id)
     {
-        $devices = Devices::where('id', $id)->first();
+        $devices = Device::where('id', $id)->first();
         return view('devices.edit',['devices'=>$devices]);
     }
 
@@ -73,10 +82,10 @@ class DevicesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(DeviceRequest $request, $id)
     {
         //
-        $devices = Devices::findOrFail($id);
+        $devices = Device::findOrFail($id);
         $devices->update($request->all());
         return redirect('devices');
 
@@ -90,7 +99,7 @@ class DevicesController extends Controller
      */
     public function destroy($id)
     {
-        Devices::destroy($id);
+        Device::destroy($id);
         return redirect('devices');
     }
 }

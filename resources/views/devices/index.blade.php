@@ -5,7 +5,7 @@
 
 @section('body')
 	
-	<h1 class="text-center" >{{trans('devices/index.title')}}</h1>
+	<h1 class="text-center font-bold" >{{trans('devices/index.title')}}</h1>
 	<div class="container-fluid">
 		<button class="btn btn-default" value="Add"><a href="{{ url('devices/create') }}">{{trans('devices/index.Add')}}</a></button>
 		
@@ -33,7 +33,7 @@
 					<td><p>{{$device->name}}</p></td>
 					<td><p>{{$device->desc}}</p></td>
 					<td><p>{{ DeviceHelper::getStatus($device->status)}}</p></td>
-					<td><p>{{$device->computers_id}}</p></td>
+					<td><p>{{$device->computer_id}}</p></td>
 					<td><p>{{$device->type_devices_id}}</p></td>
 					<td><button class="btn btn-default" title="Edit" type="submit" value="Edit"><a href="{{ url('devices') }}/{{$device->id}}/edit">Edit</a></button></td>
 					<td>
@@ -47,5 +47,6 @@
 				@endforeach
 			</tbody>
 		</table>
+		{{ $devicesList }}
 	</div>
 @endsection

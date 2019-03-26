@@ -32,7 +32,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="{{ url('devices') }}">
                         <i class="pe-7s-note2"></i>
                         <p>Device Manage</p>
                     </a>

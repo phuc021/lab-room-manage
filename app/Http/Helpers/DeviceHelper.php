@@ -25,5 +25,8 @@ class DeviceHelper {
 			DeviceStatus::CRASH => trans('devices/status.crash')
 		);
 	}
+	public static function increment($i, $perPage, $currentPage){
+		return $i + $perPage * ($currentPage - 1);
+	}
 }
 
