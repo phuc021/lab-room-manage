@@ -28,4 +28,7 @@ class RoomsHelper {
 			RoomsStatus::CRASH => trans('rooms/status.crash')
 		);
 	}
+	public static function increment($i, $perPage, $currentPage){
+		return $i + $perPage * ($currentPage -1);
+	}
 }

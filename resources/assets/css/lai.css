@@ -1,3 +1,4 @@
+
 table table-bordered{
 	padding: 5px 5px;
     vertical-align: middle;
@@ -8,3 +9,63 @@ table table-bordered{
     padding: unset;
     margin: auto;
 }
+
+
+/*create.blade*/
+button.bt.label-warning.label {
+     height: 50px;
+    width: 90px;
+    margin: 20px 28px 0px 520px;
+    color: white;
+    background-color: #2d4e96;
+}
+
+.container-fluid.dange {
+    padding: 20px 70px;
+    width: 750px
+}
+
+/*index.blade*/
+button.bt.label-warning {
+    width: 80px;
+    height: 30px;
+}
+
+a.coll {
+    color: white;
+}
+
+
+
+/*edit.blade*/
+
+.container-fluid.roomList{
+   padding: 20px 70px;
+    width: 750px
+}
+
+button.bt.label-warning.edit {
+    height: 50px;
+    width: 90px;
+    margin: 20px 28px 0px 520px;
+    color: white;
+    background-color: #2d4e96;
+}
+
+form.bo {
+    padding: unset;
+}
+
+input.form-control {
+    margin: 5px;
+}
+
+.alertroom{
+    color: red;
+}
+
+.errors{
+    border-color: red;
+}
+
+

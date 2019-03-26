@@ -5,25 +5,24 @@
 
 @section('body')
 
-	<div class="container-fluid">
+	<div class="container-fluid roomList text-center>
 			<div class="form-group">
-				<form action="{{ url('rooms/'.$rooms->id) }}" method="POST">
+				<form class="bo" action="{{ url('rooms/'.$rooms->id) }}" method="POST">
 
 				@csrf
 				{{method_field('put') }}
-				<p>
-					<h3>
-						<center>Edit</center>
-					</h3>
-				</p>
-				<label for="name">Name:</label>
+				
+				<label for="">{{ trans('rooms/create.name')}}:</label>
 
-				<input class="form-control" type="text" name="name" value="{{ $rooms->name }}">
+				<label class="alertroom" >{{ $errors-> has('name') ? $errors->first('name') :''}}</label>
 
-				<label for="desc">Desc:</label>
+				<input type="text" class="form-control  {{ $errors-> has('name') ? 'errors' :''}}" value="{{ $rooms->name }}" name="name" placeholder="Name">
 
-				<input type="text" class="form-control" name="desc" value="{{ $rooms->desc }}" placeholder="Desc"><br>
+				<label for="">{{ trans('rooms/create.desc')}}:</label>
 
+				<label class="alertroom" >{{ $errors-> has('desc') ? $errors->first('desc') :''}}</label>
+
+				<input type="text" class="form-control  {{ $errors-> has('desc') ? 'errors' :''}}" value="{{ $rooms->desc }}" name="desc" placeholder="Desc">
 				<label for="">{{ trans('rooms/create.status')}}:</label>
 				
 				<select name="status" class="form-control">
@@ -31,7 +30,8 @@
 						<option value="{{$key}}">{{$value}}</option>
 					@endforeach
 				</select><br>
-					<button type="sumbit">Sumbit</button>
+						<button class="bt label-warning edit" type="sumbit">Sumbit</button>
+					
 				</form>
 			</div>
 		</div>

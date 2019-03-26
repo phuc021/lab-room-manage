@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Room;
+use App\Http\Requests\RoomRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -16,9 +17,10 @@ class RoomController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index( )
     {
-        $roomsList = DB::table('rooms')->orderBy('id','DESC')->get();
+        $itemperPage=20;
+        $roomsList = DB::table('rooms')->paginate($itemperPage);
         return view('rooms.index',['roomsList'=>$roomsList]);    
     }
 
@@ -38,7 +40,7 @@ class RoomController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RoomRequest $request)
     {
         Room::create($request->all());
         return redirect('rooms');
@@ -75,7 +77,7 @@ class RoomController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(RoomRequest $request, $id)
     {
         $rooms = Room::findOrFail($id);
         $rooms->update($request->all());
