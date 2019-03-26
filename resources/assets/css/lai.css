@@ -1,5 +1,10 @@
 table table-bordered{
 	padding: 5px 5px;
     vertical-align: middle;
+}
 
+.h2 {
+    font-size: x-large;
+    padding: unset;
+    margin: auto;
 }

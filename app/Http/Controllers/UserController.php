@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UserRequest;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\User;
-use Illuminate\Support\Facades\DB;
+use Validator;
 
 class UserController extends Controller
 {
@@ -15,7 +17,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $userList = DB::table('users')->orderBy('id','DESC')->get();
+        $userList = DB::table('users')->orderBy('id','DESC')->paginate(10);
+        // $userList = DB::table('users')->orderBy('id','DESC')->get();
         return view('users.index', ['userList' => $userList]);
     }
 
@@ -26,7 +29,7 @@ class UserController extends Controller
      */
     public function create()
     {
-    
+        return view('users.create');
     }
 
     /**
@@ -35,9 +38,22 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
-        //
+        $validate = Validator::make($request->all(),[
+            'username' => 'required|unique:users,username|alpha_num|min:5',
+            'password' => 'required|min:5',
+            'confirm_password' => 'required|same:password|min:5',
+            'name' => 'required|max:100',
+            'email' => 'required|unique:users,email|max:100'
+        ]);
+        if ($validate->fails()) {
+            return redirect('users/create')->withInput()->withErrors($validate);
+        }
+        else {
+            User::create($request->all());
+            return redirect('users');
+        }
     }
 
     /**
@@ -97,5 +113,11 @@ class UserController extends Controller
     {
         User::destroy($id);
         return redirect('/users')->with(['delete' => 'Delete Success !!!']);
+    }
+
+    public function search($name){
+        $name = "$name%";
+        $rs = User::where('name', 'like', $name)->get();
+        return $rs;
     }
 }
