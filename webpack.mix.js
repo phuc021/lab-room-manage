@@ -19,8 +19,9 @@ mix.styles('resources/assets/css/animate.min.css','public/css/animate.min.css')
 	.styles('resources/assets/css/demo.css','public/css/demo.css')
 	.styles('resources/assets/css/light-bootstrap-dashboard.css','public/css/light-bootstrap-dashboard.css')
 	.styles('resources/assets/css/pe-icon-7-stroke.css','public/css/pe-icon-7-stroke.css')
-	.styles(['resources/assets/css/bao.css'],'public/css/all.css');
-	.styles(['resources/assets/css/lai.css'],'public/css/all.css');
+	.styles(['resources/assets/css/bao.css',
+		'resources/assets/css/lai.css',
+		'resources/assets/css/duc.css'],'public/css/all.css');
 
 // mix.js('resources/js/bootstrap-notify.js','public/js')
 // 	.js('resources/js/bootstrap-select.js','public/js')

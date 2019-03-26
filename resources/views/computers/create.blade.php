@@ -1,7 +1,11 @@
 @extends('master')
 
 @section('title', 'Computers')
-
+<style type="text/css">
+		.has-error{
+			background-color: red;
+		}
+	</style>
 @section('body')
 
 <div class="container-fluid">
@@ -10,9 +14,11 @@
 			<form action="{{url('computers')}}" method="POST">
 			@csrf
 			<label for="name">{{ trans('computer/create.name')}} :</label>
-			<input type="text" class="form-control" name="name" placeholder="Enter Name..."><br>
+			<label class="alert-danger">{{ $errors->has('name') ? $errors->first('name') : ''}}</label>
+			<input type="text" class="form-control {{ $errors->has('name') ? 'has-error' : ''}}" name="name" placeholder="Enter Name..."><br>
 
 			<label for="desc">{{ trans('computer/create.desc')}} :</label>
+			<label class="alert-danger">{{ $errors->has('desc') ? $errors->first('desc') : ''}}</label>
 			<input type="text" class="form-control" name="desc" placeholder="Enter Desc..."><br>
 
 			<label for="status">{{ trans('computer/create.status')}} :</label>
@@ -23,7 +29,11 @@
 			</select><br>
 
 			<label for="rooms-id">{{ trans('computer/create.roomsID')}} :</label>
-			<input type="number" class="form-control" name="rooms_id" placeholder="Enter Room ID..."><br>
+			<select name="rooms_id" class="form-control">
+				@foreach($roomList as $room)
+					<option value="{{ $room->id  }}">{{ $room->name }}</option>
+				@endforeach
+			</select><br>
 
 			<button class="btn btn-danger" type="submit">{{ trans('computer/create.submit')}}</button>
 			</form>
