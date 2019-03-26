@@ -8,7 +8,7 @@
 
             <ul class="nav">
                 <li>
-                    <a href="">
+                    <a href="{{ url('/') }}">
                         <i class="pe-7s-graph"></i>
                         <p>Home Page</p>
                     </a>

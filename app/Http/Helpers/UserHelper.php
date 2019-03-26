@@ -15,7 +15,7 @@ class UserHelper {
 				break;
 			
 			default:
-				return 'Teacher';
+				return 'No Role';
 				break;
 		}
 	}

@@ -34,6 +34,11 @@ Route::resource('rooms', 'RoomController');
 
 Route::resource('devices', 'DevicesController');
 
-Route::get('logout', 'UserController@getLogout')->name('logout');
+Route::resource('computers','ComputersController');
 
-Route::resource('computers','ComputerController');
+Route::get('ajax', function(){
+	return view('users.ajax');
+});
+
+// For ajax
+Route::get('search/{name}', 'UserController@search');
