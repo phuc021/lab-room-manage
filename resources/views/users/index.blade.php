@@ -4,7 +4,7 @@
 
 @section('body')
 	<a href="{{ url('users/create') }}">
-	<button type="button" class="btn btn-primary">Add New User</button></a>
+	<button id="add-new-user" type="button" class="btn btn-primary">Add New User</button></a>
 	<table class="list-user">
 		<thead>
 			<tr>
@@ -15,24 +15,28 @@
 				<th>Option</th>
 			</tr>
 		</thead>
+		@php ($index = 0)
 		@foreach($userList as $user)
 			<tbody>
-				<tr>
+				<tr @if($index % 2 == 0) class="old" @else class="even" @endif>
+					@php ($index++)
 					<td>{{ $user->name }}</td>
 					<td>{{ $user->username }}</td>
 					<td>{{ $user->email }}</td>	
 					<td class="role-user">{{  UserHelper::getRole($user->role) }}</td>
-					<td>
+					<td id="button-option-user">
 						<a href="{{ url('users/'.$user->id.'/edit') }}"><button type="button" class="btn btn-info">Edit</button></a>
 						<form action="{{ url("users/$user->id") }}" method="POST">
 						{{ csrf_field() }}
 						{{ method_field('delete') }}
-						<button type="submit" title="Delete" data-placement="top" onclick="return confirm('Xoa ???'); " class="btn btn-warning">Delete</button>
+						<button id="button-delete-user" type="submit" title="Delete" data-placement="top" onclick="return confirm('Xoa ???'); " class="btn btn-warning">Delete</button>
 					</form>
 					</td>
 				</tr>
 			</tbody>
 		@endforeach
 	</table>
-	{{ $userList->links() }}
+	<div class="pagination-user">
+		{{ $userList->links() }}
+	</div>
 @endsection
