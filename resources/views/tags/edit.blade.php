@@ -11,7 +11,7 @@
 				{{method_field('put') }}
 				<p>
 					<h3>
-						<center>{{trans('tags/langTag.editTitle')}}&nbsp{{trans('tags/langTag.value')}}:&nbsp{{ $tags->value }}</center>
+						<center>{{trans('tags/langTag.editTitle')}}&nbsp {{trans('tags/langTag.value')}}:&nbsp<b>{{ $tags->value }}</b></center>
 					</h3>
 				</p>
 				<label for="">{{trans('tags/langTag.value')}}:</label>

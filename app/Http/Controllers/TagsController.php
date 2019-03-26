@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Tag;
+use App\Http\Requests\TagsRequest;
 
 
 class TagsController extends Controller
@@ -16,7 +17,8 @@ class TagsController extends Controller
      */
     public function index()
     {
-        $tagsList = DB::table('tags')->orderBy('id','DESC')->GET();
+        $tagsList = DB::table('tags')->paginate(15);
+        
         return view('tags.index',['tagsList'=>$tagsList]);
     }
 
@@ -36,7 +38,7 @@ class TagsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TagsRequest $request)
     {
         Tag::create($request->all());
         return redirect('tags');
@@ -74,7 +76,7 @@ class TagsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(TagsRequest $request, $id)
     {
         $tags = Tag::findOrFail($id);
         $tags->Update($request->all());
@@ -91,6 +93,7 @@ class TagsController extends Controller
     public function destroy($id)
     {
         Tag::destroy($id);
-        return redirect('tags');
+        // return redirect('tags')->with(['delete' => {{trans('tags/langTag.delSuccess')}} ]);
+         return redirect('tags');
     }
 }

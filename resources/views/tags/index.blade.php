@@ -36,12 +36,13 @@
                     {{ csrf_field() }}
                     {{ method_field('DELETE') }}
                 
-                   <button class="btn btn-danger" type="submit" data-toggle="tooltip" title="Delete" data-placement="top" onclick="return confirm('bạn có thực sự muốn xóa ?'); ">{{trans('tags/langTag.del')}}</button>
+                   <button class="btn btn-danger" type="submit" data-toggle="tooltip" title="Delete" data-placement="top" onclick="return confirm('{{trans('tags/langTag.confirmDel')}}'); ">{{trans('tags/langTag.del')}}</button>
                 </form>
         </tr>
     </td>
         @endforeach
     </tbody>
 </table>
+    {{ $tagsList->links() }}
 
 @endsection

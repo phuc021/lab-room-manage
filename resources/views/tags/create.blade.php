@@ -15,7 +15,8 @@
 					</p>
 					<br>
 					<label for="">{{ trans('tags/langTag.value')}}:</label>
-					<input type="text" class="form-control" name="value" placeholder="ex: RTX 2080 Ti">{{ $errors-> has('value') ? $errors->first('value') : ''}}
+					<label class="alert-danger">{{ $errors->has('value') ? $errors->first('value') : ''}}</label>
+					<input type="text" class="form-control" name="value" placeholder="ex: RTX 2080 Ti">
 					<br>
 					
 					{{-- không dùng input, dùng option --}}

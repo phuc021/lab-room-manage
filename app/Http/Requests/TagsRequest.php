@@ -13,7 +13,7 @@ class TagsRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,17 @@ class TagsRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'value' => 'required|max:200',
+            'devices_id' => 'required'
         ];     
+    }
+
+    public function message()
+    {
+        return [
+            'value.required' => 'Giá trị phải tồn tại',
+            'value.max' => 'Giá trị không được quá 200 kí tự',
+            'devices_id.required' => 'Giá trị phải tồn tại',
+        ];
     }
 }

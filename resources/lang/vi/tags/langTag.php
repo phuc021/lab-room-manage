@@ -21,5 +21,8 @@ return [
     'addnew' => 'Thêm mới',
     'stt' => 'STT',
     'edit' => 'Sửa',
-    'del' => 'Xóa'
+    'del' => 'Xóa',
+    'confirmDel' => 'Bạn có thực sự muốn xóa?',
+    'delSuccess' => 'Xóa thành công !',
+    'updateSuccess' => 'Cập nhật thành công'
 ];

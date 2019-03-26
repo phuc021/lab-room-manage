@@ -21,5 +21,8 @@ return [
     'addnew' => 'Add new',
     'stt' => 'Serial',
     'edit' => 'Edit',
-    'del' => 'Delete'
+    'del' => 'Delete',
+    'confirmDel' => 'Are you really want to delete?',
+    'delSuccess' => 'Delete success !',
+    'updateSuccess' => 'Update Success !'
 ];
