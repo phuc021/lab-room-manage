@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Computer;
+use App\Http\Requests\ComputerRequest;
+use App\Models\Room;
 
-class ComputersController extends Controller
+class ComputerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +17,8 @@ class ComputersController extends Controller
      */
     public function index()
     {
-        $computerList = DB::table('computers')->orderby('id','DESC')->get();
+        $computerList = DB::table('computers')->paginate(10);
+        // $computerList = DB::table('computers')->orderby('id','DESC')->get();
         return view('computers.index',['computerList' => $computerList]);
     }
 
@@ -26,7 +29,9 @@ class ComputersController extends Controller
      */
     public function create()
     {
-        return view('computers.create');
+        $roomList = Room::all();
+        return view('computers.create',
+                array("roomList" => $roomList));
     }
 
     /**
@@ -35,7 +40,7 @@ class ComputersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ComputerRequest $request)
     {
         Computer::create($request->all());
         return redirect('computers');
@@ -71,7 +76,7 @@ class ComputersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ComputerRequest $request, $id)
     {
         $computer = Computer::findOrFail($id);
         $computer->update($request->all());

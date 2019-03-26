@@ -42,6 +42,7 @@
         </tbody>
     @endforeach
     </table>
+    {{ $computerList->links() }}
     </div>
 
     

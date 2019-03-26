@@ -26,7 +26,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="{{ url('/computers') }}">
                         <i class="pe-7s-note2"></i>
                         <p>Computer Manage</p>
                     </a>
