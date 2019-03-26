@@ -39,6 +39,5 @@ Route::resource('computers','ComputersController');
 Route::get('ajax', function(){
 	return view('users.ajax');
 });
-
-// For ajax
 Route::get('search/{name}', 'UserController@search');
+Route::resource('typedevices','TypeDevicesController');
