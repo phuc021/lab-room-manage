@@ -3,6 +3,7 @@
 namespace App\Enums;
 
 use BenSampo\Enum\Enum;
+use App\Enums\TagGetDeviceName;
 
 final class TagGetDeviceName extends Enum
 {

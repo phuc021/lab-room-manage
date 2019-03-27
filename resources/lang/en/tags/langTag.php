@@ -16,13 +16,21 @@ return [
     'create_new_tagTitle' => 'ADD NEW TAG',
     'value' => 'Value',
     'deviceid' => 'Device ID',
+    'deviceName' => 'Device name',
     'submit' => 'Submit',
     'editTitle' => 'EDIT',
     'addnew' => 'Add new',
     'stt' => 'Serial',
     'edit' => 'Edit',
     'del' => 'Delete',
-    'confirmDel' => 'Are you really want to delete?',
+    'confirmDel' => 'Are you really want to delete ',
     'delSuccess' => 'Delete success !',
-    'updateSuccess' => 'Update Success !'
+    'updateSuccess' => 'Update Success !',
+    'ram' => 'RAM',
+    'rom' => 'ROM',
+    'main' => 'MAIN',
+    'cpu' => 'CPU',
+    'gpu' => 'GPU',
+    'request_required' => 'The value field cannot be empty!',
+    'request_max' => 'Too long!'
 ];

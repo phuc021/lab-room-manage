@@ -17,7 +17,8 @@ class TagsController extends Controller
      */
     public function index()
     {
-        $tagsList = DB::table('tags')->paginate(15);
+        $itemperPage = 15;
+        $tagsList = DB::table('tags')->paginate($itemperPage);
         
         return view('tags.index',['tagsList'=>$tagsList]);
     }

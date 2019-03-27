@@ -24,17 +24,15 @@ class TagsRequest extends FormRequest
     public function rules()
     {
         return [
-            'value' => 'required|max:200',
-            'devices_id' => 'required'
+            'value' => 'required|min:1|max:50',
         ];     
     }
 
-    public function message()
+    public function messages()
     {
         return [
-            'value.required' => 'Giá trị phải tồn tại',
-            'value.max' => 'Giá trị không được quá 200 kí tự',
-            'devices_id.required' => 'Giá trị phải tồn tại',
+            'value.required' => trans('tags/langTag.request_required'),
+            'value.max' => trans('tags/langTag.request_max'),
         ];
     }
 }

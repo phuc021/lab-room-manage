@@ -1,34 +1,41 @@
 <?php
-use App\Enums\UserRole;
+use App\Enums\TagGetDeviceName;
 
 class TagHelper {
-	public static function getRole($key){
-		switch ($key) {
+	public static function getStatus($value){
+		switch ($value) {
 			case TagGetDeviceName::CPU:
-				return 'CPU';
+				return trans('tags/langTag.cpu');
 				break;
 			case TagGetDeviceName::GPU:
-				return 'GPU';
+				return trans('tags/langTag.gpu');
 				break;
 			case TagGetDeviceName::Main:
-				return 'Main';
+				return trans('tags/langTag.main');
 				break;
 			case TagGetDeviceName::RAM:
-				return 'RAM';
+				return trans('tags/langTag.ram');
 				break;
 			case TagGetDeviceName::ROM:
-				return 'ROM';
+				return trans('tags/langTag.rom');
+				break;
+			default:
+				return 'Unknown device';
 				break;
 		}
 	}
 
-	public static function getOptionRole(){
+	public static function getOptionStatus(){
 		return array(
-			TagGetDeviceName::CPU => 'CPU',
-			TagGetDeviceName::GPU => 'GPU',
-			TagGetDeviceName::Main => 'Main',
-			TagGetDeviceName::RAM => 'RAM',
-			TagGetDeviceName::ROM => 'ROM',
+			TagGetDeviceName::CPU => trans('tags/langTag.cpu'),
+			TagGetDeviceName::GPU => trans('tags/langTag.gpu'),
+			TagGetDeviceName::Main => trans('tags/langTag.main'),
+			TagGetDeviceName::RAM => trans('tags/langTag.ram'),
+			TagGetDeviceName::ROM => trans('tags/langTag.rom')
 		);
+	}
+
+	public static function increment($i, $perPage, $currentPage){
+		return $i+$perPage*($currentPage-1);
 	}
 }
