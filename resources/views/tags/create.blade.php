@@ -13,18 +13,23 @@
 							<center>{{ trans('tags/langTag.create_new_tagTitle') }}</center>
 						</h3>
 					</p>
-					<br>
-					<label for="">{{ trans('tags/langTag.value')}}:</label>
-					<label class="alert-danger">{{ $errors->has('value') ? $errors->first('value') : ''}}</label>
-					<input type="text" class="form-control" name="value" placeholder="ex: RTX 2080 Ti">
-					<br>
+					<br>				
 					
-					{{-- không dùng input, dùng option --}}
-					<label for="">{{ trans('tags/langTag.deviceid')}}:</label>
-					<input type="text" class="form-control" name="devices_id" placeholder="">
+					<label for="">{{ trans('tags/langTag.deviceName')}}:</label>
+					<select name="devices_id" class="form-control" >
+					@foreach(TagHelper::getOptionStatus() as $key => $value)
+						<option value="{{$key}}">{{$value}}</option>
+					@endforeach
+					</select>
+					
+					<br>
+
+					<label for="">{{ trans('tags/langTag.value')}}:</label>
+					<input type="text" class="form-control" name="value" placeholder="ex: RTX 2080 Ti">{{$errors->has('value') ? $errors->first('value'): ''}}
 					<br>
 
 					<button class="btn btn-success" type="sumbit">{{trans('tags/langTag.submit')}}</button>
+						
 				</form>
 			</div>
 		</div>

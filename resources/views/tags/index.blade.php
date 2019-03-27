@@ -17,26 +17,29 @@
         <tr>
             <th>{{trans('tags/langTag.stt')}}</th>
             <th>{{trans('tags/langTag.value')}}</th>
-            <th>{{trans('tags/langTag.deviceid')}}</th>
+            <th>{{trans('tags/langTag.deviceName')}}</th>
             <th>{{trans('tags/langTag.edit')}}</th>
             <th>{{trans('tags/langTag.del')}}</th>
         </tr>
     </thead>
     <tbody>
-        <?php $i = 0; ?>
+        @php ($i = 0)
         @foreach($tagsList as $tags)
-        <?php $i = $i + 1; ?>
         <tr>
-            <td>{{$i}}</td>
+            <td>
+                @php ($i++)
+                {{TagHelper::increment($i, $tagsList->perPage(), $tagsList->currentPage())}}
+            </td>
+
             <td>{{ $tags->value }}</td>
-            <td>{{ $tags->devices_id }}</td>
+            <td>{{ TagHelper::getStatus($tags->devices_id) }}</td>
             <td><a href="{{ url("tags/$tags->id/edit") }}">{{trans('tags/langTag.edit')}}</a></td>
             <td>
                 <form action="{{ url('tags/'.$tags->id) }}" method="POST"> 
                     {{ csrf_field() }}
                     {{ method_field('DELETE') }}
                 
-                   <button class="btn btn-danger" type="submit" data-toggle="tooltip" title="Delete" data-placement="top" onclick="return confirm('{{trans('tags/langTag.confirmDel')}}'); ">{{trans('tags/langTag.del')}}</button>
+                   <button class="btn btn-danger" type="submit" data-toggle="tooltip" title="Delete" data-placement="top" onclick="return confirm('{{trans('tags/langTag.confirmDel')}}{{ $tags->value }}'); ">{{trans('tags/langTag.del')}}</button>
                 </form>
         </tr>
     </td>
