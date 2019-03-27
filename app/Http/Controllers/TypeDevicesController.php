@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\TypeDevices;
-use App\Http\Requests\TypeDevicesRequest;
+use App\Http\Requests\TypeDeviceRequest;
 
 
 
@@ -38,7 +38,7 @@ class TypeDevicesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TypeDeviceRequest $request)
     {
         TypeDevices::create($request->all());
         return redirect('typedevices');
@@ -76,7 +76,7 @@ class TypeDevicesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(TypeDeviceRequest $request, $id)
     {
         $typedevices = typedevices::findOrFail($id);
         $typedevices->Update($request->all());
