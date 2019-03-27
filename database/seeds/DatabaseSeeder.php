@@ -17,6 +17,8 @@ class DatabaseSeeder extends Seeder
         	DevicesTableSeeder::class,
             ComputersTableSeeder::class,
             TagsTableSeeder::class,
+            TypeDevicesTableSeeder::class,
+
         ]);
     }
 }
