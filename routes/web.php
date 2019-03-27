@@ -34,7 +34,7 @@ Route::resource('rooms', 'RoomController');
 
 Route::resource('devices', 'DevicesController');
 
-Route::resource('computers','ComputersController');
+Route::resource('computers','ComputerController');
 
 Route::get('ajax', function(){
 	return view('users.ajax');
