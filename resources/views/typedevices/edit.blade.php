@@ -11,8 +11,8 @@
 
 
 				<label >Name:</label>
-				<label>{{ $errors->has('email') ? $errors->first('email') : ''}}</label>
-				<input type="text" class="form-control" value="{{$typedevices->name}}" placeholder="Enter Name" name="name">
+				<label class="alertdevice">{{ $errors->has('name') ? $errors->first('name') : ''}}</label>
+				<input type="text" class="form-control {{ $errors->has('name') ? 'has-error' : ''}}" value="{{$typedevices->name}}" placeholder="Enter Name" name="name">
 
 
 

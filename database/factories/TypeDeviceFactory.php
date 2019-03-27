@@ -18,7 +18,6 @@ use Faker\Generator as Faker;
 $factory->define(App\Models\TypeDevices::class, function (Faker $faker) {
     return [
     	'name' => $faker->name,
-    	'desc' => $faker->languageCode,
     	
     ];
 });
