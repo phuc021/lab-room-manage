@@ -88,28 +88,7 @@ table.list-user {
 }
 
 button#add-new-user {
-<<<<<<< HEAD
   width: 140px; 
-=======
-  width: 140px;
-	padding: 5px 5px;
-    vertical-align: middle;
-}
-
-.h2 {
-    font-size: x-large;
-    padding: unset;
-    margin: auto;
-}
-.has-error{
-	border-color: red;
-}
-.alertcpt{
-	color: red;
-}
-button#add-new-computer {
-  width: 180px; 
->>>>>>> finish style computer
   height: 45px;
   font-family: 'Roboto', sans-serif;
   font-size: 11px;
@@ -127,6 +106,322 @@ button#add-new-computer {
   margin: 10px 20px;
 }
 button#add-new-user:hover {
+  background-color: #2EE59D;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+td#button-option-user button {
+  width: 59px;
+  height: 31px;
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  margin: 10px 0px;
+}
+
+button#button-delete-user {
+    width: 74px!important;
+}
+
+table.list-user tbody tr.old{
+    background: #f7dae3;
+}
+
+table.list-user tbody tr.even{
+    background: #ffefef;
+}
+
+.pagination-user {
+    text-align: center;
+}
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    padding: 2px 2px;
+    vertical-align: middle;
+}
+
+table table-bordered{
+	padding: 5px 5px;
+    vertical-align: middle;
+}
+
+.h2 {
+    font-size: x-large;
+    padding: unset;
+    margin: auto;
+}
+
+
+/*create.blade*/
+button#create-rooms {
+     height: 50px;
+    width: 90px;
+    margin: 20px 28px 0px 710px;
+    color: white;
+    background-color: #2d4e96;
+    border: none;
+    border-radius: 45px;
+}
+button#create-rooms:hover {
+    background-color: #2EE59D;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+.container-fluid.dange {
+    padding: 20px 0px;
+    width: 800px
+}
+
+/*index.blade*/
+button#add-new-rooms {
+    width: 140px;
+    height: 45px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #ff98b7;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    margin: 10px 36px;
+}
+
+button#add-new-rooms:hover {
+  background-color: #2EE59D;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+table.list-room tbody tr.old{
+    background: #dadaf7
+}
+
+table.list-room tbody tr.even{
+    background: #ffefef;
+}
+
+a.coll {
+    color: white;
+}
+
+table.list-room {
+    width: 100%!important;
+    display: table;
+}
+
+button.button-room {
+    width: 61px;
+    height: 31px;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    margin: 10px 0px;
+}
+table.list-room thead tr {
+    height: 50px;
+    background: #fb89ac;
+}
+tr {
+    height: 50px;
+    background: #89fbb740;
+}
+/*edit.blade*/
+
+.container-fluid.roomList{
+   padding: 20px 0px;
+    width: 800px
+}
+button#btn-edit-rooms {
+    height: 50px;
+    width: 90px;
+    margin: 20px 28px 0px 710px;
+    color: white;
+    background-color: #2d4e96;
+    border: none;
+    border-radius: 45px;
+}
+button#btn-edit-rooms:hover {
+    background-color: #2EE59D;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+form.bo {
+    padding: unset;
+}
+input.form-control {
+    margin: 5px;
+}
+
+.alertroom{
+    color: red;
+}
+
+.errors{
+    border-color: red;
+}
+
+/* Seach */
+input#country_name {
+    border: none;
+    border-radius: 45px;
+    background-color: #4c333f;
+    color: #fff;
+    width: unset;
+    margin: auto;
+}
+
+/* Grid*/
+
+.img-middle {
+    
+    position: relative;
+    margin: 3px;
+    padding: 0px;
+    background: #FFFFFF;
+    border: 3px solid;
+    border-radius: 5px;
+    box-shadow: 0px 2px #c1bdbd;
+    width: 298px;
+}
+.middle {
+    width: 300px;
+    height: 252px;
+    position: absolute;
+    top: 0px;
+    left: 14px;
+    opacity: 0;
+}
+.block-img:hover .col-lg-6.middle {
+    background: #f7dae385;
+    opacity: 1;
+}
+.row.bgr-block {
+    background: white;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+.row.bgr-top-block {
+    margin: -1px;
+    width: 294px;
+}
+#button-option-edit-device button {
+  width: 59px;
+  height: 31px;
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: white;;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  margin: 10px 0px;
+  text-align: center;
+}
+button {
+    width: 59px;
+    height: 31px;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: white;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    margin: 10px 0px;
+}
+button {
+    padding-right: 25px;
+}
+
+div#button-option-edit-device {
+    padding-left: 25px;
+}
+.col-lg-4.block {
+    padding-bottom: 20px;
+}
+
+.contaiter-fluid.text-center {
+    margin: 40px;
+    padding-right: 33px;
+    padding-left: 14px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/*123*/
+ul.pagination {
+    display: inline-block;
+    padding-left: 270px;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.cursor-pointer{
+  cursor: pointer;
+}
+.has-error{
+	border-color: red;
+}
+.alertcpt{
+	color: red;
+}
+button#add-new-computer {
+  width: 180px; 
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #ff98b7;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  margin: 10px 20px;
   margin-left: 0px;
 }
 button#add-new-computer:hover {
@@ -135,8 +430,12 @@ button#add-new-computer:hover {
   color: #fff;
   transform: translateY(-7px);
 }
+<<<<<<< HEAD
 
 td#button-option-user button,  button#btn-form-user{
+=======
+td#button-option-edit-computer button {
+>>>>>>> Complete tags
   width: 59px;
   height: 31px;
   font-size: 11px;
@@ -174,38 +473,7 @@ td#button-option-delete-computer button {
   outline: none;
   margin: 10px 0px;
 }
-<<<<<<< HEAD
-
-button#button-delete-user {
-    width: 74px!important;
-}
-
-table.list-user tbody tr.old{
-    background: #f7dae3;
-}
-
-table.list-user tbody tr.even{
-    background: #ffefef;
-}
-
-.pagination-user {
-    text-align: center;
-}
-
-.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
-    padding: 2px 2px;
-    vertical-align: middle;
-}
-
-table table-bordered{
-	padding: 5px 5px;
-    vertical-align: middle;
-}
-
-.h2 {
-    font-size: x-large;
-    padding: unset;
-    margin: auto;
+td#button-option-delete-computer button:hover{
   background-color: #2EE59D;
   box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
   color: #fff;
@@ -298,80 +566,13 @@ div.button-option-delete-computer button:hover{
     width: 700px;
 }
 
-button.btn.btn-default.cre-sub{
-    float: right;
-    margin: 10px;
-}
-
-/*create.blade*/
-button.bt.label-warning.label {
-     height: 50px;
-    width: 90px;
-    margin: 20px 28px 0px 520px;
-    color: white;
-    background-color: #2d4e96;
-}
-
-.container-fluid.dange {
-    padding: 20px 70px;
-    width: 750px
-}
-
-/*index.blade*/
-button.bt.label-warning {
-    width: 80px;
-    height: 30px;
-}
-
-a.coll {
-    color: white;
-}
-
-/*edit.blade*/
-
-.container-fluid.roomList{
-   padding: 20px 70px;
-    width: 750px
-}
-button.bt.label-warning.edit {
-    height: 50px;
-    width: 90px;
-    margin: 20px 28px 0px 520px;
-    color: white;
-    background-color: #2d4e96;
-}
-
-form.bo {
-    padding: unset;
-}
-
-input.form-control {
-    margin: 5px;
-}
-
-.alertroom{
-    color: red;
-}
-
-.errors{
-    border-color: red;
-}
-.container-fluid.vip {
-    width: 700px;
-}
-
 .form-edit-user {
     width: 55%;
-}
-
-.container-fluid.vip {
-    width: 700px;
 }
 
 .form-create-user {
     width: 55%;
 }
-
 button.btn.btn-default.cre-sub{
     float: right;
     margin: 10px;
@@ -379,6 +580,184 @@ button.btn.btn-default.cre-sub{
 .font-bold{
 	font-weight: 500;
 }
+button#add-new-device {
+  width: 140px; 
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000000;
+  background-color: #ff98b7;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  margin: 10px 20px;
+  margin-left: 0px;
+}
+button#add-new-device:hover {
+  background-color: #2EE59D;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: white;
+  transform: translateY(-7px);
+}
+
+td#button-option-edit-device button {
+  width: 59px;
+  height: 31px;
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  margin: 10px 0px;
+}
+td#button-option-del-device button {
+  width: 72px;
+  height: 31px;
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  margin: 10px 0px;
+}
+table.list-device tbody tr.old{
+    background: #f7dae3;
+}
+
+table.list-device tbody tr.even{
+    background: #ffefef;
+}
+table.list-device thead tr {
+    height: 50px;
+    background: #fb89ac;
+    color: blue;
+}
+.has-error{
+	border-color: red;
+}
+.alertdevice{
+	color: red;
+}
+/*.stt{
+    width: 10px;
+}*/
+
+table.list-tag thead tr {
+    height: 50px;
+    background: #fb89ac;
+}
+
+table.list-tag tbody tr {
+    display: table-row;
+}
+
+table.list-tag tbody {
+    display: table-row-group;
+}
+
+table.list-tag thead {
+    display: table-header-group;
+}
+
+table.list-tag tbody tr td:last-child {
+    display: inline;
+}
+
+table.list-tag tbody tr td {
+    width: 20%;
+    text-align: left;
+    padding-left: 16px;
+}
+
+table.list-tag tbody tr td.STT {
+    width: 10%!important;
+    text-align: left;
+}
+
+table.list-tag tbody tr td form {
+    display: inline;
+}
+
+table.list-tag thead tr th {
+    width: 20%!important;
+    text-align: left;
+    padding-left: 25px;
+}
+
+table.list-tag {
+    width: 100%!important;
+    margin-left: 20px;
+    display: table;
+}
+
+
+button#submit {
+  width: 140px;
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #2EE59D;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  margin: 10px 20px;
+}
+button#submit:hover {
+  background-color: #ff98b7;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.sm{
+    display: block;
+    width: 50%;
+    box-sizing: border-box;
+    margin: auto;
+    border: 1px solid #5b5b5b;
+    padding: 15px;
+    outline: none;
+    color: #444;
+    transition: 0.5s;
+    border-radius: 15px;
+}
+.sm:focus{
+    box-shadow: 0 0 10px 4px #ff98b7;
+}
+
+.form-group{
+    text-align: center;
+}
+
+.alert{
+    margin: 5px 290px;
+}
+
 
 button.btn.btn-default.add-new-tdv{
   width: 140px;
@@ -405,16 +784,6 @@ button.btn.btn-default.add-new-tdv:hover{
   transform: translateY(-7px);
 }
 button.btn.btn-default{
-  margin-left: 0px;
-}
-button#add-new-device:hover {
-  background-color: #2EE59D;
-  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
-  color: white;
-  transform: translateY(-7px);
-}
-
-td#button-option-edit-device button {
   width: 59px;
   height: 31px;
   font-size: 11px;
@@ -450,13 +819,6 @@ button.btn.btn-default.cre-sub{
   font-weight: 500;
   color: #000;
   background-color: #ff98b7;
-  width: 72px;
-  height: 31px;
-  font-size: 11px;
-  letter-spacing: 2.5px;
-  font-weight: 500;
-  color: #000;
-  background-color: #fff;
   border: none;
   border-radius: 45px;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
@@ -483,59 +845,6 @@ button.btn.btn-default.edi-sub{
   font-weight: 500;
   color: #000;
   background-color: #ff98b7;
-  margin: 10px 0px;
-}
-table.list-device tbody tr.old{
-    background: #f7dae3;
-}
-
-table.list-device tbody tr.even{
-    background: #ffefef;
-}
-table.list-device thead tr {
-    height: 50px;
-    background: #fb89ac;
-    color: blue;
-}
-.has-error{
-	border-color: red;
-}
-.alertdevice{
-	color: red;
-}
-.img-middle {
-    position: relative;
-}
-.middle {
-    width: 335px;
-    height: 252px;
-    position: absolute;
-    top: 33px;
-    left: 14px;
-    opacity: 0;
-    cursor: pointer;
-}
-.block-img:hover .col-lg-6.middle {
-	background: #f7dae385;
-    opacity: 1;
-}
-.row.bgr-block {
-    background: white;
-    padding-bottom: 30px;
-    padding-top: 30px;
-}
-.row.bgr-top-block {
-    background: #f7dae3;
-    margin: -1px;
-}
-#button-option-edit-device button {
-  width: 59px;
-  height: 31px;
-  font-size: 11px;
-  letter-spacing: 2.5px;
-  font-weight: 500;
-  color: #000;
-  background-color: #f7dae3;;
   border: none;
   border-radius: 45px;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
@@ -549,32 +858,5 @@ button.btn.btn-default.edi-sub:hover{
 	background-color: #2EE59D;
   	box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
   	color: #fff;
-  	transform: translateY(-7px);
-  margin: 10px 0px;
-}
-#button-option-del-device button {
-  width: 72px;
-  height: 31px;
-  font-size: 11px;
-  letter-spacing: 2.5px;
-  font-weight: 500;
-  color: #000;
-  background-color: #f59898;;
-  border: none;
-  border-radius: 45px;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease 0s;
-  cursor: pointer;
-  outline: none;
-  margin: 10px 0px;
-}
-div#button-option-del-device {
-    padding-right: 25px;
-}
-
-div#button-option-edit-device {
-    padding-left: 25px;
-}
-.col-lg-4.block {
-    padding-bottom: 20px;
+  	transform: translateY(-7px)
 }
