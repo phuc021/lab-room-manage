@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Device extends Model
 {
-    protected $fillable = ['name', 'desc', 'status', 'type_devices_id', 'computers_id'];
+    protected $fillable = ['name', 'desc', 'status', 'computers_id'];
 
     public function computer(){
     	return $this->belongsTo('App\Models\Computer', 'computers_id');

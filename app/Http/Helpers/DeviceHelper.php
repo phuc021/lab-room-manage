@@ -14,7 +14,7 @@ class DeviceHelper {
 				return trans('devices/status.crash');
 				break;
 			default:
-				return trans('devices/status.working');
+				return ('Other');
 				break;
 		}
 	}
@@ -23,6 +23,7 @@ class DeviceHelper {
 			DeviceStatus::WORKING => trans('devices/status.working'),
 			DeviceStatus::PREPARING => trans('devices/status.preparing'),
 			DeviceStatus::CRASH => trans('devices/status.crash')
+			
 		);
 	}
 	public static function increment($i, $perPage, $currentPage){

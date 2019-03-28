@@ -36,7 +36,7 @@
 					
 				</select><br>
 
-				<button type="submit" class="btn btn-default cre-sub">Submit</button>
+				<button type="submit" class="btn btn-default cre-sub">Add New</button>
 			</form>
 		</div>
 	</div>	
