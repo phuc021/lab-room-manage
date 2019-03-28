@@ -4,7 +4,7 @@
 
 @section('body')
 
-	<div class="form-create-user container-fluid">
+	<div class="form-user container-fluid">
 {{-- 		@if($errors->any())
 			<div class="alert alert-danger">
 				<ul>
@@ -62,7 +62,7 @@
 				</div>
 			@endif
 			<div class="form-group">
-				<button type="submit" class="btn btn-primary">Submit</button>
+				<button id="btn-form-user" type="submit" class="btn btn-primary">Create</button>
 			</div>
 		</form>		
 	</div>

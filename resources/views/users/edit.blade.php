@@ -3,7 +3,7 @@
 @section('title', 'User List Manage')
 
 @section('body')
-	<div class="form-edit-user container-fluid">
+	<div class="form-user container-fluid">
 {{-- 		@if($errors->any())
 			<div class="alert alert-danger">
 				<ul>
@@ -72,7 +72,8 @@
 			</div>
 			
 			<div class="form-group">
-				<button id="btn-edit-rooms" type="sumbit" class="bt label-warning label">Sumbit</button>
+				<button id="btn-form-user" type="submit" class="btn btn-success">Edit</button>
+			</div>
 		</form>
 	</div>
 @endsection
