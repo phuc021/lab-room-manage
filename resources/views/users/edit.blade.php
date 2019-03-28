@@ -72,8 +72,7 @@
 			</div>
 			
 			<div class="form-group">
-				<button type="submit" class="btn btn-success">Edit</button>
-			</div>
+				<button id="btn-edit-rooms" type="sumbit" class="bt label-warning label">Sumbit</button>
 		</form>
 	</div>
 @endsection
