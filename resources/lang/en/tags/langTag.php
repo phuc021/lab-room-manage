@@ -22,6 +22,7 @@ return [
     'addnew' => 'Add new',
     'stt' => 'Serial',
     'edit' => 'Edit',
+    'option' => 'Option',
     'del' => 'Delete',
     'confirmDel' => 'Are you really want to delete ',
     'delSuccess' => 'Delete success !',
@@ -32,5 +33,7 @@ return [
     'cpu' => 'CPU',
     'gpu' => 'GPU',
     'request_required' => 'The value field cannot be empty!',
-    'request_max' => 'Too long!'
+    'request_max' => 'Too long!',
+    'confirmEdit' => 'Are you want to change ',
+    'confirmCreate' => 'Are you want to create this value?'
 ];
