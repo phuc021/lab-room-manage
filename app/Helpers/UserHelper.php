@@ -27,4 +27,8 @@ class UserHelper {
 			UserRole::Teacher => trans('users/optionRole.giaovien'),
 		);
 	}
+
+	public static function increment($i , $perPage, $currentPage){
+		return $i + $perPage * ($currentPage - 1);
+	}
 }

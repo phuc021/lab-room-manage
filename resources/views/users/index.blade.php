@@ -4,10 +4,29 @@
 
 @section('body')
 	<a href="{{ url('users/create') }}">
-	<button id="add-new-user" type="button" class="btn btn-primary">Add New User</button></a>
+		<button id="add-new-user" type="button" class="btn btn-primary">Add New User</button>
+	</a>
+	@if(session('add'))
+			<div class="alert alert-success alert-dismissible notif-user">
+			    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+				{{ session('add') }}
+			</div>
+		@elseif(session('edit'))
+			<div class="alert alert-info alert-dismissible notif-user">
+			    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+				{{ session('edit') }}
+			</div>
+		@elseif(session('delete'))
+			<div class="alert alert-danger alert-dismissible notif-user">
+			    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+				{{ session('delete') }}
+			</div>
+		@endif
+	
 	<table class="list-user">
 		<thead>
 			<tr>
+				<th>STT</th>
 				<th>Name</th>
 				<th>Username</th>
 				<th>Email</th>
@@ -20,6 +39,11 @@
 			<tbody>
 				<tr @if($index % 2 == 0) class="old" @else class="even" @endif>
 					@php ($index++)
+
+					<td class="stt-user">
+						@php($i++) 
+						{{ UserHelper::increment($i, $userList->perPage(), $userList->currentPage())}}
+					</td>
 					<td>{{ $user->name }}</td>
 					<td>{{ $user->username }}</td>
 					<td>{{ $user->email }}</td>	

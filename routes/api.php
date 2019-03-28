@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Api\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,22 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::group(['namespace' => 'Api'], function () {
+    Route::get('users', 'UserController@index');
+    Route::post('users', 'UserController@store');
+    Route::put('users/{id}', 'UserController@update');
+    Route::delete('users/{id}', 'UserController@destroy');
+});
+
+Route::prefix('v1')->namespace('Api')->group(function () {
+    // Login
+    Route::post('/login','AuthController@postLogin');
+    // Register
+    Route::post('/register','AuthController@postRegister');
+    // Protected with APIToken Middleware
+    Route::middleware('APIToken')->group(function () {
+      // Logout
+      Route::post('/logout','AuthController@postLogout');
+    });
+});
+

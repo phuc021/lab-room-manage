@@ -52,7 +52,7 @@ class UserController extends Controller
         }
         else {
             User::create($request->all());
-            return redirect('users');
+            return redirect('users')->with(['add' => 'Add New User Success !!!!!!!']);
         }
     }
 
@@ -99,7 +99,7 @@ class UserController extends Controller
             'role' => 'required',
         ]);
         $user->Update($request->all());
-        return redirect('users')->with(['success' => 'Update Success !!!']);
+        return redirect('users')->with(['edit' => 'Update Success !!!']);
         
     }
 
@@ -112,7 +112,7 @@ class UserController extends Controller
     public function destroy($id)
     {
         User::destroy($id);
-        return redirect('/users')->with(['delete' => 'Delete Success !!!']);
+        return redirect('/users')->with(['delete' => 'Delete User Success !!!']);
     }
 
     public function search($name){

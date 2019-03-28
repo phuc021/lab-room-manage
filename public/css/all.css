@@ -3,6 +3,30 @@
     padding: 0;
 }
 
+.notif-user a.close {
+    position: relative;
+    top: -5px!important;
+    right: 0!important;
+    color: #0e0e0e!important;
+    font-size: 30px;
+}
+
+.notif-user {
+    width: 98%;
+    margin-left: 1.38em;
+    padding: 17px 15px;
+}
+
+button#btn-form-user {
+    width: 90px!important;
+    height: 40px!important;
+    font-size: 16px!important;
+}
+
+.form-user form input.form-control {
+    background: #ffefef;
+}
+
 table.list-user thead tr {
     /*height: 50px;*/
     background: #fb89ac;
@@ -25,9 +49,14 @@ table.list-user tbody tr td:last-child {
 }
 
 table.list-user tbody tr td {
-    width: 20%;
+    width: 21.5%;
     text-align: left;
     padding-left: 16px;
+}
+
+table.list-user tbody tr td.stt-user {
+    width: 5%;
+    padding-left: 2.5em;
 }
 
 table.list-user tbody tr td.role-user {
@@ -40,7 +69,7 @@ table.list-user tbody tr td form {
 }
 
 table.list-user thead tr th {
-    width: 20%!important;
+    /* width: 1%!important; */
     text-align: left;
     padding-left: 25px;
 }
@@ -51,12 +80,11 @@ table.list-user {
     display: table;
 }
 
-.form-edit-user {
+.form-user {
     width: 55%;
-}
-
-.form-create-user {
-    width: 55%;
+    margin-top: 25px;
+    background: #f7dae3;
+    padding: 50px;
 }
 
 button#add-new-user {
@@ -108,7 +136,7 @@ button#add-new-computer:hover {
   transform: translateY(-7px);
 }
 
-td#button-option-user button {
+td#button-option-user button,  button#btn-form-user{
   width: 59px;
   height: 31px;
   font-size: 11px;
