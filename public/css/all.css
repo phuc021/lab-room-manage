@@ -55,7 +55,6 @@ table.list-user {
     width: 55%;
 }
 
-
 .form-create-user {
     width: 55%;
 }
@@ -117,6 +116,7 @@ table.list-user tbody tr.even{
 .pagination-user {
     text-align: center;
 }
+
 table table-bordered{
 	padding: 5px 5px;
     vertical-align: middle;
@@ -128,15 +128,6 @@ table table-bordered{
     margin: auto;
 }
 
-.container-fluid.vip {
-    width: 700px;
-}
-
-button.btn.btn-default.cre-sub{
-    float: right;
-    margin: 10px;
-}
-<<<<<<< HEAD
 
 /*create.blade*/
 button.bt.label-warning.label {
@@ -195,6 +186,119 @@ input.form-control {
     border-color: red;
 }
 
+
+
+
+.container-fluid.vip {
+    width: 700px;
+}
+
+button.btn.btn-default.cre-sub{
+    float: right;
+    margin: 10px;
+}
 .font-bold{
 	font-weight: 500;
+}
+
+button.btn.btn-default.add-new-tdv{
+  width: 140px;
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #ff98b7;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  margin: 10px 20px;
+}
+button.btn.btn-default.add-new-tdv:hover{
+  background-color: #2EE59D;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+button.btn.btn-default{
+  width: 59px;
+  height: 31px;
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  margin: 10px 0px;
+}
+button.btn.btn-default.edit-new-tdv:hover{
+	color: #ffffff !important;
+	background: #0066FF;
+	border-color: #0066FF !important;
+	transition: all 0.4s ease 0s;
+}
+button.btn.btn-danger.delete-tdv{
+	width: 74px!important;
+}
+/* Create */
+button.btn.btn-default.cre-sub{
+  width: 140px;
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #ff98b7;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  margin: 10px 20px;	
+
+}
+button.btn.btn-default.cre-sub:hover{
+	background-color: #2EE59D;
+  	box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  	color: #fff;
+  	transform: translateY(-7px);
+}
+/* Edit */
+button.btn.btn-default.edi-sub{
+  width: 140px;
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #ff98b7;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  margin: 10px 20px;	
+
+}
+button.btn.btn-default.edi-sub:hover{
+	background-color: #2EE59D;
+  	box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  	color: #fff;
+  	transform: translateY(-7px)
 }

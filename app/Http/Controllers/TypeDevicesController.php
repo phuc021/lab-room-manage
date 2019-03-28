@@ -18,7 +18,8 @@ class TypeDevicesController extends Controller
      */
     public function index()
     {
-        $typedevicesList = DB::table('type_devices')->orderBy('id','DESC')->get(); 
+        $itemPerPage = 20;
+        $typedevicesList = TypeDevices::paginate($itemPerPage);
         return view('typedevices.index',['typedevicesList'=>$typedevicesList]);
     }
 

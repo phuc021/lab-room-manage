@@ -16,7 +16,7 @@
 
 
 
-				<button type="submit" class="btn btn-default">Edit</button>
+				<button type="submit" class="btn btn-default edi-sub">Edit</button>
 			</form>
 		</div>
 	</div>

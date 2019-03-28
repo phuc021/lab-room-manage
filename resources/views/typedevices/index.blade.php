@@ -6,10 +6,11 @@
 @section('body')
 	
 	<h1 class="text-center" >{{trans('TYPEDEVICE')}}</h1>
+
 	<div class="container-fluid">
-		<button class="btn btn-default" value="Add"><a href="{{ url('typedevices/create') }}">{{trans('ADD')}}</a></button>
-		
+		<button class="btn btn-default add-new-tdv" value="Add"><a href="{{ url('typedevices/create') }}">{{trans('ADD')}}</a></button>
 	</div>
+
 	<div class="container-fluid text-center">
 		<table class="table table-bordered">
 			<thead>
@@ -40,5 +41,6 @@
 				@endforeach
 			</tbody>
 		</table>
+		{{ $typedevicesList }}
 	</div>
 @endsection
