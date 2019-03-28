@@ -16,14 +16,14 @@
 			</tr>
 		</thead>
 		@php ($index = 0)
-		@foreach($userList as $user)
+		@foreach($userList as $user) 
 			<tbody>
 				<tr @if($index % 2 == 0) class="old" @else class="even" @endif>
 					@php ($index++)
 					<td>{{ $user->name }}</td>
 					<td>{{ $user->username }}</td>
 					<td>{{ $user->email }}</td>	
-					<td class="role-user">{{  UserHelper::getRole($user->role) }}</td>
+					<td class="role-user">{{ UserHelper::getRole($user->role) }}</td>
 					<td id="button-option-user">
 						<a href="{{ url('users/'.$user->id.'/edit') }}"><button type="button" class="btn btn-info">Edit</button></a>
 						<form action="{{ url("users/$user->id") }}" method="POST">

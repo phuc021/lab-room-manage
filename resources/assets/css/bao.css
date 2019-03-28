@@ -4,7 +4,7 @@
 }
 
 table.list-user thead tr {
-    height: 50px;
+    /*height: 50px;*/
     background: #fb89ac;
 }
 
@@ -60,7 +60,7 @@ table.list-user {
 }
 
 button#add-new-user {
-  width: 140px;
+  width: 140px; 
   height: 45px;
   font-family: 'Roboto', sans-serif;
   font-size: 11px;
@@ -115,4 +115,8 @@ table.list-user tbody tr.even{
 
 .pagination-user {
     text-align: center;
+}
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    padding: 2px 2px;
+    vertical-align: middle;
 }
