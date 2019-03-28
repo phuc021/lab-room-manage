@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ComputerRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Computer;
-use App\Http\Requests\ComputerRequest;
 use App\Models\Room;
 
 class ComputerController extends Controller
@@ -17,7 +17,8 @@ class ComputerController extends Controller
      */
     public function index()
     {
-        $computerList = DB::table('computers')->paginate(10);
+        $itemperPage=12;
+        $computerList = DB::table('computers')->paginate($itemperPage);
         // $computerList = DB::table('computers')->orderby('id','DESC')->get();
         return view('computers.index',['computerList' => $computerList]);
     }
@@ -65,8 +66,9 @@ class ComputerController extends Controller
      */
     public function edit($id)
     {
+        $roomList = Room::all();
         $computer = Computer::where('id', $id)->first();
-        return view('computers.edit',['computers' => $computer]); 
+        return view('computers.edit',array("roomList" => $roomList),['computers' => $computer]); 
     }
 
     /**

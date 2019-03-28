@@ -14,12 +14,12 @@
 			<form action="{{url('computers')}}" method="POST">
 			@csrf
 			<label for="name">{{ trans('computer/create.name')}} :</label>
-			<label class="alert-danger">{{ $errors->has('name') ? $errors->first('name') : ''}}</label>
+			<label class="alertcpt">{{ $errors->has('name') ? $errors->first('name') : ''}}</label>
 			<input type="text" class="form-control {{ $errors->has('name') ? 'has-error' : ''}}" name="name" placeholder="Enter Name..."><br>
 
 			<label for="desc">{{ trans('computer/create.desc')}} :</label>
-			<label class="alert-danger">{{ $errors->has('desc') ? $errors->first('desc') : ''}}</label>
-			<input type="text" class="form-control" name="desc" placeholder="Enter Desc..."><br>
+			<label class="alertcpt">{{ $errors->has('desc') ? $errors->first('desc') : ''}}</label>
+			<input type="text" class="form-control {{ $errors->has('name') ? 'has-error' : ''}}" name="desc" placeholder="Enter Desc..."><br>
 
 			<label for="status">{{ trans('computer/create.status')}} :</label>
 			<select name="status" class="form-control">

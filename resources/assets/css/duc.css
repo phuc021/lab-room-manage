@@ -1,0 +1,157 @@
+.has-error{
+	border-color: red;
+}
+.alertcpt{
+	color: red;
+}
+button#add-new-computer {
+  width: 180px; 
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #ff98b7;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  margin: 10px 20px;
+  margin-left: 0px;
+}
+button#add-new-computer:hover {
+  background-color: #2EE59D;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+td#button-option-edit-computer button {
+  width: 59px;
+  height: 31px;
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  font-weight: bold;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  margin: 10px 0px;
+}
+td#button-option-edit-computer button:hover{
+  background-color: #2EE59D;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+td#button-option-delete-computer button {
+  width: 72px;
+  height: 31px;
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  margin: 10px 0px;
+}
+td#button-option-delete-computer button:hover{
+  background-color: #2EE59D;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+table.list-computer tbody tr.old{
+    background: #f7dae3;
+}
+
+table.list-computer tbody tr.even{
+    background: #ffefef;
+}
+table.list-computer thead tr {
+    height: 50px;
+    background: #fb89ac;
+    color: blue;
+}
+.pagination-computer{
+	text-align: center;
+}
+.bottom-grid:hover .col-lg-12.bgr {
+    opacity: 1;
+}
+.bgr {
+	width: 335px;
+	height: 227px;
+	background: #f7dae3c9;
+	position: absolute;
+	top: 34px;left: 14px;
+	opacity: 0;
+}
+
+.img-middle {
+    position: relative;
+    margin:5px;
+    padding: 10px;
+    background: #FFFFFF;
+    border: 2px solid;
+    border-radius: 5px;
+    box-shadow: 5px 8px #c1bdbd;
+}
+div.button-option-edit-computer button {
+  width: 59px;
+  height: 31px;
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  font-weight: bold;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  margin: 10px 0px;
+  margin-left: 110px;
+}
+div.button-option-edit-computer button:hover{
+  background-color: #2EE59D;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+div.button-option-delete-computer button {
+  width: 72px;
+  height: 31px;
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  margin: 10px 0px;
+  margin-right: 110px;
+}
+div.button-option-delete-computer button:hover{
+  background-color: #2EE59D;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}

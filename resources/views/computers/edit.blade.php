@@ -11,10 +11,12 @@
 			@csrf
 			{{ method_field('put') }}
 			<label for="name">{{ trans('computer/edit.name')}} :</label>
-			<input type="text" class="form-control" name="name" value="{{ $computers->name }}" placeholder="Enter Name..."><br>
+			<label class="alertcpt">{{ $errors->has('name') ? $errors->first('name') : ''}}</label>
+			<input type="text" class="form-control {{ $errors->has('name') ? 'has-error' : ''}}" name="name" value="{{ $computers->name }}" placeholder="Enter Name..."><br>
 
 			<label for="desc">{{ trans('computer/edit.desc')}} :</label>
-			<input type="text" class="form-control" name="desc" value="{{ $computers->desc }}" placeholder="Enter Desc..."><br>
+			<label class="alertcpt">{{ $errors->has('desc') ? $errors->first('desc') : ''}}</label>
+			<input type="text" class="form-control {{ $errors->has('name') ? 'has-error' : ''}}" name="desc" value="{{ $computers->desc }}" placeholder="Enter Desc..."><br>
 
 			<label for="status">{{ trans('computer/edit.status')}} :</label>
 			<select name="status" class="form-control">
@@ -26,7 +28,11 @@
 		
 
 			<label for="rooms-id">{{ trans('computer/edit.roomsID')}} :</label>
-			<input type="number" class="form-control" name="rooms_id" value="{{ $computers->rooms_id }}" placeholder="Enter Room ID..."><br>
+			<select name="rooms-id" class="form-control" value="{{ $computers->rooms_id  }}">
+				@foreach($roomList as $room)
+					<option>{{ $room->name }}</option>
+				@endforeach
+			</select>
 
 			<button class="btn btn-danger" type="submit">{{ trans('computer/edit.submit')}}</button>
 			</form>
