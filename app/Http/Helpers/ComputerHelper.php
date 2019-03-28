@@ -22,5 +22,8 @@ class ComputerHelper{
 			ComputerStatus::DISABLE => trans('computer/status.disable'),
 		);
 	}
+	public static function increment($i, $perPage, $currentPage){
+		return $i + $perPage * ($currentPage -1);
+	}
 }
 ?>
