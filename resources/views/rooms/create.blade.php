@@ -36,7 +36,7 @@
 						<option value="{{$key}}">{{$value}}</option>
 					@endforeach
 					</select><br>
-					<button class="bt label-warning label" type="sumbit">Sumbit</button>
+					<button id="create-rooms" type="sumbit" class="bt label-warning label">Sumbit</button>
 				</form>
 
 			</div>
