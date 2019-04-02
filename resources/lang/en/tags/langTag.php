@@ -1,6 +1,6 @@
 <?php
 
-return [
+return [   
 
     /*
     |--------------------------------------------------------------------------
@@ -35,5 +35,6 @@ return [
     'request_required' => 'The value field cannot be empty!',
     'request_max' => 'Too long!',
     'confirmEdit' => 'Are you want to change ',
-    'confirmCreate' => 'Are you want to create this value?'
+    'confirmCreate' => 'Are you want to create this value?',
+    'notExist' => 'This is not exist !'
 ];

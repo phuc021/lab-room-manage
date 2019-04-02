@@ -20,26 +20,26 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ url('/rooms') }}">
-                        <i class="pe-7s-note2"></i>
+                    <a href="{{ url('/rooms') }}">     
+                        <i class="pe-7s-culture"></i>
                         <p>Room Manage</p>
                     </a>
                 </li>
                 <li>
                     <a href="{{ url('/computers') }}">
-                        <i class="pe-7s-note2"></i>
+                        <i class="pe-7s-display1"></i>
                         <p>Computer Manage</p>
                     </a>
                 </li>
                 <li>
-                    <a href="{{ url('devices') }}">
+                    <a href="{{ url('/devices') }}">
                         <i class="pe-7s-note2"></i>
                         <p>Device Manage</p>
                     </a>
                 </li>
                 <li>
-                    <a href="">
-                        <i class="pe-7s-note2"></i>
+                    <a href="{{ url('/tags') }}">
+                        <i class="pe-7s-ticket"></i>
                         <p>Tag Manage</p>
                     </a>
                 </li>

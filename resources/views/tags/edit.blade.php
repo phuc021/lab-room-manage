@@ -17,15 +17,17 @@
 				<label for="">{{trans('tags/langTag.value')}}:</label>
 				
 				<input type="text" class="sm"  name="value" value="{{ $tags->value }}" required="required">
+
 				<br>
+
 				<label for="devices_id">{{trans('tags/langTag.deviceName')}}:</label>
-				
 				<select name="devices_id" class="sm" >
 					@foreach(TagHelper::getOptionStatus() as $key => $value)
 						<option value="{{$key}}">{{$value}}</option>
 					@endforeach
-					</select>
+				</select>
 				<br>
+
 					<button id="submit" class="btn btn-success" type="sumbit" >{{trans('tags/langTag.submit')}}</button>
 					{{-- <button id="submit" class="btn btn-success" type="sumbit" onclick="return confirm('{{trans('tags/langTag.confirmEdit')}}{{ $tags->value }}'); ">{{trans('tags/langTag.submit')}}</button> --}}
 				</form>

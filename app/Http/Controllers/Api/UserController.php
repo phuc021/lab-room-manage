@@ -20,17 +20,24 @@ class UserController extends BaseController
     {
         // Bug Correcting
         // $validate = $request->validated();
-
         // if($validate){
         //     return api_errors(400, ['message' => $validator->messages()]);
         // }else{
         //     $validate = User::create($request->all());
         //     return api_success(['user' => $validate]);
         // }
+        // 
         $input = $request->all();
         $input['password'] = bcrypt($input['password']);
         $user = User::create($input);
         return response()->json(['success' => 'Tạo thành công'], 200);
+        $user = User::create($request->all());
+
+        if($user){
+            return api_errors(400, ['errors' => 'This user does not exist']);
+        }else{
+            return api_success(['user' => $user]);
+        }
     }
 
     public function update(UserRequest $request, $id)
@@ -58,6 +65,6 @@ class UserController extends BaseController
     public function destroy($id)
     {
         User::destroy($id);
-        return api_success(['message' => 'ola']);
+        return  api_success(['message' => 'ola']);
     }
 }
