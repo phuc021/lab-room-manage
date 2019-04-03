@@ -366,6 +366,7 @@ button {
 }
 button {
     padding-right: 25px;
+
 }
 
 div#button-option-edit-device {
@@ -399,6 +400,52 @@ ul.pagination {
 .cursor-pointer{
   cursor: pointer;
 }
+
+div#button-option-edit-device {
+    padding-left: 25px;
+}
+.col-lg-4.block {
+    padding-bottom: 20px;
+}
+
+
+.contaiter-fluid.text-center {
+    margin: 40px;
+    padding-right: 33px;
+    padding-left: 14px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/*123*/
+ul.pagination {
+    display: inline-block;
+    padding-left: 270px;
+    margin: 20px 0;
+    border-radius: 4px;
+
+.form-edit-user {
+    width: 55%;
+}
+
+.form-create-user {
+    width: 55%;
+}
+button.btn.btn-default.cre-sub{
+    float: right;
+    margin: 10px;
+
+}
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.cursor-pointer{
+  cursor: pointer;
+}
 .has-error{
 	border-color: red;
 }
@@ -407,13 +454,17 @@ ul.pagination {
 }
 button#add-new-computer {
   width: 180px; 
+
+button#add-new-device {
+  width: 140px; 
+
   height: 45px;
   font-family: 'Roboto', sans-serif;
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 2.5px;
   font-weight: 500;
-  color: #000;
+  color: #000000;
   background-color: #ff98b7;
   border: none;
   border-radius: 45px;
@@ -423,6 +474,7 @@ button#add-new-computer {
   outline: none;
   margin: 10px 20px;
   margin-left: 0px;
+
 }
 button#add-new-computer:hover {
   background-color: #2EE59D;
@@ -430,12 +482,12 @@ button#add-new-computer:hover {
   color: #fff;
   transform: translateY(-7px);
 }
-<<<<<<< HEAD
+
 
 td#button-option-user button,  button#btn-form-user{
-=======
+
 td#button-option-edit-computer button {
->>>>>>> Complete tags
+
   width: 59px;
   height: 31px;
   font-size: 11px;
@@ -450,6 +502,8 @@ td#button-option-edit-computer button {
   cursor: pointer;
   outline: none;
   margin: 10px 0px;
+
+
 }
 td#button-option-edit-computer button:hover{
   background-color: #2EE59D;
@@ -555,6 +609,7 @@ div.button-option-delete-computer button {
   margin: 10px 0px;
   margin-right: 110px;
 }
+
 div.button-option-delete-computer button:hover{
   background-color: #2EE59D;
   box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
@@ -608,6 +663,10 @@ button#add-new-device:hover {
 
 td#button-option-edit-device button {
   width: 59px;
+
+td#button-option-del-device button {
+  width: 72px;
+
   height: 31px;
   font-size: 11px;
   letter-spacing: 2.5px;
@@ -620,6 +679,7 @@ td#button-option-edit-device button {
   transition: all 0.3s ease 0s;
   cursor: pointer;
   outline: none;
+
   margin: 10px 0px;
 }
 td#button-option-del-device button {
@@ -636,6 +696,8 @@ td#button-option-del-device button {
   transition: all 0.3s ease 0s;
   cursor: pointer;
   outline: none;
+
+
   margin: 10px 0px;
 }
 table.list-device tbody tr.old{
@@ -656,6 +718,7 @@ table.list-device thead tr {
 .alertdevice{
 	color: red;
 }
+
 /*.stt{
     width: 10px;
 }*/
@@ -860,3 +923,157 @@ button.btn.btn-default.edi-sub:hover{
   	color: #fff;
   	transform: translateY(-7px)
 }
+
+
+.container-fluid.vip {
+    width: 700px;
+}
+.form-edit-user {
+    width: 55%;
+}
+.form-create-user {
+    width: 55%;
+}
+.font-bold{
+  font-weight: 500;
+}
+button#add-new-tdv{
+    width: 140px;
+    height: 45px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #ff98b7;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    margin: 10px 20px;
+}
+button#add-new-tdv:hover{
+    background-color: #2EE59D;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px); 
+}
+td#button-option-edi-tdv button {
+    width: 59px;
+    height: 31px;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    margin: 10px 0px;
+}
+td#button-option-edi-tdv button:hover{
+    background-color: #2EE59D;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px); 
+}
+td#button-option-del-tdv button {
+    width: 72px;
+    height: 31px;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    margin: 10px 0px;
+}
+td#button-option-del-tdv button:hover{
+    background-color: #2EE59D;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);  
+}
+/* Create */
+button.btn.btn-default.cre-sub{
+    width: 140px;
+    height: 45px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #ff98b7;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    margin: 10px 20px;	
+
+}
+button.btn.btn-default.cre-sub:hover{
+  	background-color: #2EE59D;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+/* Edit */
+button.btn.btn-default.edi-sub{
+    width: 140px;
+    height: 45px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #ff98b7;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    margin: 10px 20px;	
+
+}
+button.btn.btn-default.edi-sub:hover{
+	  background-color: #2EE59D;
+  	box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  	color: #fff;
+  	transform: translateY(-7px)
+}
+
+table.list-typedevice tbody tr.old{
+    background: #f7dae3;
+}
+
+table.list-typedevice tbody tr.even{
+    background: #ffefef;
+}
+table.list-typedevice thead tr {
+    height: 50px;
+    background: #fb89ac;
+    color: blue;
+}
+.has-error{
+  border-color: red;
+}
+table.container-fluid.text-center{
+   font-weight: bold; 
+}
+
