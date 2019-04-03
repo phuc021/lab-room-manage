@@ -12,7 +12,7 @@ class UserController extends BaseController
 {
 
     public function index(){
-        $userList = DB::table('users')->orderBy('id','DESC')->paginate(10);
+        $userList = DB::table('users')->orderBy('id','ASC')->get();
         return api_success(['data' => $userList]);
     }
 
@@ -24,7 +24,7 @@ class UserController extends BaseController
         if($user){
             return api_errors(400, ['errors' => 'This user does not exist']);
         }else{
-            return api_success(['user' => $newUser]);
+            return api_success(['user' => $user]);
         }
     }
 
