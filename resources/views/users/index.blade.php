@@ -35,11 +35,11 @@
 			</tr>
 		</thead>
 		@php ($index = 0)
+		@php ($i = 0)
 		@foreach($userList as $user) 
 			<tbody>
 				<tr @if($index % 2 == 0) class="old" @else class="even" @endif>
 					@php ($index++)
-
 					<td class="stt-user">
 						@php($i++) 
 						{{ UserHelper::increment($i, $userList->perPage(), $userList->currentPage())}}
