@@ -44,7 +44,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="{{ url('typedevices') }}">
                         <i class="pe-7s-note2"></i>
                         <p>Type Devices Manage</p>
                     </a>

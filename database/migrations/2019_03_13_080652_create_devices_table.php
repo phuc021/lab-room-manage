@@ -19,6 +19,7 @@ class CreateDevicesTable extends Migration
             $table->string('desc');
             $table->string('status');
             $table->integer('computers_id')->unsigned();
+            $table->timestamps();
         });
     }
 
