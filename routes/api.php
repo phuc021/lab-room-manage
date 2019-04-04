@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\Api\ComputerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +36,10 @@ Route::group(['namespace' => 'Api'], function () {
     Route::put('rooms/{id}', 'RoomController@update');
     Route::delete('rooms/{id}', 'RoomController@destroy');
 });
-
+Route::group(['namespace' => 'Api'], function () {
+    Route::get('computers', 'ComputerController@index');
+    Route::post('computers', 'ComputerController@store');
+});
 Route::prefix('v1')->namespace('Api')->group(function () {
     // Login
     Route::post('/login','AuthController@postLogin');
