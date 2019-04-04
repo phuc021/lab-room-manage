@@ -150,10 +150,8 @@ input#country_name {
 /* Grid*/
 
 .img-middle {
-    
     position: relative;
     margin: 3px;
-    padding: 0px;
     background: #FFFFFF;
     border: 3px solid;
     border-radius: 5px;
@@ -248,4 +246,27 @@ ul.pagination {
 }
 .cursor-pointer{
   cursor: pointer;
+}
+
+/*index*/
+.col-lg-11.img-middle.btn {
+    position: relative;
+    margin: 5px;
+    padding: 1px;
+    background: #FFFFFF;
+    border: 2px solid;
+    border-radius: 5px;
+    box-shadow: 5px 8px #c1bdbd;
+}
+.col-lg-6.middle.cursor-pointer {
+    width: 299px;
+    height: 203px;
+    position: absolute;
+    top: 38px;
+    left: 19px;
+    opacity: 0;
+}
+.row {
+    margin-right: auto;
+    margin-left: auto;
 }

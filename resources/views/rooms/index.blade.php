@@ -38,8 +38,8 @@
                     </div>
 
                     <div class="row block-img">
-                        <div class="col-lg-11 img-middle">
-                            <img src="http://phongnet.com/wp-content/uploads/2015/10/lap-dat-phong-net-tai-kien-giang.jpg " style="width: 293px;" alt="placeholder+image">
+                        <div class="col-lg-11 img-middle btn">
+                            <img src="..\..\assets\img\phongmay.jpg" style="width: 293px;" alt="placeholder+image">
                         </div>
 
                         <div class="col-lg-6 middle cursor-pointer">
