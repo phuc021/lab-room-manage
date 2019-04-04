@@ -20,7 +20,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="{{ url('/rooms') }}">
                         <i class="pe-7s-note2"></i>
                         <p>Room Manage</p>
                     </a>
