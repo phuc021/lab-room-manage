@@ -21,17 +21,6 @@ button#create-rooms {
     border: none;
     border-radius: 45px;
 }
-button#create-rooms:hover {
-    background-color: #2EE59D;
-    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
-    color: #fff;
-    transform: translateY(-7px);
-}
-
-.container-fluid.dange {
-    padding: 20px 0px;
-    width: 800px
-}
 
 /*index.blade*/
 button#add-new-rooms {
@@ -115,12 +104,7 @@ button#btn-edit-rooms {
     border: none;
     border-radius: 45px;
 }
-button#btn-edit-rooms:hover {
-    background-color: #2EE59D;
-    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
-    color: #fff;
-    transform: translateY(-7px);
-}
+
 
 form.bo {
     padding: unset;
@@ -269,4 +253,23 @@ ul.pagination {
 .row {
     margin-right: auto;
     margin-left: auto;
+}
+
+/*style-api*/
+button#create-rooms:hover {
+    background-color: #2EE59D;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+.container-fluid.dange {
+    padding: 20px 0px;
+    width: 800px
+}
+button#btn-edit-rooms:hover {
+    background-color: #2EE59D;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
 }

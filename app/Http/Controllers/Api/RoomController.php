@@ -11,9 +11,10 @@ class RoomController extends BaseController
 {
     public function index( )
     {
-        $roomsList = DB::table('rooms')->orderby('id','DESC')->paginate(10);
-        return api_success(['data' => $roomsList]);    
+        $roomsList = DB::table('rooms')->orderby('id','ASC')->get();
+        return api_success(['data' => $roomsList],"");    
     }
+
      public function store(Request $request)
     {
         $rooms = Room::create($request->all());
