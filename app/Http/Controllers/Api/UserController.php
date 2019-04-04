@@ -16,21 +16,26 @@ class UserController extends BaseController
         return api_success(['data' => $userList]);
     }
 
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
         // Bug Correcting
-        $user = User::create($request->all());
+        // $validate = $request->validated();
 
-        if($user){
-            return api_errors(400, ['errors' => 'This user does not exist']);
-        }else{
-            return api_success(['user' => $user]);
-        }
+        // if($validate){
+        //     return api_errors(400, ['message' => $validator->messages()]);
+        // }else{
+        //     $validate = User::create($request->all());
+        //     return api_success(['user' => $validate]);
+        // }
+        $input = $request->all();
+        $input['password'] = bcrypt($input['password']);
+        $user = User::create($input);
+        return response()->json(['success' => 'Tạo thành công'], 200);
     }
 
     public function update(UserRequest $request, $id)
     {
-
+        
         $user = User::findOrFail($id);
         $validate = $request->validate([
             'username' => 'required',

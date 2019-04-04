@@ -24,7 +24,7 @@ class AuthController extends Controller
     	$validator = Validator::make($request->all(),$rules);
     	if ($validator->fails()) {
 	      // Validation failed
-	    	return response()->json(['message' => $validator->messages(),]);
+	    	return api_errors(400,"Validator Fail",403);
 	    } 
 	    else {
 	    	// Fetch User
@@ -37,19 +37,19 @@ class AuthController extends Controller
 		          	$login = User::where('username',$request->username)->update($postArray);
 		          
 		          	if($login) {
-		            	return response()->json([
-		              	'name'         => $user->name,
-		              	'username'     => $user->username,
-		              	'access_token' => $this->apiToken,
-		            	]);
+		            	return api_success([ 'data' => [
+					              	'name'         => $user->name,
+					              	'username'     => $user->username,
+					              	'access_token' => $this->apiToken,
+		            			]],"Success",200);
 		          	}
 		        } 
 		        else {
-		          return response()->json(['message' => 'Invalid Password',]);
+		          return api_errors(400,"Invalid Password",403);
 		        }
 	      	} 
 	      	else {
-		        return response()->json(['message' => 'User not found',]);
+		        return api_errors(400,"User not found",403);
 	      	}
 	    }
 	}
@@ -80,14 +80,14 @@ class AuthController extends Controller
 	    	$user = User::insert($postArray);
 	  
 	      	if($user) {
-	        	return response()->json([
+	        	return api_success([ 'data' => [
 	          		'name'         => $request->name,
 	          		'username'        => $request->username,
 	          		'access_token' => $this->apiToken,
-	        	]);
-	      	} 
+	        	]],"Success",200);
+	      	}
 	      	else {
-	        	return response()->json(['message' => 'Registration failed, please try again.',]);
+	        	return api_errors(400,"Registration failed, please try again.",403);
 	      	}
 	    }
 	}
@@ -100,11 +100,11 @@ class AuthController extends Controller
 	      	$postArray = ['api_token' => null];
 	      	$logout = User::where('id',$user->id)->update($postArray);
 	      	if($logout) {
-	        	return response()->json(['message' => 'User Logged Out',]);
+	        	return api_errors(400,"User Logged Out",403);
 	      	}
 	    } 
 	    else {
-	      return response()->json(['message' => 'User not found',]);
+	      return api_errors(400,"User not found",403);
 	    }
 	}
 
