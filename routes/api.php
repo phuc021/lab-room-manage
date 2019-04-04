@@ -22,6 +22,12 @@ Route::group(['namespace' => 'Api'], function () {
     Route::post('users', 'UserController@store');
     Route::put('users/{id}', 'UserController@update');
     Route::delete('users/{id}', 'UserController@destroy');
+
+
+    Route::get('tags', 'TagController@index');
+    Route::post('tags', 'TagController@store');
+    Route::put('tags/{id}', 'TagController@update');
+    Route::delete('tags/{id}', 'TagController@destroy');
 });
 Route::group(['namespace' => 'Api'], function () {
     Route::get('rooms', 'RoomController@index');
