@@ -24,19 +24,16 @@ Route::group(['namespace' => 'Api'], function () {
     Route::put('users/{id}', 'UserController@update');
     Route::delete('users/{id}', 'UserController@destroy');
 
-
     Route::get('tags', 'TagController@index');
     Route::post('tags', 'TagController@store');
     Route::put('tags/{id}', 'TagController@update');
     Route::delete('tags/{id}', 'TagController@destroy');
-});
-Route::group(['namespace' => 'Api'], function () {
+
     Route::get('rooms', 'RoomController@index');
     Route::post('rooms', 'RoomController@store');
     Route::put('rooms/{id}', 'RoomController@update');
     Route::delete('rooms/{id}', 'RoomController@destroy');
-});
-Route::group(['namespace' => 'Api'], function () {
+
     Route::get('computers', 'ComputerController@index');
     Route::post('computers', 'ComputerController@store');
 
@@ -47,7 +44,7 @@ Route::group(['namespace' => 'Api'], function () {
     Route::delete('devices/{id}', 'DeviceController@destroy');
 });
 
-Route::prefix('v1')->namespace('Api')->group(function () {
+Route::prefix('v1')->namespace('Api')->middleware('auth:api')->group(function () {
     // Login
     Route::post('/login','AuthController@postLogin');
     // Register

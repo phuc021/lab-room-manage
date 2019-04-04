@@ -14,7 +14,7 @@ class UserController extends BaseController
 
     public function index(){
         $userList = DB::table('users')->orderBy('id','ASC')->get();
-        return api_success(['data' => $userList]);
+        return api_success(['data' => $userList],"",200);
     }
 
     public function store(UserRequest $request)
