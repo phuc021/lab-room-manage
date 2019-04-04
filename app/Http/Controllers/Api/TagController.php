@@ -12,10 +12,8 @@ class TagController extends BaseController
 {
     public function index()
     {
-        $itemperPage = 15;
-        $tagsList = DB::table('tags')->paginate($itemperPage);
-        
-        return api_success(['tagsList' => $tagsList]);
+        $tagList = DB::table('tags')->orderBy('id','ASC')->get();        
+        return api_success(['data' => $tagList],"");
     }
 
     public function store(TagsRequest $request)
