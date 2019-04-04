@@ -39,7 +39,14 @@ Route::group(['namespace' => 'Api'], function () {
 Route::group(['namespace' => 'Api'], function () {
     Route::get('computers', 'ComputerController@index');
     Route::post('computers', 'ComputerController@store');
+
+    
+    Route::get('devices', 'DeviceController@index');
+    Route::post('devices', 'DeviceController@store');
+    Route::put('devices/{id}', 'DeviceController@update');
+    Route::delete('devices/{id}', 'DeviceController@destroy');
 });
+
 Route::prefix('v1')->namespace('Api')->group(function () {
     // Login
     Route::post('/login','AuthController@postLogin');
