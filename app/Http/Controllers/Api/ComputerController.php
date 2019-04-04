@@ -11,8 +11,8 @@ class ComputerController extends BaseController
     public function index()
     {
         
-         $computerList = DB::table('computers')->orderby('id','DESC')->paginate(20);
-        return api_success(['data' => $computerList]);
+         $computerList = DB::table('computers')->orderby('id','ASC')->get();
+        return api_success(['data' => $computerList],"");
     }
     public function store(ComputerRequest $request)
     {
