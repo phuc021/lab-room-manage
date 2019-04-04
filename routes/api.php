@@ -23,6 +23,12 @@ Route::group(['namespace' => 'Api'], function () {
     Route::put('users/{id}', 'UserController@update');
     Route::delete('users/{id}', 'UserController@destroy');
 });
+Route::group(['namespace' => 'Api'], function () {
+    Route::get('rooms', 'RoomController@index');
+    Route::post('rooms', 'RoomController@store');
+    Route::put('rooms/{id}', 'RoomController@update');
+    Route::delete('rooms/{id}', 'RoomController@destroy');
+});
 
 Route::prefix('v1')->namespace('Api')->group(function () {
     // Login
