@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\ComputerController;
+use App\Http\Controllers\Api\TagController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,7 +38,6 @@ Route::group(['namespace' => 'Api'], function () {
     Route::get('computers', 'ComputerController@index');
     Route::post('computers', 'ComputerController@store');
 
-    
     Route::get('devices', 'DeviceController@index');
     Route::post('devices', 'DeviceController@store');
     Route::put('devices/{id}', 'DeviceController@update');

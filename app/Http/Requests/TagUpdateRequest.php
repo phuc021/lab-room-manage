@@ -9,7 +9,7 @@ use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Http\Response;
 
-class UserUpdateRequest extends FormRequest
+class TagUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,6 +22,7 @@ class UserUpdateRequest extends FormRequest
     }
 
     /**
+     * 
      * Get the validation rules that apply to the request.
      *
      * @return array
@@ -29,11 +30,8 @@ class UserUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'username' => 'required',
-            'password' => 'required',
-            'name' => 'required',
-            'email' => 'required', 
-            'role' => 'required',
+            'value' => 'required|max:50',
+            'devices_id' => 'required',
         ];
     }
     public function failedValidation(Validator $validator)
