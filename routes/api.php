@@ -30,6 +30,12 @@ Route::group(['namespace' => 'Api'], function () {
     Route::put('tags/{id}', 'TagController@update');
     Route::delete('tags/{id}', 'TagController@destroy');
 
+    Route::get('devices', 'DeviceController@index');
+    Route::post('devices', 'DeviceController@store');
+    Route::put('devices/{id}', 'DeviceController@update');
+    Route::delete('devices/{id}', 'DeviceController@destroy');
+});
+Route::group(['namespace' => 'Api'], function () {
     Route::get('rooms', 'RoomController@index');
     Route::post('rooms', 'RoomController@store');
     Route::put('rooms/{id}', 'RoomController@update');
@@ -39,12 +45,6 @@ Route::group(['namespace' => 'Api'], function () {
     Route::post('computers', 'ComputerController@store');
     Route::put('computers/{id}', 'ComputerController@update');
     Route::delete('computers/{id}', 'ComputerController@destroy');
-});
-Route::group(['namespace' => 'Api'], function () {
-    Route::get('devices', 'DeviceController@index');
-    Route::post('devices', 'DeviceController@store');
-    Route::put('devices/{id}', 'DeviceController@update');
-    Route::delete('devices/{id}', 'DeviceController@destroy');
 });
 
 Route::prefix('v1')->namespace('Api')->middleware('auth:api')->group(function () {

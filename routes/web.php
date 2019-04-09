@@ -37,4 +37,3 @@ Route::resource('devices', 'DeviceController');
 Route::resource('computers','ComputerController');
 
 Route::resource('typedevices','TypeDevicesController');
-

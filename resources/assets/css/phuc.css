@@ -92,3 +92,17 @@ table.list-device thead tr {
 .alertdevice{
 	color: red;
 }
+.ct {
+    margin: auto;
+    margin-left: 1.5rem !important;
+    font-size: 13px;
+}
+.table > thead > tr > th {
+    text-align: center;
+    color: #423434;
+    font-weight: 600;
+}
+button.pd {
+  padding-left: 1rem;
+  font-size: 13px!important;
+}
