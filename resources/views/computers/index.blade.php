@@ -33,7 +33,7 @@
 
                     <div class="row bottom-grid">   
                         <div class="img-middle">
-                            <img src="..\..\assets\img\desktop.jpg" style="width: 335px;" alt="placeholder+image">
+                            <img src="..\..\assets\img\desktop.jpg" style="width: 280px;" alt="placeholder+image">
                         </div>
                         <div class="col-lg-12 bgr">
                             <p>{{ $computer->rooms_id }}</p>
@@ -45,7 +45,7 @@
                     <div class="row">
                         <div class="button-option-edit-computer pull-left"><button><a href="{{ url("computers/$computer->id/edit") }}">{{ trans('computer/index.edit')}}</a></button></div>
                         <div class="button-option-delete-computer pull-right">
-                            <form action="{{url("computers/$computer->id")}}" method="POST" method="POST">
+                            <form action="{{url("computers/$computer->id")}}" method="POST">
                                 {{csrf_field()}}
                                 {{method_field('DELETE')}}
 
