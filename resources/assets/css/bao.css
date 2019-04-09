@@ -82,9 +82,9 @@ table.list-user {
 
 .form-user {
     width: 55%;
-    margin-top: 25px;
+    margin: 25px 0px;
     background: #f7dae3;
-    padding: 50px;
+    padding: 20px;
 }
 
 button#add-new-user {
