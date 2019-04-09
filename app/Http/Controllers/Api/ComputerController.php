@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Models\Computer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ComputerRequest;
+use App\Http\Requests\ComputerStoreRequest;
+use App\Http\Requests\ComputerUpdateRequest;
 
 class ComputerController extends BaseController
 {
@@ -14,29 +18,22 @@ class ComputerController extends BaseController
          $computerList = DB::table('computers')->orderby('id','ASC')->get();
         return api_success(['data' => $computerList],"");
     }
-    public function store(ComputerRequest $request)
+    public function store(ComputerStoreRequest $request)
     {
-        Computer::create($request->all());
-         if($computer){
-            return api_errors(400, ['errors' => 'This computer does not exist']);
-        }else{
-            return api_success(['computers' => $newComputer]);
-        }
+        $computer = Computer::create($request->all());
+        return api_success(['data' => $computer],200);
     }
-    public function update(ComputerRequest $request, $id)
+    public function update(ComputerUpdateRequest $request, $id)
     {
         $computer = Computer::findOrFail($id);
-        $computer->update($request->all());
-        if ($validate->fails()) {
-            return api_errors(400, ['errors' => 'This product does not exist, dude!']);
-        }
-        else {
-            return api_success(['computers' => $computer]);
-        }    }
+        $computer->Update($request->all());
+        return api_success(['data' => $computer],200);
+
+    }
     public function destroy($id)
     {
         Computer::destroy($id);
-        return api_success(['message' => 'ola']);
+        return api_success(['message' => 'delete computer complete'],200);
     }
 
 }
