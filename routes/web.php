@@ -38,11 +38,11 @@ Route::resource('computers','ComputerController');
 
 Route::resource('typedevices','TypeDevicesController');
 
-Route::get('ajax', function(){
-	return view('users.ajax');
-});
+// Route::get('ajax', function(){
+// 	return view('users.ajax');
+// });
 
-Route::get('search/{name}', 'UserController@search');
-Route::get('search', 'SearchController@getSearch');
-Route::post('search/name', 'SearchController@getSearchAjax')->name('search');
+// Route::get('search/{name}', 'UserController@search');
+// Route::get('search', 'SearchController@getSearch');
+// Route::post('search/name', 'SearchController@getSearchAjax')->name('search');
 

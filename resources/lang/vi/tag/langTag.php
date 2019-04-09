@@ -21,7 +21,7 @@ return [
     'editTitle' => 'SỬA',
     'addnew' => 'Thêm mới',
     'stt' => 'STT',
-    'edit' => 'SỬa',
+    'edit' => 'Sửa',
     'option' => 'Tùy chọn',
     'del' => 'Xóa',
     'confirmDel' => 'Bạn có muốn xóa ',
