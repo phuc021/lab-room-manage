@@ -1,9 +1,10 @@
-
 <?php
 
 namespace App\Http\Controllers\Api;
 
 use App\Http\Requests\UserRequest;
+use App\Http\Requests\UserStoreRequest;
+use App\Http\Requests\UserUpdateRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\User;
@@ -17,55 +18,22 @@ class UserController extends BaseController
         return api_success(['data' => $userList],"",200);
     }
 
-    public function store(UserRequest $request)
-    {
-        // Bug Correcting
-        // $validate = $request->validated();
-        // if($validate){
-        //     return api_errors(400, ['message' => $validator->messages()]);
-        // }else{
-        //     $validate = User::create($request->all());
-        //     return api_success(['user' => $validate]);
-        // }
-        // 
-        $input = $request->all();
-        $input['password'] = bcrypt($input['password']);
-        $user = User::create($input);
-        return response()->json(['success' => 'Tạo thành công'], 200);
-        $user = User::create($request->all());
-
-        if($user){
-            return api_errors(400, ['errors' => 'This user does not exist']);
-        }else{
-            return api_success(['user' => $user]);
-        }
+    public function store(UserStoreRequest $request)
+    {        
+        $user =  User::create($request->all());
+        return api_success(['data' => $user],200);    
     }
 
-    public function update(UserRequest $request, $id)
+    public function update(UserUpdateRequest $request, $id)
     {
-        
         $user = User::findOrFail($id);
-        $validate = $request->validate([
-            'username' => 'required',
-            'password' => 'required',
-            'name' => 'required',
-            'email' => 'required', 
-            'role' => 'required',
-        ]);
         $user->Update($request->all());
-
-        if ($validate->fails()) {
-            return api_errors(400, ['errors' => 'This product does not exist, dude!']);
-        }
-        else {
-            return api_success(['user' => $user]);
-        }
-        
+        return api_success(['data' => $user],200);
     }
 
     public function destroy($id)
     {
         User::destroy($id);
-        return  api_success(['message' => 'ola']);
+        return api_success(['message' => 'Delete User Success'],200);
     }
 }
