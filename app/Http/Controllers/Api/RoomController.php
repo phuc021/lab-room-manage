@@ -7,6 +7,9 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Room;
 use Illuminate\Http\Request;
 use Validator;
+use App\Http\Requests\RoomsStoreRequest;
+use App\Http\Requests\RoomUpdateRequests;
+use App\Http\Controllers\Controllers;
 
 class RoomController extends BaseController
 {
@@ -16,7 +19,7 @@ class RoomController extends BaseController
         return api_success(['data' => $roomsList],"");    
     }
 
-     public function store(Request $request)
+     public function store(RoomsStoreRequest $request)
     {
         $rooms = Room::create($request->all());
         if ($rooms) {
@@ -24,30 +27,20 @@ class RoomController extends BaseController
         }else{
         	return api_success(['room' => $rooms]);
         }
+       $rooms = Room::create($request->all());
+        return api_success(['data' => $rooms], 200);
     }
-    public function update(RoomRequest $request, $id)
+    public function update(RoomUpdateRequests $request, $id)
     {
         $rooms = Room::findOrFail($id);
-        $validate = $request->validate([
-            'name' => 'required',
-            'desc' => 'required',
-            'status' => 'required',
-            'created_at' => 'required', 
-            'updated_at' => 'required',
-        ]);
         $rooms->Update($request->all());
 
-        if ($validate->fails()) {
-        	return api_errors(400,['errors' => 'this product does not exits, dudel']);
-        }
-        else {
-        	return api_success(['rooms' => $rooms]);
-        }
+        return api_success(['data' => $rooms], 200);
     }
     public function destroy($id)
     {
         Room::destroy($id);
-        return api_success(['message' => 'ola']);
+        return api_success(['message' => 'Delete Room'], 200);
     }
 
 }

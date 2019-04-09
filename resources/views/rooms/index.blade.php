@@ -43,7 +43,7 @@
                         </div>
 
                         <div class="col-lg-6 middle cursor-pointer">
-
+                            
                         </div>
 
                     </div>
