@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Requests\RoomRequest;
 use Illuminate\Support\Facades\DB;
+use App\Models\Room;
 use Illuminate\Http\Request;
 use Validator;
 
@@ -18,7 +19,6 @@ class RoomController extends BaseController
      public function store(Request $request)
     {
         $rooms = Room::create($request->all());
-
         if ($rooms) {
         	return api_errors(400, ['errors' =>'this room does not exitst']);
         }else{
