@@ -14,7 +14,7 @@ class AuthController extends Controller
     	return view('auth.register');
     }
 
-    public function postRegister(Request $req){
+    public function postRegister(Request $request){
     	$rules = [
     		'name' => 'required|max:100',
     		'username' => 'required|unique:users,username|alpha_num',
@@ -23,16 +23,16 @@ class AuthController extends Controller
     		'email' => 'required|unique:users,email|max:100',
     	];
 
-    	$validate = Validator::make($req->all(),$rules);
+    	$validate = Validator::make($request->all(),$rules);
     	if ($validate->fails()) {
     		return redirect()->back()->withInput()->withErrors($validate);
     	}
 
     	$newUser = new User;
-    	$newUser->name = $req['name'];
-    	$newUser->username = $req['username'];
-    	$newUser->password = bcrypt($req['password']);
-    	$newUser->email = $req['email'];
+    	$newUser->name = $request['name'];
+    	$newUser->username = $request['username'];
+    	$newUser->password = bcrypt($request['password']);
+    	$newUser->email = $request['email'];
     	
     	$newUser->save();
     	return redirect('login')->with(['success' => 'Tạo tài khoản thành công !!!']);
@@ -42,18 +42,18 @@ class AuthController extends Controller
     	return view('auth.login');
     }
 
-    public function postLogin(Request $req){
+    public function postLogin(Request $request){
     	$rules = [
     		'username' => 'required',
     		'password' => 'required',
     	];
 
-    	$validate = Validator::make($req->all(),$rules);
+    	$validate = Validator::make($request->all(),$rules);
     	if ($validate->fails()) {
     		return redirect()->back()->withInput()->withErrors($validate);
     	}
     	else {
-    		if (Auth::attempt(['username' => $req['username'], 'password' => $req['password']],true)) {
+    		if (Auth::attempt(['username' => $request['username'], 'password' => $request['password']],true)) {
     			return redirect('/')->with(['hello' => 'Helloooo']);
     		}
     		else{

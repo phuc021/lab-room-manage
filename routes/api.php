@@ -19,13 +19,14 @@ use App\Http\Controllers\Api\TagController;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::group(['namespace' => 'Api'], function () {
+Route::group(['namespace' => 'Api', 'middleware' => 'auth:api'], function () {
     Route::get('users', 'UserController@index');
     Route::get('users/{id}', 'UserController@show');
     Route::post('users', 'UserController@store');
     Route::put('users/{id}', 'UserController@update');
     Route::delete('users/{id}', 'UserController@destroy');
-
+});
+Route::group(['namespace' => 'Api'], function () {
     Route::get('tags', 'TagController@index');
     Route::post('tags', 'TagController@store');
     Route::put('tags/{id}', 'TagController@update');
