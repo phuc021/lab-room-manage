@@ -29,13 +29,14 @@ class UserUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'username' => 'required',
-            'password' => 'required',
-            'name' => 'required',
-            'email' => 'required', 
-            'role' => 'required',
+            'username' => 'required|min:5',
+            'password' => 'required|min:5',
+            'name' => 'required|max:100',
+            'email' => 'required|max:100', 
+            'role' => 'required|integer',
         ];
     }
+    
     public function failedValidation(Validator $validator)
     {
         $errors = (new ValidationException($validator))->errors();
