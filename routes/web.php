@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('home');
 });
 
+// Route::get('/home', 'HomeController@index')->name('home');
+
+
 Route::get('register','Auth\AuthController@getRegister')->name('register');
 
 Route::post('register','Auth\AuthController@postRegister');
@@ -26,18 +29,21 @@ Route::post('login', 'Auth\AuthController@postLogin');
 
 Route::get('logout', 'Auth\AuthController@getLogout')->name('logout');
 
-Route::resource('users', 'UserController');	
+Route::group(['middleware' => 'guest'], function(){ 
 
-Route::resource('tags','TagsController');
+	Route::resource('users', 'UserController');	
 
-Route::resource('rooms', 'RoomController');
+	Route::resource('tags','TagsController');
 
-Route::resource('devices', 'DeviceController');
+	Route::resource('rooms', 'RoomController');
 
-Route::resource('computers','ComputerController');
+	Route::resource('devices', 'DeviceController');
 
-Route::resource('typedevices','TypeDevicesController');
+	Route::resource('computers','ComputerController');
 
+	Route::resource('typedevices','TypeDevicesController');
+	
+});
 // Route::get('ajax', function(){
 // 	return view('users.ajax');
 // });
@@ -45,4 +51,8 @@ Route::resource('typedevices','TypeDevicesController');
 // Route::get('search/{name}', 'UserController@search');
 // Route::get('search', 'SearchController@getSearch');
 // Route::post('search/name', 'SearchController@getSearchAjax')->name('search');
+
+
+// Auth::routes();
+
 

@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\UserRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\User;
@@ -24,7 +23,6 @@ class UserController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     *
      * @return \Illuminate\Http\Response
      */
     public function create()
@@ -38,12 +36,11 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(UserRequest $request)
+    public function store(request $request)
     {
         $validate = Validator::make($request->all(),[
             'username' => 'required|unique:users,username|alpha_num|min:5',
-            'password' => 'required|min:5',
-            'confirm_password' => 'required|same:password|min:5',
+            'password' => 'required|min:5|confirmed',
             'name' => 'required|max:100',
             'email' => 'required|unique:users,email|max:100'
         ]);
@@ -51,6 +48,7 @@ class UserController extends Controller
             return redirect('users/create')->withInput()->withErrors($validate);
         }
         else {
+            $request['password'] = bcrypt($request['password']);
             User::create($request->all());
             return redirect('users')->with(['add' => 'Add New User Success !!!!!!!']);
         }
