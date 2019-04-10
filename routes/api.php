@@ -35,6 +35,11 @@ Route::group(['namespace' => 'Api'], function () {
     Route::post('devices', 'DeviceController@store');
     Route::put('devices/{id}', 'DeviceController@update');
     Route::delete('devices/{id}', 'DeviceController@destroy');
+
+    Route::get('typedevices', 'TypeDeviceController@index');
+    Route::post('typedevices', 'TypeDeviceController@store');
+    Route::put('typedevices/{id}', 'TypeDeviceController@update');
+    Route::delete('typedevices/{id}', 'TypeDeviceController@destroy');
 });
 Route::group(['namespace' => 'Api'], function () {
     Route::get('rooms', 'RoomController@index');
