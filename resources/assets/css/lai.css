@@ -264,10 +264,77 @@ button#create-rooms:hover {
 }
 
 .container-fluid.dange {
-    padding: 20px 0px;
-    width: 800px
+    border-radius: 50px;
+    width: 83%;
+    margin-top: 25px;
+    background: #dae0f7;
+    padding: 50px;
 }
-button#btn-edit-rooms:hover {
+button #btn-edit-rooms:hover {
+    background-color: #2EE59D;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+/*RoomAPI*/
+.container-fluid.roomList {
+    border-radius: 55px;
+    width: 86%;
+    margin-top: 21px;
+    background: #dae0f7;
+    padding: 50px;
+}
+div #button-option-edit-device {
+    padding-left: 10px;
+}
+button {
+    padding: initial;
+}
+#button-option-edit-device button {
+    width: 60px;
+    height: 30px;
+    font-size: 16px;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: white;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    margin: 10px 0px;
+    text-align: center;
+}
+
+button#button:hover {
+    background-color: #2EE59D;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+button {
+    width: 60px;
+    height: 30px;
+    font-size: 14px;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #F44336;
+    background-color: white;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    margin: 10px 0px;
+    text-align: center;
+    padding: initial;
+}
+
+button#button-option-del-device:hover {
     background-color: #2EE59D;
     box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
     color: #fff;
