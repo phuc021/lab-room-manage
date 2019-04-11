@@ -177,25 +177,6 @@ input#country_name {
   margin: 10px 0px;
   text-align: center;
 }
-button {
-    width: 59px;
-    height: 31px;
-    font-size: 11px;
-    letter-spacing: 2.5px;
-    font-weight: 500;
-    color: #000;
-    background-color: white;
-    border: none;
-    border-radius: 45px;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease 0s;
-    cursor: pointer;
-    outline: none;
-    margin: 10px 0px;
-}
-button {
-    padding-right: 25px;
-}
 
 div#button-option-edit-device {
     padding-left: 25px;
@@ -218,12 +199,6 @@ ul.pagination {
     padding-left: 270px;
     margin: 20px 0;
     border-radius: 4px;
-}
-.container-fluid {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
 }
 .cursor-pointer{
   cursor: pointer;
@@ -284,9 +259,6 @@ button #btn-edit-rooms:hover {
 div #button-option-edit-device {
     padding-left: 10px;
 }
-button {
-    padding: initial;
-}
 #button-option-edit-device button {
     width: 60px;
     height: 30px;
@@ -310,25 +282,6 @@ button#button:hover {
     box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
     color: #fff;
     transform: translateY(-7px);
-}
-
-button {
-    width: 60px;
-    height: 30px;
-    font-size: 14px;
-    letter-spacing: 2.5px;
-    font-weight: 500;
-    color: #F44336;
-    background-color: white;
-    border: none;
-    border-radius: 45px;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease 0s;
-    cursor: pointer;
-    outline: none;
-    margin: 10px 0px;
-    text-align: center;
-    padding: initial;
 }
 
 button#button-option-del-device:hover {

@@ -3,6 +3,7 @@
 @section('title', 'User List Manage')
 
 @section('body')
+	@include('partials/navigation_bar')
 	<div class="form-user container-fluid">
 {{-- 		@if($errors->any())
 			<div class="alert alert-danger">

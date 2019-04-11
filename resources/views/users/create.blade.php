@@ -3,8 +3,10 @@
 @section('title', 'Create User Page')
 
 @section('body')
-
+	@include('partials/navigation_bar')
+	@section('nav-href','users')
 	<div class="form-user container-fluid">
+
 {{-- 		@if($errors->any())
 			<div class="alert alert-danger">
 				<ul>

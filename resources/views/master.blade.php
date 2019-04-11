@@ -1,13 +1,13 @@
-@include('requieds/header')
+@include('partials/header')
 
 <body>
 
-	@include('requieds/sidebar')
+	@include('partials/sidebar')
 	
 	<div class="wrapper">
     	<div class="main-panel">
 
-    		@include('requieds/navbar')
+    		@include('partials/navbar')
 			@yield('body')
 
     	</div>
@@ -15,4 +15,4 @@
 
 </body>
 
-@include('requieds/footer')
+@include('partials/footer')
