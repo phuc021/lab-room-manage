@@ -30,7 +30,7 @@
 			<label for="rooms-id">{{ trans('computer/edit.roomsID')}} :</label>
 			<select name="rooms-id" class="form-control" value="{{ $computers->rooms_id  }}">
 				@foreach($roomList as $room)
-					<option>{{ $room->name }}</option>
+					<option value="{{ $room->id  }}">{{ $room->name }}</option>
 				@endforeach
 			</select>
 
