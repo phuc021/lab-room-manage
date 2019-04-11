@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('title', 'User List Manage')
-
+@section('title-bar', 'User')
 @section('body')
 	<a href="{{ url('users/create') }}">
 		<button id="add-new-user" type="button" class="btn btn-primary">+</button>
@@ -47,13 +47,13 @@
 					<td>{{ $user->username }}</td>
 					<td>{{ $user->email }}</td>	
 					<td class="role-user">{{ UserHelper::getRole($user->role) }}</td>
-					<td id="button-option-user">
-						<a href="{{ url('users/'.$user->id.'/edit') }}"><button type="button" class="btn btn-info">Edit</button></a>
+					<td>
+						<a href="{{ url('users/'.$user->id.'/edit') }}" class="btn-option-user" title="Edit"><i class="fa fa-pencil-square-o text-info"></i></a>
 						<form action="{{ url("users/$user->id") }}" method="POST">
-						{{ csrf_field() }}
-						{{ method_field('delete') }}
-						<button id="button-delete-user" type="submit" title="Delete" data-placement="top" onclick="return confirm('Xoa ???'); " class="btn btn-warning">Delete</button>
-					</form>
+							{{ csrf_field() }}
+							{{ method_field('delete') }}
+							<button type="submit" title="Delete" onclick="return confirm('Xoa ???');" class="btn-option-user"><i class="fa fa-trash text-danger"></i></button>
+						</form>
 					</td>
 				</tr>
 			</tbody>
