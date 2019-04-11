@@ -16,8 +16,15 @@ class UserController extends Controller
      */
     public function index()
     {
-        $userList = DB::table('users')->orderBy('id','DESC')->paginate(10);
-        // $userList = DB::table('users')->orderBy('id','DESC')->get();
+        $filters = request()->only('action', 'key');
+
+        if($filters && $filters['action'] == 'search'){
+            //For search
+            $userList = DB::table('users')->where('name', 'like', '%'.$filters['key'].'%')->orderBy('id','ASC')->paginate(10);
+        }else{
+            //For all user
+            $userList = DB::table('users')->orderBy('id','DESC')->paginate(10);
+        }        
         return view('users.index', ['userList' => $userList]);
     }
 
@@ -36,7 +43,7 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(request $request)
+    public function store(TaskRequest $request)
     {
         $validate = Validator::make($request->all(),[
             'username' => 'required|unique:users,username|alpha_num|min:5',
@@ -113,9 +120,4 @@ class UserController extends Controller
         return redirect('/users')->with(['delete' => 'Delete User Success !!!']);
     }
 
-    public function search($name){
-        $name = "$name%";
-        $rs = User::where('name', 'like', $name)->get();
-        return $rs;
-    }
 }

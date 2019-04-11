@@ -4,6 +4,45 @@
     font-family: 'Roboto', sans-serif;
 }
 
+.search-user input#input:focus {
+    width: 70%;
+    transition: all 0.5s;
+}
+
+.search-user i.fa {
+    position: absolute;
+    z-index: 999;
+    right: 15px;
+    top: 10px;
+    font-size: 19px;
+    color: #263544;
+}
+
+.search-user {
+    float: right!important;
+    min-width: 500px;
+    max-width: 700px;
+    position: relative;
+    margin: 10px 13px;
+}
+
+.search-user input#input {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    float: right;
+    width: 50%;
+    transition: all 0.5s;
+}
+
+.pagination-user .pagination {
+    padding: 0px!important;
+}
+
+.pagination-user {
+    margin-left: 20px;
+}
+
 .form-user label {
     font-weight: 400;
 }
@@ -125,7 +164,6 @@ button#add-new-user {
   font-size: 23px;
   text-transform: uppercase;
   letter-spacing: 2.5px;
-  color: #000;
   background-color: #263544;
   border: none;
   border-radius: 45px;
