@@ -22,31 +22,31 @@
                 <li {{ TemplateHelper::checkMenuSelected('rooms') }}>
                     <a href="{{ url('/rooms') }}">     
                         <i class="pe-7s-culture"></i>
-                        <p>Room</p>
+                        <p>Room </p>
                     </a>
                 </li>
                 <li {{ TemplateHelper::checkMenuSelected('computers') }}>
                     <a href="{{ url('/computers') }}">
                         <i class="pe-7s-display1"></i>
-                        <p>Computer</p>
+                        <p>Computer </p>
                     </a>
                 </li>
                 <li {{ TemplateHelper::checkMenuSelected('devices') }}>
                     <a href="{{ url('/devices') }}">
                         <i class="pe-7s-note2"></i>
-                        <p>Device</p>
+                        <p>Device </p>
                     </a>
                 </li>
                 <li {{ TemplateHelper::checkMenuSelected('tags') }}>
                     <a href="{{ url('/tags') }}">
                         <i class="pe-7s-ticket"></i>
-                        <p>Tag</p>
+                        <p>Tag </p>
                     </a>
                 </li>
                 <li {{ TemplateHelper::checkMenuSelected('typedevices') }}>
                     <a href="{{ url('typedevices') }}">
                         <i class="pe-7s-note2"></i>
-                        <p>Type Devices</p>
+                        <p>Type Devices </p>
                     </a>
                 </li>
             </ul>

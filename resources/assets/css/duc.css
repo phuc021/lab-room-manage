@@ -29,50 +29,6 @@ button#add-new-computer:hover {
   color: #fff;
   transform: translateY(-7px);
 }
-td#button-option-edit-computer button {
-  width: 59px;
-  height: 31px;
-  font-size: 11px;
-  letter-spacing: 2.5px;
-  font-weight: bold;
-  color: #000;
-  background-color: #fff;
-  border: none;
-  border-radius: 45px;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease 0s;
-  cursor: pointer;
-  outline: none;
-  margin: 10px 0px;
-}
-td#button-option-edit-computer button:hover{
-  background-color: #2EE59D;
-  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
-  color: #fff;
-  transform: translateY(-7px);
-}
-td#button-option-delete-computer button {
-  width: 72px;
-  height: 31px;
-  font-size: 11px;
-  letter-spacing: 2.5px;
-  font-weight: 500;
-  color: #000;
-  background-color: #fff;
-  border: none;
-  border-radius: 45px;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease 0s;
-  cursor: pointer;
-  outline: none;
-  margin: 10px 0px;
-}
-td#button-option-delete-computer button:hover{
-  background-color: #2EE59D;
-  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
-  color: #fff;
-  transform: translateY(-7px);
-}
 table.list-computer tbody tr.old{
     background: #f7dae3;
 }
@@ -93,11 +49,12 @@ table.list-computer thead tr {
 }
 .bgr {
 	width: 298px;
-	height: 212px;
-	background: #f7dae3c9;
+	height: 226px;
+	background: #4f5b67a1;
 	position: absolute;
 	top: 39px;left: 20px;
 	opacity: 0;
+  color: white;
 }
 
 .img-middle {
@@ -110,7 +67,7 @@ table.list-computer thead tr {
     box-shadow: 5px 8px #c1bdbd;
 }
 div.button-option-edit-computer button {
-  width: 59px;
+  width: 72px;
   height: 31px;
   font-size: 11px;
   letter-spacing: 2.5px;
@@ -124,7 +81,7 @@ div.button-option-edit-computer button {
   cursor: pointer;
   outline: none;
   margin: 10px 0px;
-  margin-left: 110px;
+  margin-left: 60px;
 }
 div.button-option-edit-computer button:hover{
   background-color: #2EE59D;
@@ -138,7 +95,7 @@ div.button-option-delete-computer button {
   font-size: 11px;
   letter-spacing: 2.5px;
   font-weight: 500;
-  color: #000;
+  color: #FD0202;
   background-color: #fff;
   border: none;
   border-radius: 45px;
@@ -147,7 +104,7 @@ div.button-option-delete-computer button {
   cursor: pointer;
   outline: none;
   margin: 10px 0px;
-  margin-right: 110px;
+  margin-right: 70px;
 }
 div.button-option-delete-computer button:hover{
   background-color: #2EE59D;
