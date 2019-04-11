@@ -20,6 +20,6 @@ $factory->define(App\Models\Tag::class, function (Faker $faker) {
 	shuffle($values);
     return [   
     	'value' => $values[0] ,
-    	'devices_id' => $faker->randomDigitNotNull,
+    	'devices_id' => $faker->numberBetween($min = 0, $max = 4),
     ];
 });
