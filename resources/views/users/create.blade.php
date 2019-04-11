@@ -36,11 +36,11 @@
 			@endif
 			<div class="form-group">
 				<label for="">Confirm password :</label>
-				<input type="password" name="confirm_password" class="form-control" required="required">
+				<input type="password" name="password_confirmation" class="form-control" required="required">
 			</div>
-			@if($errors->has('confirm_password'))
+			@if($errors->has('password_confirmation'))
 				<div class="alert alert-danger">
-					{{ $errors->first('confirm_password') }}
+					{{ $errors->first('password_confirmation') }}
 				</div>
 			@endif
 			<div class="form-group">
