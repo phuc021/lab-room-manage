@@ -32,7 +32,6 @@ class TaskRequest extends FormRequest
         return[
             'name.required'=> 'Please enter a name!',
             'name.max' => 'The name must not exceed 100 characters!'
-
         ];
     }
 }

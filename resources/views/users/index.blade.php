@@ -3,9 +3,18 @@
 @section('title', 'User List Manage')
 @section('title-bar', 'User')
 @section('body')
-	<a href="{{ url('users/create') }}">
-		<button id="add-new-user" type="button" class="btn btn-primary">+</button>
-	</a>
+	<div class="top-list-user">
+		<a href="{{ url('users/create') }}">
+			<button id="add-new-user" type="button" class="btn btn-primary">+</button>
+		</a>
+		<div class="search-user">
+			<form action="{{ url('users') }}" method="GET">
+				<input type="hidden" name="action" value="search">
+				<input type="text" name="key" id="input" class="form-control" value="" placeholder="Search User ...">
+			</form>
+			<i class="fa fa-search"></i>
+		</div>
+	</div>
 	<table class="list-user">
 		@if(session('add'))
 			<div class="alert alert-success alert-dismissible notif-user">

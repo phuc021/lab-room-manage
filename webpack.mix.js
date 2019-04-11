@@ -24,7 +24,8 @@ mix.styles('resources/assets/css/animate.min.css','public/css/animate.min.css')
 		'resources/assets/css/duc.css',
 		'resources/assets/css/phuc.css',
 		'resources/assets/css/thuan.css',
-		'resources/assets/css/thanh.css'],'public/css/all.css');
+		'resources/assets/css/thanh.css',
+		'resources/assets/css/tan.css'],'public/css/all.css');
 
 
 // mix.js('resources/js/bootstrap-notify.js','public/js')

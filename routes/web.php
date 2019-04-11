@@ -33,6 +33,8 @@ Route::get('logout', 'Auth\AuthController@getLogout')->name('logout');
 
 	Route::resource('users', 'UserController');	
 
+	Route::get('users/search/{key}', 'UserController@search');
+
 	Route::resource('tags','TagsController');
 
 	Route::resource('rooms', 'RoomController');
