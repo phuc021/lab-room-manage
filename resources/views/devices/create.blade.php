@@ -6,7 +6,7 @@
 
 	<div class="container-fluid vip">
 		<div class="from-group">
-			<h3 class="text-center font-bold">Add new devices</h3>
+			<h3 class="text-center font-bold">Add New Device</h3>
 			<form action="{{url('devices')}}" method="post">
 				@csrf
 
@@ -23,20 +23,20 @@
 					@foreach(DeviceHelper::getOptionStatus() as $key => $value)
 						<option value="{{$key}}">{{$value}}</option>
 					@endforeach
-				</select><br>
+				</select>
 				
 				<label for="">Rooms:</label>				
 				<select id="rooms_id" onchange="setComputers(this)" name="rooms_id" class="form-control">
 					@foreach($roomList as $room)
 						<option value="{{$room->id}}">{{$room->name}}</option>
 					@endforeach
-				</select><br>
+				</select>
 				<label for="">Computer:</label>
 				<select id="computers_id" name="computers_id" class="form-control">
 					
-				</select><br>
+				</select>
 
-				<button type="submit" class="btn btn-default cre-sub">Add New</button>
+				<button type="submit" class="btn btn-default cre-sb">Add</button>
 			</form>
 		</div>
 	</div>	

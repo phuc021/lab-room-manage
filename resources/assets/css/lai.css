@@ -194,12 +194,7 @@ div#button-option-edit-device {
 }
 
 /*123*/
-ul.pagination {
-    display: inline-block;
-    padding-left: 270px;
-    margin: 20px 0;
-    border-radius: 4px;
-}
+
 .cursor-pointer{
   cursor: pointer;
 }
