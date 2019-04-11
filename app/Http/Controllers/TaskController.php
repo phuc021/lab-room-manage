@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\Tag;
-use App\Http\Requests\TagStoreRequest;
-use App\Http\Requests\TagUpdateRequest;
+use App\Models\Task;
+use App\Http\Requests\TaskRequest;
+use App\Http\Requests\TaskStoreRequest;
+use App\Http\Requests\TaskUpdateRequest;
 
-
-class TagsController extends Controller
+class TaskController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,9 +19,9 @@ class TagsController extends Controller
     public function index()
     {
         $itemperPage = 15;
-        $tagsList = DB::table('tags')->paginate($itemperPage);
+        $taskList = DB::table('tasks')->paginate($itemperPage);
         
-        return view('tags.index',['tagsList'=>$tagsList]);
+        return view('tasks.index',['tasksList' => $taskList]);
     }
 
     /**
@@ -31,7 +31,7 @@ class TagsController extends Controller
      */
     public function create()
     {
-        return view('tags.create');
+        return view('tasks.create');
     }
 
     /**
@@ -40,10 +40,10 @@ class TagsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(TagStoreRequest $request)
+    public function store(TaskStoreRequest $request)
     {
-        Tag::create($request->all());
-        return redirect('tags');
+        Task::create($request->all());
+        return redirect('tasks');
     }
 
     /**
@@ -54,9 +54,9 @@ class TagsController extends Controller
      */
     public function show($id)   
     {
-        $tag = Tag::findOrFail($id);
+        $tasks = Task::findOrFail($id);
         // $tag = DB::table('tags')->where('id',$id)->first();
-        return view('tags.show', ['tag', $tag]);
+        return view('tasks.show', ['task', $task]);
     }
 
     /**
@@ -67,23 +67,23 @@ class TagsController extends Controller
      */
     public function edit($id)
     {
-        $tags = Tag::where('id',$id)->first();
-        return view('tags.edit',['tags' => $tags]); 
+        $tasks = Task::where('id',$id)->first();
+        return view('tasks.edit',['tasks' => $tasks]); 
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Reqest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(TagUpdateRequest $request, $id)
+    public function update(TaskUpdateRequest $request, $id)
     {
-        $tags = Tag::findOrFail($id);
-        $tags->Update($request->all());
+        $tasks = Task::findOrFail($id);
+        $tasks->Update($request->all());
         // dd($tags);
-        return redirect('tags');
+        return redirect('tasks');
     }
 
     /**
@@ -94,8 +94,8 @@ class TagsController extends Controller
      */
     public function destroy($id)
     {
-        Tag::destroy($id);
+        Task::destroy($id);
         // return redirect('tags')->with(['delete' => {{trans('tags/langTag.delSuccess')}} ]);
-         return redirect('tags');
+         return redirect('tasks');
     }
 }

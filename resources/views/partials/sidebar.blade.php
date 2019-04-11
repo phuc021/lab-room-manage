@@ -49,6 +49,12 @@
                         <p>Type Devices </p>
                     </a>
                 </li>
+                <li>
+                    <a href="{{ url('tasks') }}">
+                        <i class="pe-7s-note2"></i>
+                        <p>Task</p>
+                    </a>
+                </li>
             </ul>
     	</div>
     </div>
