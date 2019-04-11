@@ -20,7 +20,7 @@ $factory->define(App\Models\Device::class, function (Faker $faker) {
     $status = array('0', '1', '2');
 
     shuffle($names);
-    shuffle( $status);
+    shuffle($status);
     return [
         'name' => $names[0],
         'desc' => $faker->safeColorName,
