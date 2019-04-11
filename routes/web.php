@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('home');
 });
 
-// Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::get('register','Auth\AuthController@getRegister')->name('register');
@@ -29,7 +29,7 @@ Route::post('login', 'Auth\AuthController@postLogin');
 
 Route::get('logout', 'Auth\AuthController@getLogout')->name('logout');
 
-Route::group(['middleware' => 'guest'], function(){ 
+// Route::group(['middleware' => 'guest'], function(){ 
 
 	Route::resource('users', 'UserController');	
 
@@ -43,7 +43,9 @@ Route::group(['middleware' => 'guest'], function(){
 
 	Route::resource('typedevices','TypeDevicesController');
 	
-});
+	Route::resource('tasks','TaskController');
+	
+// });
 // Route::get('ajax', function(){
 // 	return view('users.ajax');
 // });
