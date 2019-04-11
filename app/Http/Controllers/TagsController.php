@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Tag;
-use App\Http\Requests\TagsRequest;
+use App\Http\Requests\TagStoreRequest;
+use App\Http\Requests\TagUpdateRequest;
 
 
 class TagsController extends Controller
@@ -39,7 +40,7 @@ class TagsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(TagsRequest $request)
+    public function store(TagStoreRequest $request)
     {
         Tag::create($request->all());
         return redirect('tags');
@@ -77,7 +78,7 @@ class TagsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(TagsRequest $request, $id)
+    public function update(TagUpdateRequest $request, $id)
     {
         $tags = Tag::findOrFail($id);
         $tags->Update($request->all());
