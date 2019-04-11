@@ -5,9 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Tag;
-use App\Http\Requests\TagStoreRequest;
-use App\Http\Requests\TagUpdateRequest;
-
+use Validator;
 
 class TagsController extends Controller
 {
@@ -20,10 +18,8 @@ class TagsController extends Controller
     {
         $itemperPage = 15;
         $tagsList = DB::table('tags')->paginate($itemperPage);
-        
         return view('tags.index',['tagsList'=>$tagsList]);
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -40,10 +36,17 @@ class TagsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(TagStoreRequest $request)
+    public function store(Request $request)
     {
-        Tag::create($request->all());
-        return redirect('tags');
+        $validate = Validator::make($request->all(),[
+            'value' => 'required|max:50'
+        ]);
+        if ($validate->fails()) {
+            return redirect('tags/create')->withInput()->withErrors($validate);
+        } else {
+            Tag::create($request->all());
+            return redirect('tags')->with(['add' => trans('tags/langTag.addSuccess')]);
+        }
     }
 
     /**
@@ -78,12 +81,14 @@ class TagsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(TagUpdateRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $tags = Tag::findOrFail($id);
+        $validate = $request->validate([
+            'value' => 'required|max:50'
+        ]);
         $tags->Update($request->all());
-        // dd($tags);
-        return redirect('tags');
+        return redirect('tags')->with(['edit' => trans('tags/langTag.updateSuccess')]);
     }
 
     /**
@@ -96,6 +101,12 @@ class TagsController extends Controller
     {
         Tag::destroy($id);
         // return redirect('tags')->with(['delete' => {{trans('tags/langTag.delSuccess')}} ]);
-         return redirect('tags');
+        return redirect('tags')->with(['delete' => trans('tags/langTag.delSuccess')]);
+    }
+
+        public function search($value){
+        $value = "$value%";
+        $rs = Tag::where('value', 'like', $value)->get();
+        return $rs;
     }
 }

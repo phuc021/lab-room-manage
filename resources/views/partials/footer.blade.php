@@ -24,4 +24,12 @@
     	});
 	</script>
 
+{{--     Thuan - Js of search --}}
+{{--     <script type="text/javascript">
+      $(".btn-search").on("click",function() {
+        $(".input-search").toggleClass("inclicked");
+        $(".btn-search").toggleClass("close");
+      });
+    </script> --}}
+
 </html>
