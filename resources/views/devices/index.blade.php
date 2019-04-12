@@ -30,18 +30,18 @@
 					<td><p>{{$device->name}}</p></td>
 					<td><p>{{$device->desc}}</p></td>
 					<td><p>{{ DeviceHelper::getStatus($device->status)}}</p></td>
-					<td><p>{{$device->computers_id}}</p></td>
-					<td><p>{{$device->type_devices_id}}</p></td>
+					<td><p>{{$device->computer['name']}}</p></td>
+					<td><p>{{$device->type_device['name']}}</p></td>
 					<td>
 						<div class="row">
 							<div class="col-md-3 col-md-push-2">
-								<button class="edt" title="Edit" type="submit" value="Edit"><a  href="{{ url('devices') }}/{{$device->id}}/edit">Edit</a></button>
+								<button class="btn-option-user" title="Edit" type="submit" value="Edit"><a  href="{{ url('devices') }}/{{$device->id}}/edit"><i class="fa fa-pencil-square-o text-info"></i></a></button>
 							</div>
 							<div class="col-md-3 col-md-push-2">
 								<form action="{{ url('devices/'.$device->id) }}" method="POST">
 					 				@csrf
 									{{ method_field('DELETE') }}
-									<button class="del" type="submit" value="Delete"  title="Delete"  onclick="return confirm('bạn có muốn xóa?');">Delete</button>
+									<button class="btn-option-user" type="submit" value="Delete"  title="Delete"  onclick="return confirm('bạn có muốn xóa?');"><i class="fa fa-trash text-danger"></i></button>
 								</form>
 							</div>
 						</div>

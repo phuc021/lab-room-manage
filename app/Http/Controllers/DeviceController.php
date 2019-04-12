@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Room;
 use App\Models\Device;
 use App\Models\Computer;
+use App\Models\TypeDevices;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\DeviceRequest;
@@ -25,7 +26,7 @@ class DeviceController extends Controller
         // $devicesList = DB::table('devices')->orderBy('id','DESC')->get();
         return view('devices.index',['devicesList'=> $devicesList]); 
     }
-
+ 
     /**
      * Show the form for creating a new resource.
      *
@@ -34,10 +35,12 @@ class DeviceController extends Controller
     public function create()
     {
         $roomList = Room::all();
+        $typedeviceList = TypeDevices::all();
         $computerList = Computer::all();
         return view('devices.create', 
             array("computerList" => $computerList,
-                  "roomList" => $roomList));
+                  "roomList" => $roomList,
+                  "typedeviceList" => $typedeviceList));
     }
 
     /**
@@ -70,9 +73,13 @@ class DeviceController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
+    {   
+        $typedevicesList = TypeDevices::all();
+        $computerList = Computer::all();
         $devices = Device::where('id', $id)->first();
-        return view('devices.edit',['devices'=>$devices]);
+        return view('devices.edit',array('computerList' => $computerList,
+                                          'typedevicesList' => $typedevicesList),
+                                         ['devices'=>$devices]);
     }
 
     /**
