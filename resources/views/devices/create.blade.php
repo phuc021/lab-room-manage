@@ -3,40 +3,48 @@
 @section('title', 'Add New Devices')
 	
 @section('body')
-
-	<div class="container-fluid vip">
-		<div class="from-group">
-			<h3 class="text-center font-bold">Add New Device</h3>
+	@include('partials/navigation_bar')
+	@section('title-bar', trans('devices/create.create_device'))
+	<div class="container-fluid">
+		<div class="from-group lb">
 			<form action="{{url('devices')}}" method="post">
 				@csrf
 
-				<label for="name">Name:</label>
+				<label>Name:</label>
 				<label class="alertdevice">{{ $errors->has('name') ? $errors->first('name') : ''}}</label>
 				<input type="text" class="form-control {{ $errors->has('name') ? 'has-error' : ''}}" placeholder="Enter Name" name="name" id="name">
 
-				<label for="desc">Description:</label>
+				<label>Description:</label>
 				<label class="alertdevice">{{ $errors->has('name') ? $errors->first('name') : ''}}</label>
 				<input type="text" class="form-control {{ $errors->has('desc') ? 'has-error' : ''}}" placeholder="Enter description" name="desc">
 
-				<label for="">Status:</label>
+				<label>Status:</label>
 				<select name="status" class="form-control">
 					@foreach(DeviceHelper::getOptionStatus() as $key => $value)
 						<option value="{{$key}}">{{$value}}</option>
 					@endforeach
 				</select>
-				
-				<label for="">Rooms:</label>				
+
+				<label>Rooms:</label>				
 				<select id="rooms_id" onchange="setComputers(this)" name="rooms_id" class="form-control">
 					@foreach($roomList as $room)
-						<option value="{{$room->id}}">{{$room->name}}</option>
+						<option value="{{ $room->id }}">{{ $room->name }}</option>
 					@endforeach
 				</select>
-				<label for="">Computer:</label>
+
+				<label>Computers:</label>
 				<select id="computers_id" name="computers_id" class="form-control">
 					
 				</select>
 
-				<button type="submit" class="btn btn-default cre-sb">Add</button>
+				<label>Type Devices:</label>				
+				<select id="typedevices_id"  name="typydevices_id" class="form-control">
+					@foreach($typedeviceList as $tydevices)
+						<option value="{{ $tydevices->id }}">{{ $tydevices->name }}</option>
+					@endforeach
+				</select>
+
+				<button  id="btn-form-user" type="submit" class="btn btn-default cre">Add</button>
 			</form>
 		</div>
 	</div>	

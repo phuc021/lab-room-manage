@@ -3,9 +3,10 @@
 @section('title', 'Edit Devices')
 
 @section('body')
-	<div class="container-fluid vip">
-		<div class="from-group">
-			<h3 class="text-center font-bold">Add new devices</h3>
+	@include('partials/navigation_bar')
+	@section('title-bar', trans('devices/edit.edit_device'))
+	<div class="container-fluid">
+		<div class="from-group lb">
 			<form action="{{ url('devices/'.$devices->id) }}" method="post">
 				@csrf
 				{{ method_field('put') }}
@@ -25,15 +26,22 @@
 						<option value="{{$key}}">{{$value}}</option>
 					@endforeach
 				</select><br>
-				
 
 				<label>Type Devices:</label>
-				<input type="number" class="form-control" value="{{$devices->type_devices_id}}" placeholder="Enter Type Devices Id" name="type_devices_id">
+				<select name="typedevice_id" class="form-control" value="{{ $devices->typedevice_id}}">
+					@foreach($typedevicesList as $typedevices)
+						<option value="{{ $typedevices->id }}"> {{ $typedevices->name }} </option>
+					@endforeach
+				</select>
 
 				<label>Computer:</label>
-				<input type="number" class="form-control" value="{{$devices->computers_id}}" placeholder="Enter Computer id" name="computers_id">
+				<select name="computer_id" class="form-control" value="{{ $devices->computer_id}}">
+					@foreach($computerList as $computer)
+						<option value="{{ $computer->id }}"> {{ $computer->name }} </option>
+					@endforeach
+				</select>
 
-				<button type="submit" class="btn btn-default cre-sub">Edit</button>
+				<button id="btn-form-user" type="submit" class="btn btn-default cre">Edit</button>
 			</form>
 		</div>
 	</div>
