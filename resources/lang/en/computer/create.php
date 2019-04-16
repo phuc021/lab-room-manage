@@ -1,10 +1,10 @@
 <?php 
 return[
 	'title' => 'Add New Computer',
-	'name' => 'NAME',
-	'desc' => 'DESC',
-	'status' => 'STATUS',
-	'roomsID' => 'ROOMS ID',
-	'submit' => 'Add New'
+	'name' => 'Name',
+	'desc' => 'Desc',
+	'status' => 'Status',
+	'roomsID' => 'Rooms ID',
+	'submit' => 'Add'
 ]
  ?>

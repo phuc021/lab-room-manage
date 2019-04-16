@@ -14,23 +14,23 @@
         <div class="row">
             @php($i = 0)
             @foreach($computerList as $computer)
-            <div class="col-lg-4">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
                 <div class="wrap-item">
 
                     <div class="row bottom-grid">   
                         <div class="img-middle">
                             <div class="row">
-                                <div class="col-xs-3">
-                                    <p><b>ID:
+                                <div class="col-md-3 col-lg-3">
+                                    <p>ID:
                                         @php($i++)
-                                        {{ ComputerHelper::increment($i, $computerList->perPage(), $computerList->currentPage())}}</b>
+                                        {{ ComputerHelper::increment($i, $computerList->perPage(), $computerList->currentPage())}}
                                     </p>
                                 </div>
-                                <div class="col-xs-6">
-                                    <p><b>{{ trans('computer/index.roomsID')}}:{{ $computer->rooms_id }}</b></p>
+                                <div class="col-md-6 col-lg-6">
+                                    <p>{{ trans('computer/index.roomsID')}}:{{ $computer->rooms_id }}</p>
                                 </div>
-                                <div class="col-xs-3">
-                                    <p><b>{{ ComputerHelper::getStatus( $computer->status )}}</b></p>
+                                <div class="col-md-3 col-lg-3">
+                                    <p>{{ ComputerHelper::getStatus( $computer->status )}}</p>
                                 </div>
                             </div>
                             {{-- image --}}
@@ -39,16 +39,16 @@
                             <div class="text-center"><b>{{ trans('computer/index.name')}}:{{ $computer->name }}</b></div>
                             <div class="row btn-computer">
                                 {{-- edit button --}}
-                                <div class="button-option-edit-computer pull-left">
-                                    <button><a href="{{ url("computers/$computer->id/edit") }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></button>
+                                <div class="pull-left">
+                                    <button class="btn-option-user"><a href="{{ url("computers/$computer->id/edit") }}"><i class="fa fa-pencil-square-o text-info"></i></a></button>
                                 </div>
                                 {{-- delete button --}}
-                                <div class="button-option-delete-computer pull-right">
+                                <div class=" pull-right">
                                     <form action="{{url("computers/$computer->id")}}" method="POST">
                                         {{csrf_field()}}
                                         {{method_field('DELETE')}}
 
-                                        <button type="submit" data-toggle="tooltip" title="Delete" data-placement="top" onclick="return confirm('bạn có thực sự muốn xóa ?'); "><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                        <button type="submit" data-toggle="tooltip" class="btn-option-user" title="Delete" data-placement="top" onclick="return confirm('bạn có thực sự muốn xóa ?'); "><i class="fa fa-trash text-danger"></i></button>
                                     </form>
                                 </div>
                             </div>

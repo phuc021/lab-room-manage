@@ -3,10 +3,10 @@
 @section('title', 'Computers')
 
 @section('body')
+@include('partials/navigation_bar')
 
 <div class="container-fluid">
-		<center><h3>{{ trans('computer/edit.title')}}</h3></center>
-		<div class="form-group">
+		<div class="form-group form-user">
 			<form action="{{ url('computers/'.$computers->id) }}" method="POST">
 			@csrf
 			{{ method_field('put') }}
@@ -34,7 +34,7 @@
 				@endforeach
 			</select>
 
-			<button class="btn btn-danger" type="submit">{{ trans('computer/edit.submit')}}</button>
+			<button class="btn btn-danger" id="btn-form-user" type="submit">{{ trans('computer/edit.submit')}}</button>
 			</form>
 		</div>
 	</div>
