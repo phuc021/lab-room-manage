@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Http\Requests\UserWebStoreRequest;
+use App\Http\Requests\UserWebUpdateRequest;
 use App\User;
 use Validator;
 use Auth;
@@ -48,22 +50,11 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserWebStoreRequest $request)
     {
-        $validate = Validator::make($request->all(),[
-            'username' => 'required|unique:users,username|alpha_num|min:5',
-            'password' => 'required|min:5|confirmed',
-            'name' => 'required|max:100',
-            'email' => 'required|unique:users,email|max:100'
-        ]);
-        if ($validate->fails()) {
-            return redirect('users/create')->withInput()->withErrors($validate);
-        }
-        else {
             $request['password'] = bcrypt($request['password']);
             User::create($request->all());
             return redirect('users')->with(['add' => 'Add New User Success !!!!!!!']);
-        }
     }
 
     /**
@@ -98,17 +89,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UserWebUpdateRequest $request, $id)
     {
 
         $user = User::findOrFail($id);
-        $validate = $request->validate([
-            'username' => 'required',
-            'password' => 'required',
-            'name' => 'required',
-            'email' => 'required', 
-            'role' => 'required',
-        ]);
         $user->Update($request->all());
         return redirect('users')->with(['edit' => 'Update Success !!!']);
         
