@@ -1,6 +1,6 @@
 @extends('master')
 
-@section('title', 'Create User Page')
+@section('title', trans('users/create.title'))
 
 @section('body')
 	@include('partials/navigation_bar')
@@ -19,7 +19,7 @@
 		<form action="{{ url('users') }}" method="POST">
 			@csrf
 			<div class="form-group">
-				<label for="">Username :</label>
+				<label for="">{{ trans('users/create.username') }}</label>
 				<input type="text" name="username" class="form-control" required="required">
 			</div>
 			@if($errors->has('username'))
@@ -28,7 +28,7 @@
 				</div>
 			@endif
 			<div class="form-group">
-				<label for="">Password :</label>
+				<label for="">{{ trans('users/create.password') }}</label>
 				<input type="password" name="password" class="form-control" required="required">
 			</div>
 			@if($errors->has('password'))
@@ -37,7 +37,7 @@
 				</div>
 			@endif
 			<div class="form-group">
-				<label for="">Confirm password :</label>
+				<label for="">{{ trans('users/create.confirm_password') }}</label>
 				<input type="password" name="password_confirmation" class="form-control" required="required">
 			</div>
 			@if($errors->has('password_confirmation'))
@@ -46,7 +46,7 @@
 				</div>
 			@endif
 			<div class="form-group">
-				<label for="">Full name :</label>
+				<label for="">{{ trans('users/create.name') }}</label>
 				<input type="text" name="name" class="form-control" required="required">
 			</div>
 			@if($errors->has('name'))
@@ -55,7 +55,7 @@
 				</div>
 			@endif
 			<div class="form-group">
-				<label for="">Email :</label>
+				<label for="">{{ trans('users/create.email') }}</label>
 				<input type="email" name="email" class="form-control" required="required">
 			</div>
 			@if($errors->has('email'))
@@ -64,7 +64,7 @@
 				</div>
 			@endif
 			<div class="form-group">
-				<button id="btn-form-user" type="submit" class="btn btn-primary">Create</button>
+				<button id="btn-form-user" type="submit" class="btn btn-primary">{{ trans('users/create.create') }}</button>
 			</div>
 		</form>		
 	</div>

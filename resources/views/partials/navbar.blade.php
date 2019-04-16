@@ -27,22 +27,22 @@
 
                               </a>
                               <ul class="dropdown-menu">
-                                <li><a href="#">Profile</a></li>
-                                <li><a href="#">Something</a></li>
-                                <li><a href="#">Something</a></li>
+                                <li><a href="#">{{ trans('partials/navbar.profile') }}</a></li>
+                                <li><a href="#">{{ trans('partials/navbar.setting') }}</a></li>
+                                <li><a href="#">{{ trans('partials/navbar.about') }}</a></li>
                                 <li class="divider"></li>
-                                <li><a href="{{ URL::route('logout') }}">Log Out</a></li>
+                                <li><a href="{{ URL::route('logout') }}">{{ trans('partials/navbar.log_out') }}</a></li>
                               </ul>
                         </li>
                         @else
                             <li>
                                 <a href="{{ URL::route('register') }}">
-                                    <p>Register</p>
+                                    <p>{{ trans('partials/navbar.register') }}</p>
                                 </a>
                             </li>
                             <li>
                                 <a href="{{ URL::route('login') }}">
-                                    <p>Login</p>
+                                    <p>{{ trans('partials/navbar.log_in') }}</p>
                                 </a>
                             </li>
                         @endif
