@@ -1,6 +1,6 @@
 @extends('master')
 
-@section('title', 'User List Manage')
+@section('title', trans('users/edit.title'))
 
 @section('body')
 	@include('partials/navigation_bar')
@@ -18,8 +18,8 @@
 			@csrf
 			{{ method_field('put') }}
 			<div class="form-group">
-				<label for="">Username</label>
-				<input type="text" class="form-control" name="username" value="{{ $user->username }}">
+				<label for="">{{ trans('users/edit.username') }}</label>
+				<input type="text" class="form-control" name="username" value="{{ $user->username }}" disabled>
 			</div>
 
 			@if($errors->has('username'))
@@ -29,7 +29,7 @@
 			@endif
 
 			<div class="form-group">
-				<label for="">Password</label>
+				<label for="">{{ trans('users/edit.password') }}</label>
 				<input type="password" class="form-control" name="password" value="{{ $user->password }}">
 			</div>
 
@@ -39,7 +39,7 @@
 				</div>
 			@endif
 			<div class="form-group">
-				<label for="">Name</label>
+				<label for="">{{ trans('users/edit.name') }}</label>
 				<input type="text" class="form-control" name="name" value="{{ $user->name }}">
 			</div>
 
@@ -49,7 +49,7 @@
 				</div>
 			@endif
 			<div class="form-group">
-				<label for="">Email</label>
+				<label for="">{{ trans('users/edit.email') }}</label>
 				<input type="email" class="form-control" name="email" value="{{ $user->email }}">
 			</div>
 
@@ -60,7 +60,7 @@
 			@endif
 
 			<div class="form-group">
-				<label for="">Role</label>
+				<label for="">{{ trans('users/edit.role') }}</label>
 				<select name="role" class="form-control">
 					@foreach( UserHelper::getOptionRole() as $key => $value)
 						@if($key == $user->role)
@@ -73,7 +73,7 @@
 			</div>
 			
 			<div class="form-group">
-				<button id="btn-form-user" type="submit" class="btn btn-success">Edit</button>
+				<button id="btn-form-user" type="submit" class="btn btn-success">{{ trans('users/edit.update') }}</button>
 			</div>
 		</form>
 	</div>

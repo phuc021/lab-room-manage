@@ -1,6 +1,6 @@
 @extends('master')
 
-@section('title', 'User List Manage')
+@section('title', trans('users/index.title'))
 @section('title-bar', 'User')
 @section('body')
 	<div class="top-list-user">
@@ -34,12 +34,12 @@
 		@endif
 		<thead>
 			<tr>
-				<th>STT</th>
-				<th>Name</th>
-				<th>Username</th>
-				<th>Email</th>
-				<th>Role</th>
-				<th>Option</th>
+				<th>{{ trans('users/index.stt') }}</th>
+				<th>{{ trans('users/index.name') }}</th>
+				<th>{{ trans('users/index.username') }}</th>
+				<th>{{ trans('users/index.email') }}</th>
+				<th>{{ trans('users/index.role') }}</th>
+				<th>{{ trans('users/index.option') }}</th>
 			</tr>
 		</thead>
 		@php ($index = 0)
