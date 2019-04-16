@@ -12,8 +12,9 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-    'title' => 'TAGS',
-    'create_new_tagTitle' => 'THÊM TAG MỚI',
+    'tagsmanager' => 'Quản lý thẻ',
+    'title' => 'THẺ',
+    'create_new_tagTitle' => 'THÊM THẺ MỚI',
     'value' => 'Giá trị',
     'deviceid' => 'ID thiết bị',
     'deviceName' => 'Tên thiết bị',
@@ -38,4 +39,5 @@ return [
     'confirmCreate' => 'Bạn có muốn tại xóa trị này không?',
     'notExist' => 'Không tồn tại !',
     'addSuccess' => 'Thêm thành công !'
+    
 ];

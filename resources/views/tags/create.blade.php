@@ -1,7 +1,7 @@
 @extends('master')
 
-@section('title', 'Tag manager')
-
+@section('title', trans('tags/langTag.title').' | '.trans('tags/langTag.create_new_tagTitle'))
+@section('title-bar', trans('tags/langTag.create_new_tagTitle'))
 @section('body')
 	@include('partials/navigation_bar')
 	@section('nav-href','users')

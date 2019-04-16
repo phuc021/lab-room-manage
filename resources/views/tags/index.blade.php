@@ -1,6 +1,6 @@
 @extends('master')
 
-@section('title', 'Tags manager')
+@section('title', trans('tags/langTag.tagsmanager'))
 @section('title-bar', trans('tags/langTag.title'))
 @section('body')
 

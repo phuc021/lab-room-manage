@@ -1,7 +1,7 @@
 @extends('master')
 
-@section('title', 'Tag manager')
-@section('title-bar', trans('tags/langTag.editTitle'))
+@section('title', trans('tags/langTag.title').' | '.trans('tags/langTag.editTitle'))
+@section('title-bar', trans('tags/langTag.editTitle').' : '.$tags->value)
 @section('body')
 	@include('partials/navigation_bar')
 	@section('nav-href','users')

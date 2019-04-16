@@ -11,7 +11,7 @@
 		'room' => 'Phòng',
 		'computer' => 'Máy Tính',
 		'device' => 'Thiết Bị',
-		'tag' => 'Tag',
+		'tag' => 'Thẻ',
 		'type_devices' => 'Loại Thiết Bị',
 		'task' => 'Task',
 	];
