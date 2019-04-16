@@ -14,7 +14,7 @@ return [
     */
 
     'create_new_room' => 'Add new room',
-    'name' => 'Name',
+    'name' => 'Username',
     'desc' => 'Description',
     'status' => 'Status',
 
