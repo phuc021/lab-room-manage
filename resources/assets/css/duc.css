@@ -55,6 +55,7 @@ table.list-computer thead tr {
 	top: 39px;left: 20px;
 	opacity: 0;
   color: white;
+  cursor: pointer;
 }
 
 .img-middle {
@@ -62,9 +63,9 @@ table.list-computer thead tr {
     margin:5px;
     padding: 10px;
     background: #FFFFFF;
-    border: 2px solid;
+    border: 1px solid #c1c1c1;
     border-radius: 5px;
-    box-shadow: 5px 8px #c1bdbd;
+    box-shadow: 5px 5px #c1bdbd;
 }
 div.button-option-edit-computer button {
   width: 72px;

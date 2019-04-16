@@ -3,10 +3,10 @@ return[
 	'title' => 'Computers',
 	'add' => 'Add New Computer',
 	'stt' => 'STT',
-	'name' => 'NAME',
+	'name' => 'Name',
 	'desc' => 'DESC',
 	'status' => 'STATUS',
-	'roomsID' => 'ROOMS ID',
+	'roomsID' => 'Rooms ID',
 	'edit' => 'Edit',
 	'delete' => 'Delete'
 ]

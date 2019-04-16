@@ -1,10 +1,10 @@
 <?php 
 return[
 	'title' => 'Edit Computer',
-	'name' => 'NAME',
-	'desc' => 'DESC',
-	'status' => 'STATUS',
-	'roomsID' => 'ROOMS ID',
+	'name' => 'Name',
+	'desc' => 'Desc',
+	'status' => 'Status',
+	'roomsID' => 'Rooms ID',
 	'submit' => 'Edit'
 ]
  ?>
