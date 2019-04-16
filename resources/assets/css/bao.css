@@ -4,6 +4,23 @@
     font-family: 'Roboto', sans-serif;
 }
 
+a.a_lang {
+    margin: 14px 9px!important;
+    padding: 1px 1px!important;
+}
+
+img.icon-lang {
+    width: 30px;
+}
+
+.notify-error a.btn.btn-warning {
+    border-right: 2px solid #f7f7f8;
+}
+
+.search-user button {
+    display: contents;
+}
+
 .search-user input#input:focus {
     width: 70%;
     transition: all 0.5s;
@@ -181,7 +198,7 @@ button#add-new-user:hover {
   transform: translateY(-7px);
 }
 
-button#btn-form-user{
+.btn-form-user, button#btn-form-user{
   font-weight: 500;
   color: #e0e0e0;
   background-color: #263544;
