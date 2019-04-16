@@ -3,76 +3,74 @@
 @section('title', 'Room manage')
 
 @section('body')
-   
-
+    
+@section('title-bar', trans('rooms/index.title')) 
     <div class="container-fluid">
-           <h3 align="center">Tìm Kiếm</h3><br />   
-       <div class="container-fluid">
-             <input type="text" name="country_name" id="country_name" class="form-control input-lg" placeholder="Enter Country Name" />
-            <div id="countryList"><br>
-             </div>
-        </div>  
-    </div>
-
-    <div class="container-fluid">
-           <a href="{{ url('rooms/create') }}">
-        <button id="add-new-rooms" type="button" class="btn btn-primary">Add New Rooms</button></a>
-
-    <div class="contaiter-fluid text-center">
-        @php($index = 0)
-        <div class="row bgr-book">
+        {{-- add button --}}
+        <a href="{{url('rooms/create')}}">
+            <button id="add-new-user" class="btn btn-primary">+</button>
+        </a>
+        
+        <div class="row">
+            @php($i = 0)
             @foreach($roomsList as $rooms)
-            @php($index++)
-            <div class="col-lg-4 block">
-                    <div class="row bgr-top-block">
-                        <div class="col-lg-2 stt">
-                            <p>{{ RoomsHelper::increment($index, $roomsList->perPage(), $roomsList->currentPage())}}</p>
-                        </div>
-                        <div class="col-lg-7 ">
-                            <p>{{ RoomsHelper::getStatus($rooms->status)}}</p>
-                                
+            <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
+                <div class="wrap-item">
+                    <div class="row bottom-grid">   
+                        <div class="img-middle room">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <p><b>ID:
+                                        @php($i++)
+                                        {{ RoomsHelper::increment($i , $roomsList->perPage(), $roomsList->currentPage()) }}</b>
+                                    </p>
+                                </div>
+                                <div class="col-xs-6">
+                                    <p><b>{{ RoomsHelper::getStatus($rooms->status)}}</b></p>
+                                </div>
+                                <div class="col-xs-3">
+                                    <p><b>{{$rooms->desc}}</b></p>
+                                </div>
                             </div>
-                        <div class="col-lg-3">
-                            <p>{{$rooms->desc}}</p>
+                            {{-- image --}}
+                            <img src="{{ asset('img/rooms.jpg') }}" style="width: 280px" alt="placeholder+image">
+                            {{-- button --}}
+                            <div class="text-center"><b>{{ $rooms->name }}</b></div>
+                            <div class="row btn-computer">
+                                {{-- edit button --}}
+                                <div >
+                                    <button class="button-edit-room pull-left"><a href="{{ url("rooms/$rooms->id/edit") }}"><i id="room-ion" class="fa fa-pencil-square-o" aria-hidden="true"></i></a></button>
+                                </div>
+                                {{-- delete button --}}
+                                <div >
+                                    <form action="{{ url('rooms/'.$rooms->id) }}" method="POST">
+                                        {{csrf_field()}}
+                                        {{method_field('DELETE')}}
+
+                                        <button class="button-delete-room pull-right"  type="submit" data-toggle="tooltip" title="Delete" data-placement="top" onclick="return confirm('bạn có thực sự muốn xóa ?'); "><i id="room-ion" class="fa fa-trash" aria-hidden="true"></i></button>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="row block-img">
-                        <div class="col-lg-11 img-middle btn">
-                            <img src="..\..\assets\img\phongmay.jpg" style="width: 293px;" alt="placeholder+image">
-                        </div>
-
-                        <div class="col-lg-6 middle cursor-pointer">
-                            
-                        </div>
-
-                    </div>
-                    <p>{{$rooms->name}}</p>
-                    <div class="row">
-                        <div id="button-option-edit-device" class="pull-left block-btn">
-                            <button title="Edit" type="submit" value="Edit"><a href="{{ url('rooms') }}/{{$rooms->id}}/edit">Edit</a></button>
-                    </div>
-
-                    <div id="button-option-del-device" class="pull-right block-btn">
-                            <form action="{{ url('rooms/'.$rooms->id) }}" method="POST">
-                                @csrf
-                                {{ method_field('DELETE') }}
-                                <button type="submit" value="Delete"  title="Delete"  onclick="return confirm('bạn có muốn xóa?');">Delete</button>
-                            </form>
-                    </div>
                         
+                        <div class="col-lg-12 bgr room">
+                            <p>
+                                <b>{{ trans('rooms/create.desc')}}:{{$rooms->desc}}</b>
+                            </p>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
-                
             @endforeach
         </div>
+        <div class="pagination-computer">
+            {{ $roomsList->links() }}
+        </div>
+    </div> 
     
-    </div>
-        {{ $roomsList}}
-        
-            
-               
 
+   
     @endsection
 
         

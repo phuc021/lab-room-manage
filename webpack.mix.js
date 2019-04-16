@@ -37,4 +37,5 @@ mix.styles('resources/assets/css/animate.min.css','public/css/animate.min.css')
 
 mix.copyDirectory('resources/assets/fonts','public/fonts')
 	.copyDirectory('resources/js','public/js')
+	.copyDirectory('resources/assets/img','public/img')
 	.copyDirectory('resources/assets/folder_form_register_login','public/assets/folder_form_register_login');

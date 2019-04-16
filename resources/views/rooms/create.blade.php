@@ -5,30 +5,32 @@
 
 
 @section('body')
-
-	<div>
-	</div>
+<div class="navigation-bar">
+						<div class="btn-close">
+							<a href="http://127.0.0.1:8000/rooms">X</a></div>
+					</div>
 		<div class="container-fluid dange">
 
 			<div class="form-group">
 
 				<form action="{{ url('rooms') }}" method="POST">
 					@csrf
-		
-
-					<label for="">{{ trans('rooms/create.name')}}:</label>
-
-					<label class="alertroom" >{{ $errors-> has('name') ? $errors->first('name') :''}}</label>
+		            
+				<div class="form-rooms container-fluid">
+					<div class="form-group">
+					    <label for="" class="room">{{ trans('rooms/create.name')}}:</label>
+						<label class="alertroom" >{{ $errors-> has('name') ? $errors->first('name') :''}}</label>
+						<input type="text" class="form-control  {{ $errors-> has('name') ? 'errors' :''}}"  name="name" placeholder="Name">
+					</div>
 					
-					<input type="text" class="form-control  {{ $errors-> has('name') ? 'errors' :''}}"  name="name" placeholder="Name">
 
-					<label for="">{{ trans('rooms/create.desc')}}:</label>
+					<label for="" class="room">{{ trans('rooms/create.desc')}}:</label>
 
 					<label class="alertroom" >{{ $errors-> has('desc') ? $errors->first('desc') :''}}</label>
 
 					<input type="text" class="form-control  {{ $errors-> has('desc') ? 'errors' :''}}" name="desc" placeholder="Desc"><br>
 
-					<label for="">{{ trans('rooms/create.status')}}:</label>
+					<label for="" class="room">{{ trans('rooms/create.status')}}:</label>
 
 					<select name="status" class="form-control">
 
@@ -36,9 +38,10 @@
 						<option value="{{$key}}">{{$value}}</option>
 					@endforeach
 					</select><br>
-					<button id="create-rooms" type="sumbit" class="bt label-warning label">Sumbit</button>
-				</form>
-
+					<div class="form-group">
+					<button id="create-rooms" type="sumbit" class="bt label-warning label">Create</button></div>
+				  </form>
+                </div>
 			</div>
 		</div>
 @endsection
