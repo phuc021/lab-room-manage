@@ -5,6 +5,7 @@
   <title>Sign-Up/Login Form</title>
   <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" />
   <link rel="stylesheet" href="{{ asset('assets/folder_form_register_login/css/style.css') }}">  
 </head>
 
@@ -33,9 +34,10 @@
             </label>
             <input type="password" name="password" required autocomplete="off"/>
           </div>
-        
-        <p class="forgot"><a href="#">Forgot Password?</a></p>
-          
+        <div class="option-login">
+          <p class="forgot register"><a href="{{ url('register') }}">Register</a></p>
+          <p class="forgot forgot-pass"><a href="#">Forgot Password?</a></p>
+        </div>
         <button class="button button-block"/>Log In</button>
           
         </form>

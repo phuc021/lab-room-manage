@@ -2,6 +2,18 @@
   box-sizing: border-box;
 }
 
+.option-login p.forgot.register {
+    float: left;
+}
+
+.option-login p.forgot {
+    display: inline-block!important;
+}
+
+.option-login p.forgot-pass {
+    float: right;
+}
+
 html {
   overflow-y: scroll;
 }
