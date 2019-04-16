@@ -16,25 +16,14 @@
 
 				<label>Description:</label>
 				<label class="alertdevice">{{ $errors->has('name') ? $errors->first('name') : ''}}</label>
-				<input type="text" class="form-control {{ $errors->has('desc') ? 'has-error' : ''}}" placeholder="Enter description" name="desc">
-
-				<label>Status:</label>
-				<select name="status" class="form-control">
-					@foreach(DeviceHelper::getOptionStatus() as $key => $value)
-						<option value="{{$key}}">{{$value}}</option>
-					@endforeach
-				</select>
-
-				<label>Rooms:</label>				
-				<select id="rooms_id" onchange="setComputers(this)" name="rooms_id" class="form-control">
-					@foreach($roomList as $room)
-						<option value="{{ $room->id }}">{{ $room->name }}</option>
-					@endforeach
-				</select>
+				<textarea type="text" class="form-control {{ $errors->has('desc') ? 'has-error' : ''}}" placeholder="Enter description" name="desc" rows="10">
+				</textarea>						
 
 				<label>Computers:</label>
 				<select id="computers_id" name="computers_id" class="form-control">
-					
+					@foreach($computerList as $computer)
+						<option value="{{ $computer->id }}">{{ $computer->name }}</option>
+					@endforeach
 				</select>
 
 				<label>Type Devices:</label>				
@@ -44,6 +33,33 @@
 					@endforeach
 				</select>
 
+				<label>Tags</label>		
+				<div class="row">
+					<div class="col-md-8">									
+						<select id="tags"  name="tags" class="form-control">
+							@foreach($tags as $tag)
+								<option value="{{ $tag->id }}">{{ $tag->value }}</option>
+							@endforeach
+						</select>
+					</div>
+					<div class="col-md-2">
+						<input type="button" onclick="addTags()" class="form-control" value="Add">
+					</div>					
+				</div>
+				<div class="row">
+					<div class="col-md-2">
+						<div id="tagsDom">						
+						</div>
+					</div>
+				</div>
+				
+
+				<label>Status:</label>
+				<select name="status" class="form-control">
+					@foreach(DeviceHelper::getOptionStatus() as $key => $value)
+						<option value="{{$key}}">{{$value}}</option>
+					@endforeach
+				</select>
 				<button  id="btn-form-user" type="submit" class="btn btn-default cre">Add</button>
 			</form>
 		</div>
@@ -67,6 +83,10 @@
 				    selectList.appendChild(option);
 				}			    
 			}
+		}
+
+		function addTags(){
+			$('#tagsDom').append('<label class=tag name=tags[] value=' + $('#tags').val() + '>' + $('#tags option:selected').text() +'</label><br/>');
 		}
 	</script>
 @endsection

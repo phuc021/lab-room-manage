@@ -24,7 +24,7 @@
 				</tr>
 			</thead>
 			@php($i = 0)
-			@foreach($typedevicesList as $typedevice)
+			@foreach($typedeviceList as $typedevice)
 			<tbody>
 				<tr @if($i% 2 == 0) class="old" @else class="even" @endif >
 					<td><center><?php echo ++$i; ?></center></td>

@@ -31,7 +31,7 @@
 					<td><p>{{$device->desc}}</p></td>
 					<td><p>{{ DeviceHelper::getStatus($device->status)}}</p></td>
 					<td><p>{{$device->computer['name']}}</p></td>
-					<td><p>{{$device->type_device['name']}}</p></td>
+					<td><p>{{$device->typeDevice['name']}}</p></td>
 					<td>
 						<div class="row">
 							<div class="col-md-3 col-md-push-2">

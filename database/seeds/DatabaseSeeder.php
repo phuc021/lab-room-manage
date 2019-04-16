@@ -14,12 +14,11 @@ class DatabaseSeeder extends Seeder
         $this->call([
         	UsersTableSeeder::class,
         	RoomsTableSeeder::class,
-        	DevicesTableSeeder::class,
             ComputersTableSeeder::class,
-            TagsTableSeeder::class,
             TypeDevicesTableSeeder::class,
+            DevicesTableSeeder::class,
+            TagsTableSeeder::class,
             TaskTableSeeder::class,
-
         ]);
     }
 }

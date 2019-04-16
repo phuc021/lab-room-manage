@@ -3,6 +3,7 @@
 use App\User;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
+use App\Enums\ComputerStatus;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,13 +16,10 @@ use Faker\Generator as Faker;
 |
 */
 $factory->define(App\Models\Computer::class, function (Faker $faker) {
-	$names = array('1','2','3','4','5','6','7','8','9','10',
-		'11','12','13','14','15','16','17','18','19','20');
-	$status = array('0','1');
-	shuffle($names);
+	$status = array(ComputerStatus::DISABLE,ComputerStatus::ENABLE);
 	shuffle($status);
     return [
-        'name' => $names[0],
+        'name' => 'MAY'.$faker->randomDigit,
         'desc' => $faker->languageCode,
         'status' => $status[0],
         'rooms_id' => $faker->randomDigit,

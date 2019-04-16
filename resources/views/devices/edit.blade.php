@@ -18,7 +18,7 @@
 
 				<label>Description:</label>
 				<label class="alertdevice">{{ $errors->has('desc') ? $errors->first('desc') : ''}}</label>
-				<input type="text" class="form-control {{ $errors->has('desc') ? 'has-error' : ''}}" value="{{$devices->desc}}" placeholder="Enter description" name="desc">
+				<textarea type="text" class="form-control {{ $errors->has('desc') ? 'has-error' : ''}}" value="{{$devices->desc}}" placeholder="Enter description" name="desc" rows="10"></textarea>
 
 				<label>Status:</label>
 				<select name="status" class="form-control">
@@ -30,7 +30,7 @@
 				<label>Type Devices:</label>
 				<select name="typedevice_id" class="form-control" value="{{ $devices->typedevice_id}}">
 					@foreach($typedevicesList as $typedevices)
-						<option value="{{ $typedevices->id }}"> {{ $typedevices->name }} </option>
+						<option @if($devices->typedevice_id == $typedevices->id) selected @endif value="{{ $typedevices->id }}"> {{ $typedevices->name }} </option>
 					@endforeach
 				</select>
 
