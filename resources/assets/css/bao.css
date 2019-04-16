@@ -52,7 +52,7 @@ img.icon-lang {
     min-width: 500px;
     max-width: 700px;
     position: relative;
-    margin: 10px 48px;
+    margin: 10px 29px;
 }
 
 .search-user input#input {
@@ -221,27 +221,6 @@ button#add-new-user:hover {
   outline: none;
   margin: 10px 0px;
 }
-/*
-td#button-option-user button{
-  width: 59px;
-  height: 31px;
-  font-size: 11px;
-  letter-spacing: 2.5px;
-  font-weight: 500;
-  color: #000;
-  background-color: #fff;
-  border: none;
-  border-radius: 45px;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease 0s;
-  cursor: pointer;
-  outline: none;
-  margin: 10px 0px;
-}
-
-button#button-delete-user {
-    width: 74px!important;
-}*/
 
 table.list-user tbody tr.old{
     background: #cccccc;
