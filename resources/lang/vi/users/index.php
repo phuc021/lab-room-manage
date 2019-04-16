@@ -1,6 +1,7 @@
 <?php 
 	return [
 		'title' => 'Trang quản lý người dùng',
+		'title-bar' => 'Người dùng',
 		'stt' => 'STT',
 		'name' => 'Tên',
 		'username' => 'Tên người dùng',

@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('title', trans('users/index.title'))
-@section('title-bar', 'User')
+@section('title-bar', trans('users/index.title-bar'))
 @section('body')
 	<div class="top-list-user">
 		<a href="{{ url('users/create') }}">
