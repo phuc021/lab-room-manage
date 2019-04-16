@@ -17,37 +17,85 @@ Route::get('/', function () {
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-
+/*
+|--------------------------------------------------------------------------
+| Route Auth
+|--------------------------------------------------------------------------
+*/
 Route::get('register','Auth\AuthController@getRegister')->name('register');
-
 Route::post('register','Auth\AuthController@postRegister');
-
 Route::get('login', 'Auth\AuthController@getLogin')->name('login');
-
 Route::post('login', 'Auth\AuthController@postLogin');
-
 
 Route::get('logout', 'Auth\AuthController@getLogout')->name('logout');
 
-// Route::group(['middleware' => 'guest'], function(){ 
+Route::middleware(['guest', 'locale'])->group(function () {
+	/*
+	|--------------------------------------------------------------------------
+	| Change Language
+	|--------------------------------------------------------------------------
+	*/
+	Route::get('change-language/{language}', 'HomeController@changeLanguage')->name('change-language');
 
-	Route::resource('users', 'UserController');	
-
+	/*
+	|--------------------------------------------------------------------------
+	| Routes User
+	|--------------------------------------------------------------------------
+	*/
+	Route::get('users', 'UserController@index');
+	Route::get('users/create', 'UserController@create')->middleware('can:user.create');
+	Route::post('users', 'UserController@store');
+	Route::get('users/{id}/edit', 'UserController@edit')->middleware('can:user.update');
+	Route::put('users/{id}', 'UserController@update');
+	Route::get('users/{id}', 'UserController@show');
+	Route::delete('users/{id}','UserController@destroy')->middleware('can:user.delete');
 	Route::get('users/search/{key}', 'UserController@search');
 
+	/*
+	|--------------------------------------------------------------------------
+	| Routes Tag
+	|--------------------------------------------------------------------------
+	*/
 	Route::resource('tags','TagsController');
 
+	/*
+	|--------------------------------------------------------------------------
+	| Routes Room
+	|--------------------------------------------------------------------------
+	*/
 	Route::resource('rooms', 'RoomController');
 
+	/*
+	|--------------------------------------------------------------------------
+	| Routes Device
+	|--------------------------------------------------------------------------
+	*/
 	Route::resource('devices', 'DeviceController');
 
+	/*
+	|--------------------------------------------------------------------------
+	| Routes Computer
+	|--------------------------------------------------------------------------
+	*/
 	Route::resource('computers','ComputerController');
 
+	/*
+	|--------------------------------------------------------------------------
+	| Routes Type Device
+	|--------------------------------------------------------------------------
+	*/
 	Route::resource('typedevices','TypeDevicesController');
 	
+	/*
+	|--------------------------------------------------------------------------
+	| Routes Task
+	|--------------------------------------------------------------------------
+	*/
 	Route::resource('tasks','TaskController');
 	
-// });
+});
+
+
 // Route::get('ajax', function(){
 // 	return view('users.ajax');
 // });

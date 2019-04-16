@@ -11,8 +11,8 @@
 			<form action="{{ url('users') }}" method="GET">
 				<input type="hidden" name="action" value="search">
 				<input type="text" name="key" id="input" class="form-control" value="" placeholder="Search User ...">
+				<button type="submit"><i class="fa fa-search"></i></button>
 			</form>
-			<i class="fa fa-search"></i>
 		</div>
 	</div>
 	<table class="list-user">

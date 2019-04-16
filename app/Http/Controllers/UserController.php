@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\User;
 use Validator;
+use Auth;
 
 class UserController extends Controller
 {
@@ -20,7 +21,8 @@ class UserController extends Controller
 
         if($filters && $filters['action'] == 'search'){
             //For search
-            $userList = DB::table('users')->where('name', 'like', '%'.$filters['key'].'%')->orderBy('id','ASC')->paginate(10);
+            $userList = DB::table('users')->where('name', 'like', '%'.$filters['key'].'%')
+                                        ->orderBy('id','ASC')->paginate(10);
         }else{
             //For all user
             $userList = DB::table('users')->orderBy('id','DESC')->paginate(10);
@@ -34,6 +36,9 @@ class UserController extends Controller
      */
     public function create()
     {
+        $user = Auth::user();
+        $this->authorize($user, 'create');
+
         return view('users.create');
     }
 
@@ -43,7 +48,7 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(TaskRequest $request)
+    public function store(Request $request)
     {
         $validate = Validator::make($request->all(),[
             'username' => 'required|unique:users,username|alpha_num|min:5',
@@ -82,6 +87,7 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::where('id', $id)->first();
+        $this->authorize($user, 'update');
         return view('users.edit', ['user' => $user]);
     }
 
@@ -116,7 +122,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        User::destroy($id);
+        $user = User::destroy($id);
         return redirect('/users')->with(['delete' => 'Delete User Success !!!']);
     }
 
