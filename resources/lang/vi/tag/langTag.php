@@ -12,10 +12,10 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-
+    'title' => 'TAGS',
     'create_new_tagTitle' => 'THÊM TAG MỚI',
     'value' => 'Giá trị',
-    'deviceid' => 'ID của thiết bị',
+    'deviceid' => 'ID thiết bị',
     'deviceName' => 'Tên thiết bị',
     'submit' => 'Gửi',
     'editTitle' => 'SỬA',
@@ -36,5 +36,6 @@ return [
     'request_max' => 'Quá dài!',
     'confirmEdit' => 'Bạn có muốn thay đổi ',
     'confirmCreate' => 'Bạn có muốn tại xóa trị này không?',
-    'notExist' => 'Không tồn tại !'
+    'notExist' => 'Không tồn tại !',
+    'addSuccess' => 'Thêm thành công !'
 ];

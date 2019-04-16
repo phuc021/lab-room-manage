@@ -13,6 +13,7 @@ return [
     |
     */
 
+    'title' => 'TAGS',
     'create_new_tagTitle' => 'ADD NEW TAG',
     'value' => 'Value',
     'deviceid' => 'Device ID',
@@ -36,5 +37,6 @@ return [
     'request_max' => 'Too long!',
     'confirmEdit' => 'Are you want to change ',
     'confirmCreate' => 'Are you want to create this value?',
-    'notExist' => 'This is not exist !'
+    'notExist' => 'This is not exist !',
+    'addSuccess' => 'Add Success !'
 ];
