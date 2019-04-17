@@ -15,9 +15,10 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(App\Models\TypeDevices::class, function (Faker $faker) {
+$factory->define(App\Models\TypeDevice::class, function (Faker $faker) {
+	$names = array('CPU','RAM','HDD','Mainboard','Mouse','Monitor');
+	shuffle($names);
     return [
-    	'name' => $faker->name,
-    	
+    	'name' => $names[0],    	
     ];
 });

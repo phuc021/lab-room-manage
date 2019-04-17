@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Room;
 use App\Models\Device;
 use App\Models\Computer;
-use App\Models\TypeDevices;
+use App\Models\TypeDevice;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\DeviceRequest;
@@ -22,7 +23,7 @@ class DeviceController extends Controller
     public function index()
     {
         $itemPerPage = 20;
-        $devicesList = Device::paginate($itemPerPage);
+        $devicesList = Device::with(['computer','typeDevice'])->paginate($itemPerPage);
         // $devicesList = DB::table('devices')->orderBy('id','DESC')->get();
         return view('devices.index',['devicesList'=> $devicesList]); 
     }
@@ -34,13 +35,13 @@ class DeviceController extends Controller
      */
     public function create()
     {
-        $roomList = Room::all();
-        $typedeviceList = TypeDevices::all();
+        $typedeviceList = TypeDevice::all();
         $computerList = Computer::all();
-        return view('devices.create', 
-            array("computerList" => $computerList,
-                  "roomList" => $roomList,
-                  "typedeviceList" => $typedeviceList));
+        $tags = Tag::all();
+        $data = array("computerList" => $computerList,
+            "typedeviceList" => $typedeviceList,
+            "tags" => $tags);
+        return view('devices.create', $data);
     }
 
     /**
@@ -74,7 +75,7 @@ class DeviceController extends Controller
      */
     public function edit($id)
     {   
-        $typedevicesList = TypeDevices::all();
+        $typedevicesList = TypeDevice::all();
         $computerList = Computer::all();
         $devices = Device::where('id', $id)->first();
         return view('devices.edit',array('computerList' => $computerList,

@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-use App\Models\TypeDevices;
+use App\Models\TypeDevice;
 use App\Http\Requests\TypeDeviceRequest;
 
 
 
-class TypeDevicesController extends Controller
+class TypeDevice extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,8 +19,8 @@ class TypeDevicesController extends Controller
     public function index()
     {
         $itemPerPage = 20;
-        $typedevicesList = TypeDevices::paginate($itemPerPage);
-        return view('typedevices.index',['typedevicesList'=>$typedevicesList]);
+        $typeDevice = TypeDevice::paginate($itemPerPage);
+        return view('typeDevice.index',['typeDevice'=>$typeDevice]);
     }
 
     /**
@@ -30,7 +30,7 @@ class TypeDevicesController extends Controller
      */
     public function create()
     {
-        return view('typedevices.create');
+        return view('typeDevice.create');
     }
 
     /**
@@ -41,21 +41,20 @@ class TypeDevicesController extends Controller
      */
     public function store(TypeDeviceRequest $request)
     {
-        TypeDevices::create($request->all());
-        return redirect('typedevices');
+        TypeDevice::create($request->all());
+        return redirect('typeDevice');
     }
 
     /**
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+TypeDevice     */
     public function show($id)
     {
-        $typedevices = typedevices::findOrFail($id);
-        // $typedevices = DB::table('typedevicess')->where('id',$id)->first();
-        return view('typedevices.show', ['typedevices', $typedevices]);
+        $typeDevice = TypeDevice::findOrFail($id);
+        // $TypeDevice = DB::table('TypeDevice')->where('id',$id)->first();
+        return view('typeDevice.show', ['typeDevice', $typeDevice]);
     }
 
     /**
@@ -66,8 +65,8 @@ class TypeDevicesController extends Controller
      */
     public function edit($id)
     {
-        $typedevices = TypeDevices::where('id', $id)->first();
-        return view('typedevices.edit',['typedevices'=>$typedevices]);
+        $typeDevice = TypeDevice::where('id', $id)->first();
+        return view('typeDevice.edit',['typeDevice'=>$typedevices]);
     }
 
     /**

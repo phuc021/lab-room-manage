@@ -49,7 +49,7 @@ Route::middleware(['guest', 'locale'])->group(function () {
 	Route::put('users/{id}', 'UserController@update');
 	Route::get('users/{id}', 'UserController@show');
 	Route::delete('users/{id}','UserController@destroy')->middleware('can:user.delete');
-	Route::get('users/search/{key}', 'UserController@search');
+	Route::get('users/search/{key}', 'UserController@search'); 
 
 	/*
 	|--------------------------------------------------------------------------
