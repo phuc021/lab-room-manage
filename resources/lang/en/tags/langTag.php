@@ -12,7 +12,7 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-
+    'tagsmanager' => 'Tags manager',
     'title' => 'TAGS',
     'create_new_tagTitle' => 'ADD NEW TAG',
     'value' => 'Value',
