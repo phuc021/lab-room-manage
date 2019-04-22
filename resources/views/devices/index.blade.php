@@ -7,18 +7,25 @@
 	<a href="{{ url('devices/create') }}">
 		<button id="add-new-device" type="button" class="btn btn-primary">+</button>
 	</a>
+	<div class="search-user">
+		<form action="{{ url('users') }}" method="GET">
+			<input type="hidden" name="action" value="search">
+			<input type="text" name="key" id="input" class="form-control" value="" placeholder="{{ trans('devices/index.seach') }}">
+			<button type="submit"><i class="fa fa-search"></i></button>
+		</form>
+	</div>
+	
 	<div class="container-fluid text-center">
-		<table class="table boder">
-
+		<table class="table h">
 			<thead>
 				<tr>
-					<th>Stt</th>
-					<th>Name</th>
-					<th>Desc</th>
-					<th>Status</th>
-					<th>Computers</th>
-					<th>Type Devices</th>
-					<th>Option</th>
+					<th>{{ trans('devices/index.stt') }}</th>
+					<th>{{ trans('devices/index.name') }}</th>
+					<th>{{ trans('devices/index.desc') }}</th>
+					<th>{{ trans('devices/index.status') }}</th>
+					<th>{{ trans('devices/index.computers') }}</th>
+					<th>{{ trans('devices/index.type_device') }}</th>
+					<th>{{ trans('devices/index.option') }}</th>
 				</tr>
 			</thead>
 			@php($i = 0)
@@ -38,10 +45,10 @@
 								<button class="btn-option-user" title="Edit" type="submit" value="Edit"><a  href="{{ url('devices') }}/{{$device->id}}/edit"><i class="fa fa-pencil-square-o text-info"></i></a></button>
 							</div>
 							<div class="col-md-3 col-md-push-2">
-								<form action="{{ url('devices/'.$device->id) }}" method="POST">
+								<form action="{{ url('devices/'.$device->id)}}" method="POST">
 					 				@csrf
 									{{ method_field('DELETE') }}
-									<button class="btn-option-user" type="submit" value="Delete"  title="Delete"  onclick="return confirm('bạn có muốn xóa?');"><i class="fa fa-trash text-danger"></i></button>
+									<button class="btn-option-user" type="submit" value="Delete"  title="Delete"  onclick="return confirm('{{ trans('devices/index.delete') }}{{ $device->name }}');"><i class="fa fa-trash text-danger"></i></button>
 								</form>
 							</div>
 						</div>

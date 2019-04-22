@@ -4,36 +4,36 @@
 	
 @section('body')
 	@include('partials/navigation_bar')
-	@section('title-bar', trans('devices/create.create_device'))
+	@section('title-bar', trans('devices/create.title'))
 	<div class="container-fluid">
 		<div class="from-group lb">
 			<form action="{{url('devices')}}" method="post">
 				@csrf
 
-				<label>Name:</label>
+				<label>{{ trans('devices/create.name') }}:</label>
 				<label class="alertdevice">{{ $errors->has('name') ? $errors->first('name') : ''}}</label>
 				<input type="text" class="form-control {{ $errors->has('name') ? 'has-error' : ''}}" placeholder="Enter Name" name="name" id="name">
 
-				<label>Description:</label>
+				<label>{{ trans('devices/create.description') }}:</label>
 				<label class="alertdevice">{{ $errors->has('name') ? $errors->first('name') : ''}}</label>
 				<textarea type="text" class="form-control {{ $errors->has('desc') ? 'has-error' : ''}}" placeholder="Enter description" name="desc" rows="10">
 				</textarea>						
 
-				<label>Computers:</label>
+				<label>{{ trans('devices/create.computers') }}:</label>
 				<select id="computers_id" name="computers_id" class="form-control">
 					@foreach($computerList as $computer)
 						<option value="{{ $computer->id }}">{{ $computer->name }}</option>
 					@endforeach
 				</select>
 
-				<label>Type Devices:</label>				
+				<label>{{ trans('devices/create.type_device') }}:</label>				
 				<select id="typedevices_id"  name="typydevices_id" class="form-control">
 					@foreach($typedeviceList as $tydevices)
 						<option value="{{ $tydevices->id }}">{{ $tydevices->name }}</option>
 					@endforeach
 				</select>
 
-				<label>Tags</label>		
+				<label>{{ trans('devices/create.tag') }}:</label>		
 				<div class="row">
 					<div class="col-md-8">									
 						<select id="tags"  name="tags" class="form-control">
@@ -54,13 +54,13 @@
 				</div>
 				
 
-				<label>Status:</label>
+				<label>{{ trans('devices/create.status') }}:</label>
 				<select name="status" class="form-control">
 					@foreach(DeviceHelper::getOptionStatus() as $key => $value)
 						<option value="{{$key}}">{{$value}}</option>
 					@endforeach
 				</select>
-				<button  id="btn-form-user" type="submit" class="btn btn-default cre">Add</button>
+				<button  id="btn-form-user" type="submit" class="btn btn-default cre">{{ trans('devices/create.add') }}</button>
 			</form>
 		</div>
 	</div>	

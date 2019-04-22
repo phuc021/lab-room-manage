@@ -3,9 +3,10 @@
 namespace App\Policies;
 
 use App\User;
+use App\Device;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class UserPolicy
+class DevicePolicy
 {
     use HandlesAuthorization;
 
@@ -15,21 +16,20 @@ class UserPolicy
             return true;
         }
     }
-
     /**
-     * Determine whether the user can view the odel= user.
+     * Determine whether the user can view the device.
      *
      * @param  \App\User  $user
-     * @param  \App\odel=User  $odel=User
+     * @param  \App\Device  $device
      * @return mixed
      */
-    public function view(User $user)
+    public function view(User $user, Device $device)
     {
         //
     }
 
     /**
-     * Determine whether the user can create odel= users.
+     * Determine whether the user can create devices.
      *
      * @param  \App\User  $user
      * @return mixed
@@ -40,49 +40,49 @@ class UserPolicy
     }
 
     /**
-     * Determine whether the user can update the odel= user.
+     * Determine whether the user can update the device.
      *
      * @param  \App\User  $user
-     * @param  \App\odel=User  $odel=User
+     * @param  \App\Device  $device
      * @return mixed
      */
-    public function update(User $user) 
-    {
-        return $user->role == 1;
-    }
-
-    /**
-     * Determine whether the user can delete the odel= user.
-     *
-     * @param  \App\User  $user
-     * @param  \App\odel=User  $odel=User
-     * @return mixed
-     */
-    public function delete(User $user)
+    public function update(User $user, Device $device)
     {
         return $user->role == 2;
     }
 
     /**
-     * Determine whether the user can restore the odel= user.
+     * Determine whether the user can delete the device.
      *
      * @param  \App\User  $user
-     * @param  \App\odel=User  $odel=User
+     * @param  \App\Device  $device
      * @return mixed
      */
-    public function restore(User $user)
+    public function delete(User $user, Device $device)
+    {
+        return $user->role == 2;
+    }
+
+    /**
+     * Determine whether the user can restore the device.
+     *
+     * @param  \App\User  $user
+     * @param  \App\Device  $device
+     * @return mixed
+     */
+    public function restore(User $user, Device $device)
     {
         //
     }
 
     /**
-     * Determine whether the user can permanently delete the odel= user.
+     * Determine whether the user can permanently delete the device.
      *
      * @param  \App\User  $user
-     * @param  \App\odel=User  $odel=User
+     * @param  \App\Device  $device
      * @return mixed
      */
-    public function forceDelete(User $user)
+    public function forceDelete(User $user, Device $device)
     {
         //
     }

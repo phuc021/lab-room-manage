@@ -1,6 +1,7 @@
 <?php
 	return[
 		"working" => "Working",
-		"preparing" => "Preparing",
-		"crash" => "Crash"
+		"repairing" => "Repairing",
+		"crash" => "Crash",
 	];
+?>

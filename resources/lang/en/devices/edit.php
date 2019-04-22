@@ -1,6 +1,13 @@
 <?php
 	return[
-		'edit_device' => 'Edit Device',
-	]
+		'title' => 'Edit Devices',
+		'name' => 'Name',
+		'description' => 'Description',
+		'computer' => 'Computer',
+		'type_device' => 'Type Device',
+		'tag' => 'Tag',
+		'status' => 'Status',
+		'edit' => 'Edit',
 
+	]
 ?>

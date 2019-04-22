@@ -70,7 +70,15 @@ Route::middleware(['guest', 'locale'])->group(function () {
 	| Routes Device
 	|--------------------------------------------------------------------------
 	*/
-	Route::resource('devices', 'DeviceController');
+
+	Route::get('devices', 'DeviceController@index');
+	Route::get('devices/create', 'DeviceController@create')->middleware('can:devices.create');
+	Route::post('devices', 'DeviceController@store');
+	Route::get('devices/{id}/edit', 'DeviceController@edit')->middleware('can:devices.update');
+	Route::put('devices/{id}', 'DeviceController@update');
+	Route::get('devices/{id}', 'DeviceController@show');
+	Route::delete('devices/{id}','DeviceController@destroy')->middleware('can:devices.delete');
+	Route::get('devices/search/{key}', 'DeviceController@search'); 
 
 	/*
 	|--------------------------------------------------------------------------

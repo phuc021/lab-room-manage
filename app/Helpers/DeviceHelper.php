@@ -7,8 +7,8 @@ class DeviceHelper {
 			case DeviceStatus::WORKING:
 				return trans('devices/status.working');
 				break;
-			case DeviceStatus::PREPARING:
-				return trans('devices/status.preparing');
+			case DeviceStatus::REPAIRING:
+				return trans('devices/status.repairing');
 				break;
 			case DeviceStatus::CRASH:
 				return trans('devices/status.crash');
@@ -21,7 +21,7 @@ class DeviceHelper {
 	public static function getOptionStatus(){
 		return array(
 			DeviceStatus::WORKING => trans('devices/status.working'),
-			DeviceStatus::PREPARING => trans('devices/status.preparing'),
+			DeviceStatus::REPAIRING => trans('devices/status.repairing'),
 			DeviceStatus::CRASH => trans('devices/status.crash')
 			
 		);
